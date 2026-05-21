@@ -1,23 +1,25 @@
-# Tool Entry Template
+# 工具条目模板
 
-~~~md
-# Tool: 名称
+## 基本信息
 
-## Positioning
+| 字段 | 内容 |
+|---|---|
+| 工具名 |  |
+| 厂商 / 维护者 |  |
+| 类别 |  |
+| 授权 |  |
+| 优先级 | A / B / C |
 
-## License / access
+## 用途
 
-## Role in aerospace simulation workflow
+## 输入输出
 
-## Inputs / outputs
+## 优点
 
-## Automation and integration
+## 限制
 
-## Strengths
+## 替代工具
 
-## Limitations
+## 学习计划
 
-## Alternatives
-
-## Site verdict
-~~~
+## 相关实验

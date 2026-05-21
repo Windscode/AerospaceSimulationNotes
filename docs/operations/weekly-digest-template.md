@@ -1,19 +1,13 @@
-# Weekly Digest Template
+# 周报模板
 
-~~~md
-# Weekly Digest - YYYY-WW
+## 本周新增
 
-## Most valuable findings
+## 本周高价值发现
 
-## Tools added or updated
+## 本周复现实验
 
-## Projects evaluated
+## 工具矩阵更新
 
-## Papers read
+## 项目雷达更新
 
-## Reproduction work
-
-## Items to archive
-
-## Next week focus
-~~~
+## 下周计划

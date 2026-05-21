@@ -1,30 +1,17 @@
-# Information Architecture
+# 信息架构
 
-网站采用“研究门户 + 文档库 + 数据矩阵”的混合结构。
+## 顶层入口
 
-## 一级入口
-
-| 入口 | 用途 |
+| 入口 | 作用 |
 |---|---|
-| Home | 专业门户首页，呈现站点定位、工具生态、项目雷达和维护流程 |
-| Intelligence | 每日收集和研究动态入口 |
-| Tool Stack | 工程软件生态矩阵 |
-| Project Radar | 开源项目评价与跟踪 |
-| Reproduction Lab | 复现实验和验证记录 |
-| Knowledge Base | 稳定长期知识 |
-| Research Log | 以时间为序的研究日志 |
+| 首页 | 站点定位与关键入口 |
+| 研究情报 | 每日动态和资料收集 |
+| 工程软件栈 | 软件工具矩阵和筛选 |
+| 项目雷达 | 开源项目评估与复现状态 |
+| 复现实验室 | 实验记录、验证和归档 |
+| 知识库 | 稳定长期资料 |
+| 研究日志 | 每日/每周文章 |
 
-## 内容生命周期
+## 设计逻辑
 
-```text
-Discovered → Reading → Evaluating → Reproducing → Validated → Archived
-```
-
-这个流程的目的是防止网站变成链接收藏夹。新资料可以快速进入 Daily Intake，但不能直接污染稳定知识库。
-
-## 页面类型
-
-- **Portal page**：首页、Tool Stack、Radar、Lab 等 React 自定义页面。
-- **Evergreen docs**：长期知识、方法论、模板。
-- **Blog posts**：研究日志、每日/每周动态。
-- **Data-driven lists**：工具、项目、实验、动态。
+新资料不直接进入稳定知识库，而是先进入研究情报。经过评估后，才会进入工具条目、项目雷达、论文笔记或复现实验。

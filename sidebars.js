@@ -1,84 +1,12 @@
 const sidebars = {
-  knowledgeSidebar: [
+  mainSidebar: [
     'intro',
-    {
-      type: 'category',
-      label: 'Site Architecture',
-      collapsed: false,
-      items: [
-        'architecture/information-architecture',
-        'architecture/design-system',
-        'architecture/content-model',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Knowledge Domains',
-      collapsed: false,
-      items: [
-        'knowledge/orbital-mechanics',
-        'knowledge/spacecraft-dynamics',
-        'knowledge/gnc-adcs',
-        'knowledge/propulsion',
-        'knowledge/aerodynamics-cfd',
-        'knowledge/structures-fem',
-        'knowledge/visualization-digital-twin',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Engineering Software',
-      collapsed: false,
-      items: [
-        'tools/engineering-software-landscape',
-        'tools/matlab-simulink',
-        'tools/ansys-stk',
-        'tools/cfd-aero-stack',
-        'tools/mbse-systems',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Project Radar',
-      items: [
-        'radar/overview',
-        'radar/evaluation-rubric',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Reproduction Lab',
-      items: [
-        'lab/reproduction-lab',
-        'lab/experiment-template',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Papers & Reports',
-      items: [
-        'papers/paper-note-template',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Operations',
-      items: [
-        'operations/maintenance-workflow',
-        'operations/daily-intake-template',
-        'operations/weekly-digest-template',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Templates',
-      items: [
-        'templates/tool-entry-template',
-        'templates/project-entry-template',
-        'templates/paper-note-template',
-      ],
-    },
+    { type: 'category', label: '架构与方法', items: ['architecture/design-system','architecture/content-model','architecture/information-architecture'] },
+    { type: 'category', label: '工程软件栈', items: ['tools/engineering-software-landscape','tools/matlab-simulink','tools/ansys-stk-odtk','tools/cfd-and-aero','tools/orbit-and-mission-analysis'] },
+    { type: 'category', label: '项目雷达', items: ['radar/evaluation-rubric','radar/open-source-radar-method'] },
+    { type: 'category', label: '复现实验室', items: ['lab/reproduction-method','lab/experiment-template'] },
+    { type: 'category', label: '运行维护', items: ['operations/maintenance-workflow','operations/daily-intake-template','operations/weekly-digest-template'] },
+    { type: 'category', label: '内容模板', items: ['templates/tool-entry-template','templates/project-evaluation-template','templates/paper-note-template','templates/reproduction-log-template'] },
   ],
 };
-
 module.exports = sidebars;

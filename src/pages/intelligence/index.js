@@ -1,0 +1,9 @@
+import React from 'react';
+import Layout from '@theme/Layout';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link';
+import { intelligenceItems, visualAssets, lifecycle } from '../../data/siteContent';
+
+export default function IntelligencePage(){
+  return <Layout title="研究情报" description="每日研究动态与资料收集入口"><main className="asn-page"><section className="asn-hero"><img className="asn-hero__image" src={useBaseUrl(visualAssets.intelligence)} alt="每日研究情报流视觉图"/><div className="container asn-hero__content"><div><div className="asn-badge">研究情报</div><h1>每日资料先进入情报流，再沉淀到知识库。</h1><p>这里用于记录当天发现的文章、论文、工具、项目、新闻、教程和复现实验线索。不要一开始就写成长文，先做轻量判断。</p><div className="asn-actions"><Link className="asn-button asn-button--primary" to="/docs/operations/daily-intake-template">查看每日收集模板</Link></div></div><div className="asn-command-panel"><h3>情报状态</h3><div className="asn-metric"><span>待评估</span><strong>Discovered</strong></div><div className="asn-metric"><span>正在阅读</span><strong>Reading</strong></div><div className="asn-metric"><span>准备复现</span><strong>Reproducing</strong></div></div></div></section><section className="asn-section container"><div className="asn-grid asn-grid--3">{intelligenceItems.map(item => <article className="asn-card" key={item.title}><div className="asn-kicker">{item.date} · {item.type}</div><h3>{item.title}</h3><p>{item.status}</p><div className="asn-tags">{item.tags.map(t => <span className="asn-tag" key={t}>{t}</span>)}</div></article>)}</div></section><section className="asn-section container"><div className="asn-visual-band"><img src={useBaseUrl(visualAssets.knowledge)} alt="知识图谱视觉图"/><div><h2>内容生命周期</h2><p>发现、评估、复现、验证、归档、废弃，每一步都要有状态和结论。</p></div></div><div className="asn-grid asn-grid--3" style={{marginTop: 22}}>{lifecycle.map(s => <article className="asn-card" key={s.step}><div className="asn-kicker">{s.step}</div><h3>{s.name}</h3><p>{s.desc}</p></article>)}</div></section></main></Layout>;
+}

@@ -1,41 +1,35 @@
-# Experiment Template
+# 复现实验模板
 
-~~~md
-# Experiment: 标题
+## 实验目标
 
-## Objective
+## 来源
 
-## Source / Reference
+- 论文 / 项目 / 工具：
+- 链接：
+- 版本 / commit：
 
-## Environment
+## 环境
 
-| Item | Value |
+| 项目 | 内容 |
 |---|---|
-| OS | |
-| Tool version | |
-| Language | |
-| Commit / data version | |
+| OS |  |
+| 编译器 / 解释器 |  |
+| 依赖 |  |
+| 日期 |  |
 
-## Input
-
-## Procedure
+## 操作步骤
 
 ```bash
-# commands
+# 记录完整命令
 ```
 
-## Output
+## 结果
 
-## Benchmark
+## 基准对比
 
-## Error metrics
+| 指标 | 当前结果 | 基准 | 误差 |
+|---|---:|---:|---:|
 
-## Result
+## 结论
 
-- [ ] Failed
-- [ ] Partial
-- [ ] Reproduced
-- [ ] Validated
-
-## Notes
-~~~
+## 下一步

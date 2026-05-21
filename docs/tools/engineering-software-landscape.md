@@ -1,26 +1,20 @@
-# Engineering Software Landscape
+# 工程软件生态地图
 
-一个专业航天仿真研究站必须把工程软件生态作为核心内容，而不是把工具当作零散链接。
+航天仿真不是单一工具能完成的工作。一个严肃的个人研究站必须同时理解商业工程软件和开源工具。
 
-## 核心类别
+## 工具类别
 
 | 类别 | 代表工具 |
 |---|---|
-| Mission Analysis | Ansys STK, GMAT, Orekit, Tudat |
-| Orbit Determination | Ansys ODTK, Orekit, Tudat |
-| GNC & Model-Based Design | MATLAB, Simulink, Stateflow, Aerospace Blockset, Basilisk |
-| CFD & Aerodynamics | Ansys Fluent/CFX, STAR-CCM+, SU2, OpenFOAM, OpenVSP, DATCOM |
-| Structures & FEM | Ansys Mechanical, Nastran, Abaqus, Simcenter 3D, COMSOL |
-| Propulsion | NASA CEA, RocketCEA |
-| Flight Software | NASA cFS, F Prime |
-| Visualization | CesiumJS, Unreal Engine, Open MCT, ParaView |
-| Automation | Python, Jupyter, Docker, GitHub Actions |
+| 任务分析 | Ansys STK、ODTK、GMAT、Orekit、Tudat |
+| 控制与系统建模 | MATLAB、Simulink、Aerospace Blockset、Stateflow |
+| CFD / 气动 | Ansys Fluent、CFX、SU2、OpenFOAM、OpenVSP、Digital DATCOM |
+| 结构 / FEM | Ansys Mechanical、Nastran、Abaqus、Simcenter 3D |
+| 推进 | NASA CEA、RocketCEA、RocketPy |
+| 航天器 / GNC | Basilisk、NASA 42、cFS、F Prime |
+| 可视化 | Open MCT、CesiumJS、Unreal Engine、ParaView |
+| 自动化 | Python、Jupyter、Docker、GitHub Actions |
 
-## 评估维度
+## 评估字段
 
-- 在工程流程中的位置。
-- 输入输出是什么。
-- 是否可脚本化和自动化。
-- 是否有商业授权限制。
-- 是否适合做基准。
-- 是否适合与自己的项目集成。
+每个工具至少记录：用途、厂商/维护者、授权方式、成熟度、适用领域、优缺点、替代工具、学习优先级。

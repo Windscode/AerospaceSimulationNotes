@@ -1,44 +1,37 @@
-# Content Model
+# 内容模型
 
-本网站采用数据驱动内容模型。核心数据在 `src/data/siteContent.js`。
+站点采用“动态情报层 + 稳定知识层”的内容模型。
 
-## Tool Entry
+## 生命周期
 
-```js
-{
-  id: 'matlab-simulink',
-  name: 'MATLAB / Simulink',
-  vendor: 'MathWorks',
-  category: 'GNC & System Modeling',
-  type: 'Commercial',
-  maturity: 'Industry Standard',
-  priority: 1,
-  domains: ['GNC', 'Flight Dynamics', 'Controls'],
-  interface: 'MATLAB, Simulink, Stateflow',
-  status: 'Core reference',
-  description: '...',
-  link: '/docs/tools/matlab-simulink'
-}
+```text
+发现 → 评估 → 复现 → 验证 → 归档 → 废弃
 ```
 
-## Project Entry
+每条资料至少要知道它处于哪个状态。
 
-```js
-{
-  id: 'orekit',
-  name: 'Orekit',
-  domain: 'Orbit',
-  language: 'Java',
-  license: 'Apache-2.0',
-  maturity: 'Engineering Reference',
-  status: 'Evaluating',
-  rating: 'A',
-  reproduction: 'Planned',
-  description: '...',
-  link: 'https://www.orekit.org/'
-}
+## 数据驱动内容
+
+核心列表数据集中在：
+
+```text
+src/data/siteContent.js
 ```
 
-## Governance
+适合放：
 
-新增条目时必须至少填写：来源、类别、成熟度、工程价值、状态、下一步动作。没有判断的链接不要直接进入稳定知识库。
+- 软件工具条目
+- 项目雷达条目
+- 首页领域卡片
+- 情报流摘要
+- 内容生命周期
+
+## Markdown 内容
+
+适合放：
+
+- 工具详细说明
+- 项目复现记录
+- 论文笔记
+- 方法论
+- 周报和每日记录

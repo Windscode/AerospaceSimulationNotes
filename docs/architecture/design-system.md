@@ -1,43 +1,31 @@
-# Design System
+# 设计系统
 
-本设计系统不追求“炫酷科幻”，而追求专业、克制、高信息密度和工程可信度。
+新版默认中文界面，视觉目标是：**专业、克制、高级、工程感强**。
 
-## 视觉原则
+## 设计原则
 
-- 深色背景承载工程和航天氛围。
-- 青蓝色作为主强调色，避免大面积橙色造成低端 B2B 感。
-- 卡片使用细边框、弱辉光和轻微玻璃态。
-- 表格和卡片保持高信息密度，但避免拥挤。
-- 图片优先使用自绘 SVG，不依赖版权不明素材。
+- 不做花哨科幻海报站；图片服务信息架构。
+- 不堆砌卡片；每个卡片都有明确用途。
+- 暗色为主，使用低饱和深蓝黑背景、电蓝/青色强调、琥珀色只用于状态提示。
+- 所有关键页面都有栏目级高清视觉图。
 
-## Design Tokens
+## 组件层级
 
-关键变量位于 `src/css/custom.css`：
+- Hero 主视觉：建立专业感和站点定位。
+- Command Panel：显示站点状态、工具数量、生命周期等。
+- Data Card：用于工具、项目、论文、实验记录。
+- Tag Badge：用于领域、状态、许可证、优先级。
+- Visual Band：用于栏目封面和专题入口。
 
-```css
---asn-bg: #050816;
---asn-panel: rgba(12, 24, 44, 0.82);
---asn-border: rgba(142, 202, 255, 0.18);
---asn-cyan: #5de1ff;
---asn-blue: #6aa4ff;
---asn-green: #7ef3bd;
---asn-radius-md: 20px;
-```
+## 图片系统
 
-## 组件体系
+本包内已集成 6 张原创高清视觉图：
 
-- `SectionHeader`：区块标题。
-- `StatusPill`：状态/评级徽章。
-- `ToolCard`：工具矩阵卡片。
-- `ProjectCard`：项目雷达卡片。
-- `HeroVisual`：首页主视觉。
+- `hero-simulation-center.jpg`
+- `tool-stack-landscape.jpg`
+- `project-radar.jpg`
+- `reproduction-lab.jpg`
+- `intelligence-feed.jpg`
+- `knowledge-map.jpg`
 
-## 后续扩展建议
-
-后续可以继续加入：
-
-- 表格型工具矩阵视图。
-- 搜索索引。
-- 标签颜色规范。
-- 内容状态看板。
-- 复杂图表组件。
+这些图都在 `static/img/visual/`，已被首页和关键页面实际引用。

@@ -1,8 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Aerospace Simulation Notes logo">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5de1ff"/><stop offset="1" stop-color="#8b7dff"/></linearGradient></defs>
-  <rect width="64" height="64" rx="16" fill="#050816"/>
-  <circle cx="32" cy="32" r="6" fill="url(#g)"/>
-  <ellipse cx="32" cy="32" rx="25" ry="10" fill="none" stroke="url(#g)" stroke-width="2" transform="rotate(-22 32 32)"/>
-  <ellipse cx="32" cy="32" rx="25" ry="10" fill="none" stroke="#7ef3bd" stroke-width="1.5" opacity=".75" transform="rotate(34 32 32)"/>
-  <circle cx="51" cy="25" r="3" fill="#ffcf6b"/>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="航天仿真研究库">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#51e6ff"/><stop offset="1" stop-color="#6f7dff"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="128" height="128" rx="30" fill="#06142d"/><circle cx="64" cy="64" r="18" fill="url(#g)" opacity=".95" filter="url(#glow)"/><ellipse cx="64" cy="64" rx="51" ry="18" fill="none" stroke="#8beaff" stroke-width="5" opacity=".75" transform="rotate(-24 64 64)"/><ellipse cx="64" cy="64" rx="43" ry="14" fill="none" stroke="#7b86ff" stroke-width="4" opacity=".55" transform="rotate(22 64 64)"/><circle cx="104" cy="51" r="6" fill="#ffd36a"/>
 </svg>

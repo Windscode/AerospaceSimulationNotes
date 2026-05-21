@@ -1,26 +1,24 @@
-# MATLAB / Simulink / Stateflow
+# MATLAB / Simulink / Aerospace Blockset
 
-MATLAB / Simulink 在航天仿真中不是普通“数学软件”，而是控制系统设计、模型在环、飞控律验证、算法原型和工程数据处理的核心平台之一。
+MATLAB 和 Simulink 是航天仿真、控制设计、数据分析和基于模型设计中的核心工具之一。
 
-## 站内定位
+## 适合用途
 
-| 维度 | 说明 |
-|---|---|
-| 类别 | GNC & System Modeling |
-| 成熟度 | Industry Standard |
-| 典型用途 | 控制律设计、飞控逻辑、模型在环、代码生成前验证 |
-| 相关扩展 | Aerospace Blockset, Stateflow, Simscape, Control System Toolbox |
-| 替代/补充 | Python, Julia, Basilisk, Orekit/Tudat for astrodynamics |
+- 控制律设计和验证
+- 状态机和任务阶段建模
+- 飞行器/航天器动力学原型
+- 数据处理和可视化
+- 与 C/C++ 或 Python 工具链互补
 
-## 重点关注
+## 重点模块
 
-- Simulink 是否用于闭环控制仿真。
-- Stateflow 是否用于任务阶段、故障逻辑和模式转换。
-- Aerospace Blockset 是否用于环境、坐标系和飞行动力学组件。
-- 与 C++/Python 仿真核心的数据接口如何定义。
+- MATLAB
+- Simulink
+- Stateflow
+- Aerospace Blockset
+- Simscape
+- Control System Toolbox
 
-## 站内后续工作
+## 记录重点
 
-- 建立 GNC 控制律复现实验模板。
-- 记录 MATLAB 与 Python/C++ 混合流程。
-- 建立模型在环、软件在环和硬件在环概念页。
+不要只记录“会用 MATLAB”。要记录模型结构、输入输出、采样周期、求解器、单位、坐标系和验证基准。

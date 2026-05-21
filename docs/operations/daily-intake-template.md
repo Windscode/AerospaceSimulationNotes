@@ -1,23 +1,15 @@
-# Daily Intake Template
+# 每日收集模板
 
-~~~md
-# Daily Intake - YYYY-MM-DD
+## 日期
 
-## New items
+## 今日新增
 
-### 1. 标题
-- Source:
-- Type: Tool / Project / Paper / News / Dataset / Experiment
-- Domain:
-- Why it matters:
-- Initial status: Discovered
-- Next action:
+| 类型 | 标题 | 来源 | 状态 | 下一步 |
+|---|---|---|---|---|
+| 工具 / 项目 / 论文 / 新闻 |  |  | 待评估 |  |
 
-## Promotion candidates
+## 今日判断
 
-- [ ] Move to Tool Stack
-- [ ] Move to Project Radar
-- [ ] Move to Paper Notes
-- [ ] Move to Reproduction Lab
-- [ ] Archive
-~~~
+## 需要复现的内容
+
+## 归档动作
