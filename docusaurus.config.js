@@ -2,17 +2,20 @@
 
 const config = {
   title: 'Aerospace Simulation Notes',
-  tagline: 'A curated intelligence hub for aerospace simulation, tools, papers, projects and engineering practice.',
+  tagline: 'Aerospace simulation intelligence hub for tools, projects, papers and reproducible engineering notes.',
   favicon: 'img/brand/orbital-mark.svg',
 
   url: 'https://windscode.github.io',
   baseUrl: '/AerospaceSimulationNotes/',
+
   organizationName: 'Windscode',
   projectName: 'AerospaceSimulationNotes',
-
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  trailingSlash: false,
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'zh-CN',
@@ -29,14 +32,13 @@ const config = {
           editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/',
         },
         blog: {
-          showReadingTime: true,
           routeBasePath: 'blog',
           blogTitle: 'Research Log',
-          blogDescription: 'Daily research notes, project discoveries, reproduction logs and aerospace simulation observations.',
-          postsPerPage: 9,
+          blogDescription: 'Daily research notes, project discoveries, software evaluations and reproducibility logs.',
+          showReadingTime: true,
+          postsPerPage: 8,
+          onUntruncatedBlogPosts: 'ignore',
           editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/',
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -46,15 +48,15 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/brand/social-card.svg',
+    image: 'img/hero/mission-console.svg',
     metadata: [
-      { name: 'keywords', content: 'aerospace simulation, orbital mechanics, GNC, ADCS, propulsion, CFD, JSBSim, GMAT, Orekit, Tudat, Basilisk, mission analysis' },
+      { name: 'keywords', content: 'aerospace simulation, MATLAB, Simulink, Ansys, STK, GMAT, Orekit, Tudat, Basilisk, CFD, propulsion, GNC, ADCS' },
       { name: 'theme-color', content: '#050816' },
     ],
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: false,
       respectPrefersColorScheme: false,
+      disableSwitch: false,
     },
     navbar: {
       title: 'Aerospace Simulation Notes',
@@ -65,9 +67,11 @@ const config = {
       hideOnScroll: true,
       items: [
         { to: '/', label: 'Home', position: 'left' },
-        { type: 'docSidebar', sidebarId: 'knowledgeSidebar', position: 'left', label: 'Knowledge Base' },
-        { to: '/docs/radar/overview', label: 'Project Radar', position: 'left' },
-        { to: '/docs/tools/overview', label: 'Tool Stack', position: 'left' },
+        { to: '/intelligence', label: 'Intelligence', position: 'left' },
+        { to: '/tools', label: 'Tool Stack', position: 'left' },
+        { to: '/radar', label: 'Project Radar', position: 'left' },
+        { to: '/reproduction-lab', label: 'Reproduction Lab', position: 'left' },
+        { type: 'docSidebar', sidebarId: 'knowledgeSidebar', label: 'Knowledge Base', position: 'left' },
         { to: '/blog', label: 'Research Log', position: 'left' },
         { href: 'https://github.com/Windscode/AerospaceSimulationNotes', label: 'GitHub', position: 'right' },
       ],
@@ -76,36 +80,35 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Explore',
-          items: [
-            { label: 'Knowledge Base', to: '/docs/intro' },
-            { label: 'Project Radar', to: '/docs/radar/overview' },
-            { label: 'Research Log', to: '/blog' },
-            { label: 'Maintenance Workflow', to: '/docs/methodology/maintenance-workflow' },
-          ],
-        },
-        {
-          title: 'Core Domains',
-          items: [
-            { label: 'Orbital Mechanics', to: '/docs/learning-path/orbital-mechanics' },
-            { label: 'GNC / ADCS', to: '/docs/learning-path/gnc-adcs' },
-            { label: 'Propulsion', to: '/docs/learning-path/propulsion' },
-            { label: 'CFD / Aerodynamics', to: '/docs/learning-path/aerodynamics-cfd' },
-          ],
-        },
-        {
           title: 'Operate',
           items: [
-            { label: 'Daily Intake Template', to: '/docs/operations/daily-intake-template' },
-            { label: 'Project Evaluation Template', to: '/docs/projects/project-template' },
-            { label: 'Paper Note Template', to: '/docs/papers/paper-note-template' },
+            { label: 'Daily Intelligence', to: '/intelligence' },
+            { label: 'Maintenance Workflow', to: '/docs/operations/maintenance-workflow' },
+            { label: 'Content Model', to: '/docs/architecture/content-model' },
+          ],
+        },
+        {
+          title: 'Engineering Landscape',
+          items: [
+            { label: 'Tool Stack', to: '/tools' },
+            { label: 'MATLAB / Simulink', to: '/docs/tools/matlab-simulink' },
+            { label: 'Ansys / STK', to: '/docs/tools/ansys-stk' },
+            { label: 'CFD & Aero', to: '/docs/tools/cfd-aero-stack' },
+          ],
+        },
+        {
+          title: 'Research Assets',
+          items: [
+            { label: 'Project Radar', to: '/radar' },
+            { label: 'Paper Template', to: '/docs/papers/paper-note-template' },
+            { label: 'Reproduction Template', to: '/docs/lab/experiment-template' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Windscode. Built as an aerospace simulation intelligence hub.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Windscode. Aerospace Simulation Notes.`,
     },
     prism: {
-      additionalLanguages: ['cpp', 'python', 'matlab', 'bash', 'json', 'yaml'],
+      additionalLanguages: ['cpp', 'python', 'bash', 'json'],
     },
   },
 };

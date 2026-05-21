@@ -1,56 +1,44 @@
 # Aerospace Simulation Notes
 
-A professional aerospace simulation research portal, project radar and engineering knowledge base.
+Aerospace Simulation Notes 是一个面向长期维护的航天仿真研究门户，不是普通博客。它用于沉淀工程软件工具栈、开源项目雷达、论文笔记、复现实验和稳定知识库。
 
-## What this site is
+## 本版定位
 
-This repository is not a link dump. It is designed for long-term maintenance of aerospace simulation knowledge:
+新版按“专业航天仿真研究站”重构：
 
-- Orbital mechanics
-- Spacecraft dynamics
-- GNC / ADCS
-- Propulsion
-- Aerodynamics / CFD
-- 6DOF simulation
-- Mission analysis tools
-- Open-source project evaluation
-- Engineering reproduction logs
+- **Intelligence Feed**：每日资料收集与研究动态。
+- **Tool Stack**：MATLAB / Simulink、Ansys / STK、GMAT、Orekit、Tudat、Basilisk、OpenFOAM、SU2 等工程软件生态。
+- **Project Radar**：按成熟度、复现状态、语言、许可证和工程价值评价项目。
+- **Knowledge Base**：稳定长期知识，包括轨道、GNC、推进、气动、结构和可视化。
+- **Reproduction Lab**：复现实验、验证基准和工程记录。
 
-## Local development
+## 本地运行
 
 ```bash
 npm install
 npm run start
 ```
 
-Open:
-
-```text
-http://localhost:3000/AerospaceSimulationNotes/
-```
-
-## Build
+## 构建
 
 ```bash
 npm run build
 ```
 
-## Deploy
+## 部署
 
-The repository includes a GitHub Pages workflow at `.github/workflows/deploy.yml`.
-
-In GitHub:
+GitHub Pages 使用 `.github/workflows/deploy.yml` 自动构建。推送到 `main` 后等待 Actions 完成，然后访问：
 
 ```text
-Settings → Pages → Source → GitHub Actions
+https://windscode.github.io/AerospaceSimulationNotes/
 ```
 
-Then push to `main`.
+## 每日维护入口
 
-## Content workflow
+- 快速新增动态：`blog/`
+- 新增工具：`src/data/siteContent.js` 中的 `tools`
+- 新增项目：`src/data/siteContent.js` 中的 `projects`
+- 新增稳定知识：`docs/knowledge/`
+- 新增实验：`docs/lab/` 或 `src/data/siteContent.js` 中的 `experiments`
 
-- Daily notes go to `blog/`.
-- Stable knowledge goes to `docs/`.
-- Project evaluations go to `docs/radar/` and `docs/projects/`.
-- Homepage content cards are controlled by `src/data/homeContent.js`.
-- Visual styling is controlled by `src/css/custom.css` and `src/pages/index.module.css`.
+更多说明见：`docs/operations/maintenance-workflow.md`。

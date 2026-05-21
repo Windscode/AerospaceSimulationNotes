@@ -1,33 +1,19 @@
 # Weekly Digest Template
 
-```md
-# Week YYYY-WW Digest
+~~~md
+# Weekly Digest - YYYY-WW
 
-## 本周新增
+## Most valuable findings
 
-- Papers:
-- Tools:
-- Repositories:
-- Industry updates:
-- Engineering notes:
+## Tools added or updated
 
-## 最值得继续的 3 条
+## Projects evaluated
 
-1.
-2.
-3.
+## Papers read
 
-## 本周复现 / 验证进展
+## Reproduction work
 
-| Item | Result | Evidence | Next Action |
-|---|---|---|---|
-|  |  |  |  |
+## Items to archive
 
-## 需要清理的低价值内容
-
-- 
-
-## 下周重点
-
-- 
-```
+## Next week focus
+~~~

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320">
+  <rect width="1200" height="320" rx="28" fill="#071225"/>
+  <g font-family="Inter,Arial">
+    <g fill="none" stroke="#5de1ff" stroke-width="3" opacity=".45"><path d="M170 160H1030"/></g>
+    <g fill="#0d1a31" stroke="#294668" stroke-width="2">
+      <rect x="52" y="92" width="150" height="136" rx="22"/><rect x="240" y="92" width="150" height="136" rx="22"/><rect x="428" y="92" width="150" height="136" rx="22"/><rect x="616" y="92" width="150" height="136" rx="22"/><rect x="804" y="92" width="150" height="136" rx="22"/><rect x="992" y="92" width="150" height="136" rx="22"/>
+    </g>
+    <g text-anchor="middle" font-weight="800" fill="#e7f0ff" font-size="20"><text x="127" y="154">Discover</text><text x="315" y="154">Evaluate</text><text x="503" y="154">Reproduce</text><text x="691" y="154">Validate</text><text x="879" y="154">Archive</text><text x="1067" y="154">Review</text></g>
+    <g text-anchor="middle" fill="#93a6bf" font-size="14"><text x="127" y="184">source</text><text x="315" y="184">value</text><text x="503" y="184">build/run</text><text x="691" y="184">benchmark</text><text x="879" y="184">stable note</text><text x="1067" y="184">refresh</text></g>
+  </g>
+</svg>

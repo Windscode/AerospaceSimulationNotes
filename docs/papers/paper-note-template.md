@@ -1,40 +1,35 @@
-# 论文笔记模板
+# Paper Note Template
 
-## 基本信息
+~~~md
+# Paper: 标题
 
-| 项目 | 内容 |
+## Metadata
+
+| Field | Value |
 |---|---|
-| 标题 |  |
-| 作者 |  |
-| 年份 |  |
-| 来源 |  |
-| 链接 / DOI |  |
-| 阅读日期 |  |
-| 主题 |  |
-| 价值评级 | A / B / C / D |
+| Authors | |
+| Year | |
+| Venue / Source | |
+| DOI / URL | |
+| Domain | |
+| Status | Reading / Evaluating / Reproducing / Archived |
 
-## 这篇资料解决什么问题
+## Problem
 
-用自己的话说明。
+## Core method
 
-## 核心方法
+## Assumptions
 
-- 
+## Key equations
 
-## 关键公式与变量
+| Symbol | Meaning | Unit |
+|---|---|---|
 
-| 符号 | 含义 | 单位 | 备注 |
-|---|---|---|---|
-|  |  |  |  |
+## Engineering value
 
-## 工程实现启发
+## Reproduction plan
 
-- 
+## Related tools
 
-## 适用边界和风险
-
-- 
-
-## 是否值得复现
-
-- 是 / 否 / 暂缓
+## Verdict
+~~~

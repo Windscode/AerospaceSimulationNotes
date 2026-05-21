@@ -1,8 +1,7 @@
 {
   "name": "aerospace-simulation-notes",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "private": true,
-  "description": "A professional aerospace simulation research portal and knowledge base.",
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -10,19 +9,19 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "3.10.1",
-    "@docusaurus/preset-classic": "3.10.1",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
     "@mdx-js/react": "^3.1.0",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "engines": {
+    "node": ">=20.0"
   },
   "browserslist": {
     "production": [">0.5%", "not dead", "not op_mini all"],
     "development": ["last 3 chrome version", "last 3 firefox version", "last 5 safari version"]
-  },
-  "engines": {
-    "node": ">=20.0"
   }
 }
