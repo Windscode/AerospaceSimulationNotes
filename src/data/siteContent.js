@@ -1,5 +1,5 @@
 export const visualAssets = {
-  hero: '/img/visual/hero-simulation-center.jpg',
+  hero: '/img/visual/hero-console-v2.svg',
   tools: '/img/visual/tool-stack-landscape.jpg',
   radar: '/img/visual/project-radar.jpg',
   lab: '/img/visual/reproduction-lab.jpg',
@@ -15,7 +15,7 @@ export const intelligenceItems = [
 
 export const domains = [
   { title: '轨道与任务分析', desc: '轨道传播、摄动、转移、星历、覆盖和任务规划。', link: '/docs/tools/orbit-and-mission-analysis', image: '/img/visual/knowledge-map.jpg' },
-  { title: 'GNC / ADCS', desc: '制导、导航、控制、姿态确定、执行机构和闭环验证。', link: '/docs/intro', image: '/img/visual/hero-simulation-center.jpg' },
+  { title: 'GNC / ADCS', desc: '制导、导航、控制、姿态确定、执行机构和闭环验证。', link: '/docs/intro', image: '/img/visual/hero-console-v2.svg' },
   { title: '推进与动力系统', desc: '发动机性能、质量流率、推力曲线、CEA 与系统级模型。', link: '/docs/tools/engineering-software-landscape', image: '/img/visual/tool-stack-landscape.jpg' },
   { title: '气动 / CFD / 再入', desc: '气动数据库、OpenFOAM、SU2、Ansys Fluent、OpenVSP 和热环境。', link: '/docs/tools/cfd-and-aero', image: '/img/visual/tool-stack-landscape.jpg' },
   { title: '结构 / FEM / 多体', desc: 'Ansys Mechanical、Nastran、Abaqus、Simcenter、Adams 等工程分析。', link: '/tools', image: '/img/visual/reproduction-lab.jpg' },
