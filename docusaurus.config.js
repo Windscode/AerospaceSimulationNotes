@@ -2,8 +2,8 @@
 
 const config = {
   title: 'Aerospace Simulation Notes',
-  tagline: '航天仿真资料、工具链、开源项目与工程实践笔记',
-  favicon: 'img/favicon.ico',
+  tagline: 'A curated intelligence hub for aerospace simulation, tools, papers and engineering practice.',
+  favicon: 'img/brand/orbital-mark.svg',
 
   url: 'https://windscode.github.io',
   baseUrl: '/AerospaceSimulationNotes/',
@@ -26,12 +26,15 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: 'docs',
+          editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/',
         },
         blog: {
           showReadingTime: true,
           routeBasePath: 'blog',
-          blogTitle: '研究日志',
-          blogDescription: '航天仿真学习、工程验证和资料整理日志',
+          blogTitle: 'Research Log',
+          blogDescription: 'Daily research notes, project discoveries, reproduction logs and aerospace simulation observations.',
+          postsPerPage: 8,
+          editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -41,11 +44,28 @@ const config = {
   ],
 
   themeConfig: {
+    metadata: [
+      { name: 'keywords', content: 'aerospace simulation, orbital mechanics, GNC, ADCS, propulsion, CFD, JSBSim, GMAT, Orekit, Tudat, Basilisk' },
+      { name: 'theme-color', content: '#050816' },
+    ],
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       title: 'Aerospace Simulation Notes',
+      logo: {
+        alt: 'Aerospace Simulation Notes',
+        src: 'img/brand/orbital-mark.svg',
+      },
+      hideOnScroll: true,
       items: [
-        { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: '资料库' },
-        { to: '/blog', label: '研究日志', position: 'left' },
+        { to: '/', label: 'Home', position: 'left' },
+        { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: 'Knowledge Base' },
+        { to: '/docs/radar/overview', label: 'Project Radar', position: 'left' },
+        { to: '/docs/tools/overview', label: 'Tool Stack', position: 'left' },
+        { to: '/blog', label: 'Research Log', position: 'left' },
         { href: 'https://github.com/Windscode/AerospaceSimulationNotes', label: 'GitHub', position: 'right' },
       ],
     },
@@ -53,24 +73,35 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: '资料库',
+          title: 'Explore',
           items: [
-            { label: '学习路线', to: '/docs/learning-path/overview' },
-            { label: '工具软件', to: '/docs/tools/overview' },
-            { label: '开源项目索引', to: '/docs/projects/overview' },
+            { label: 'Knowledge Base', to: '/docs/intro' },
+            { label: 'Project Radar', to: '/docs/radar/overview' },
+            { label: 'Research Log', to: '/blog' },
           ],
         },
         {
-          title: '原则',
+          title: 'Core Domains',
           items: [
-            { label: '整理规范', to: '/docs/methodology/content-rules' },
+            { label: 'Orbital Mechanics', to: '/docs/learning-path/orbital-mechanics' },
+            { label: 'GNC / ADCS', to: '/docs/learning-path/gnc-adcs' },
+            { label: 'Propulsion', to: '/docs/learning-path/propulsion' },
+            { label: 'CFD / Aerodynamics', to: '/docs/learning-path/aerodynamics-cfd' },
+          ],
+        },
+        {
+          title: 'Operate',
+          items: [
+            { label: 'Maintenance Workflow', to: '/docs/methodology/maintenance-workflow' },
+            { label: 'Project Template', to: '/docs/projects/project-template' },
+            { label: 'Paper Note Template', to: '/docs/papers/paper-note-template' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Windscode. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Windscode. Built as an aerospace simulation intelligence hub.`,
     },
     prism: {
-      additionalLanguages: ['cpp', 'python', 'matlab'],
+      additionalLanguages: ['cpp', 'python', 'matlab', 'bash', 'json'],
     },
   },
 };
