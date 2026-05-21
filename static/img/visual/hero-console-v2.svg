@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <defs>
+    <radialGradient id="g1" cx="35%" cy="25%" r="80%">
+      <stop offset="0" stop-color="#123b73"/>
+      <stop offset="0.45" stop-color="#061a35"/>
+      <stop offset="1" stop-color="#020713"/>
+    </radialGradient>
+    <linearGradient id="cyan" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7ce8ff"/>
+      <stop offset="1" stop-color="#3ff0d0"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M54 0H0V54" fill="none" stroke="#6edfff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#g1)"/>
+  <rect width="1600" height="1100" fill="url(#grid)" opacity="0.9"/>
+  <g opacity="0.34">
+    <path d="M-80 760C310 430 720 320 1170 360C1370 378 1540 435 1660 515" fill="none" stroke="#7ce8ff" stroke-width="2"/>
+    <path d="M-70 860C360 610 760 540 1200 595C1390 620 1510 680 1660 790" fill="none" stroke="#3ff0d0" stroke-width="2"/>
+    <path d="M210 1120C430 760 740 510 1130 390C1330 328 1505 305 1660 300" fill="none" stroke="#7d89ff" stroke-width="2"/>
+  </g>
+  <g transform="translate(845 125)">
+    <rect x="0" y="0" width="520" height="318" rx="30" fill="#07172e" fill-opacity="0.76" stroke="#7ce8ff" stroke-opacity="0.38"/>
+    <text x="34" y="48" fill="#dffaff" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800">MISSION ANALYSIS CONSOLE</text>
+    <text x="34" y="84" fill="#7ce8ff" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="3">ORBIT · GNC · CFD · SOFTWARE</text>
+    <g transform="translate(34 118)">
+      <rect width="452" height="12" rx="6" fill="#102848"/>
+      <rect width="340" height="12" rx="6" fill="url(#cyan)"/>
+      <text x="0" y="45" fill="#a9bfd3" font-family="Inter,Arial,sans-serif" font-size="16">轨道传播</text><text x="390" y="45" fill="#7ce8ff" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800">已校核</text>
+      <rect y="64" width="452" height="12" rx="6" fill="#102848"/>
+      <rect y="64" width="286" height="12" rx="6" fill="#3ff0d0"/>
+      <text x="0" y="109" fill="#a9bfd3" font-family="Inter,Arial,sans-serif" font-size="16">控制闭环</text><text x="390" y="109" fill="#7ce8ff" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800">复现中</text>
+      <rect y="128" width="452" height="12" rx="6" fill="#102848"/>
+      <rect y="128" width="408" height="12" rx="6" fill="#6aa4ff"/>
+      <text x="0" y="173" fill="#a9bfd3" font-family="Inter,Arial,sans-serif" font-size="16">工具矩阵</text><text x="390" y="173" fill="#7ce8ff" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800">30+</text>
+    </g>
+  </g>
+  <g transform="translate(170 170)">
+    <circle cx="360" cy="360" r="270" fill="none" stroke="#7ce8ff" stroke-opacity="0.16" stroke-width="2"/>
+    <circle cx="360" cy="360" r="188" fill="none" stroke="#3ff0d0" stroke-opacity="0.22" stroke-width="2"/>
+    <circle cx="360" cy="360" r="84" fill="#0d2445" stroke="#7ce8ff" stroke-opacity="0.55" stroke-width="2"/>
+    <circle cx="360" cy="360" r="22" fill="url(#cyan)" filter="url(#glow)"/>
+    <path d="M125 330C250 180 470 140 650 238" fill="none" stroke="#7ce8ff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <path d="M94 420C245 545 430 565 626 468" fill="none" stroke="#3ff0d0" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="612" cy="232" r="12" fill="#7ce8ff" filter="url(#glow)"/>
+    <circle cx="122" cy="424" r="9" fill="#3ff0d0" filter="url(#glow)"/>
+    <text x="260" y="730" fill="#e7f9ff" font-family="Inter,Arial,sans-serif" font-size="38" font-weight="900">Aerospace Simulation</text>
+    <text x="263" y="768" fill="#7ce8ff" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">INTELLIGENCE · TOOLS · REPRODUCTION</text>
+  </g>
+  <g transform="translate(960 575)">
+    <rect x="0" y="0" width="430" height="245" rx="28" fill="#07172e" fill-opacity="0.68" stroke="#7ce8ff" stroke-opacity="0.3"/>
+    <text x="28" y="45" fill="#e7f9ff" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="800">ENGINEERING SOFTWARE STACK</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="15" font-weight="800">
+      <rect x="28" y="76" width="112" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="50" y="101" fill="#dffaff">MATLAB</text>
+      <rect x="150" y="76" width="118" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="174" y="101" fill="#dffaff">Ansys STK</text>
+      <rect x="278" y="76" width="92" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="304" y="101" fill="#dffaff">GMAT</text>
+      <rect x="28" y="126" width="92" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="51" y="151" fill="#dffaff">Orekit</text>
+      <rect x="130" y="126" width="92" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="153" y="151" fill="#dffaff">Tudat</text>
+      <rect x="232" y="126" width="110" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="253" y="151" fill="#dffaff">Basilisk</text>
+      <rect x="28" y="176" width="94" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="54" y="201" fill="#dffaff">SU2</text>
+      <rect x="132" y="176" width="126" height="38" rx="19" fill="#0d2e55" stroke="#7ce8ff" stroke-opacity="0.24"/><text x="155" y="201" fill="#dffaff">OpenFOAM</text>
+    </g>
+  </g>
+</svg>
