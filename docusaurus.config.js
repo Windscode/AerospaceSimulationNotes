@@ -6,10 +6,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://windscode.github.io',
-  baseUrl: '/Studying/',
+  baseUrl: '/AerospaceSimulationNotes/',
 
   organizationName: 'Windscode',
-  projectName: 'Studying',
+  projectName: 'AerospaceSimulationNotes',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -46,7 +46,7 @@ const config = {
       items: [
         { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: '资料库' },
         { to: '/blog', label: '研究日志', position: 'left' },
-        { href: 'https://github.com/Windscode/Studying', label: 'GitHub', position: 'right' },
+        { href: 'https://github.com/Windscode/AerospaceSimulationNotes', label: 'GitHub', position: 'right' },
       ],
     },
     footer: {
