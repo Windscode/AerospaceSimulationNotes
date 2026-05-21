@@ -1,9 +1,31 @@
 const sidebars = {
-  mainSidebar: [
+  knowledgeSidebar: [
     'intro',
     {
       type: 'category',
-      label: '学习路线',
+      label: 'Operations',
+      collapsed: false,
+      items: [
+        'operations/overview',
+        'operations/daily-intake-template',
+        'operations/weekly-digest-template',
+        'operations/content-pipeline',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Project Radar',
+      collapsed: false,
+      items: [
+        'radar/overview',
+        'radar/project-radar-board',
+        'radar/evaluation-checklist',
+        'radar/source-tracking',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Learning Path',
       items: [
         'learning-path/overview',
         'learning-path/orbital-mechanics',
@@ -11,11 +33,12 @@ const sidebars = {
         'learning-path/gnc-adcs',
         'learning-path/propulsion',
         'learning-path/aerodynamics-cfd',
+        'learning-path/simulation-architecture',
       ],
     },
     {
       type: 'category',
-      label: '工具软件',
+      label: 'Tool Stack',
       items: [
         'tools/overview',
         'tools/orbit-mission-analysis',
@@ -27,7 +50,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '开源项目索引',
+      label: 'Projects',
       items: [
         'projects/overview',
         'projects/project-template',
@@ -39,7 +62,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '论文与资料笔记',
+      label: 'Papers',
       items: [
         'papers/overview',
         'papers/paper-note-template',
@@ -47,7 +70,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '工程实践',
+      label: 'Engineering Practice',
       items: [
         'engineering/overview',
         'engineering/reproduction-log-template',
@@ -56,10 +79,12 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '整理方法',
+      label: 'Methodology',
       items: [
+        'methodology/maintenance-workflow',
         'methodology/content-rules',
         'methodology/project-grading',
+        'methodology/design-system',
       ],
     },
   ],

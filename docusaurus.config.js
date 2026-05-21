@@ -2,17 +2,17 @@
 
 const config = {
   title: 'Aerospace Simulation Notes',
-  tagline: 'A curated intelligence hub for aerospace simulation, tools, papers and engineering practice.',
+  tagline: 'A curated intelligence hub for aerospace simulation, tools, papers, projects and engineering practice.',
   favicon: 'img/brand/orbital-mark.svg',
 
   url: 'https://windscode.github.io',
   baseUrl: '/AerospaceSimulationNotes/',
-
   organizationName: 'Windscode',
   projectName: 'AerospaceSimulationNotes',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  trailingSlash: false,
 
   i18n: {
     defaultLocale: 'zh-CN',
@@ -33,8 +33,10 @@ const config = {
           routeBasePath: 'blog',
           blogTitle: 'Research Log',
           blogDescription: 'Daily research notes, project discoveries, reproduction logs and aerospace simulation observations.',
-          postsPerPage: 8,
+          postsPerPage: 9,
           editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -44,8 +46,9 @@ const config = {
   ],
 
   themeConfig: {
+    image: 'img/brand/social-card.svg',
     metadata: [
-      { name: 'keywords', content: 'aerospace simulation, orbital mechanics, GNC, ADCS, propulsion, CFD, JSBSim, GMAT, Orekit, Tudat, Basilisk' },
+      { name: 'keywords', content: 'aerospace simulation, orbital mechanics, GNC, ADCS, propulsion, CFD, JSBSim, GMAT, Orekit, Tudat, Basilisk, mission analysis' },
       { name: 'theme-color', content: '#050816' },
     ],
     colorMode: {
@@ -62,7 +65,7 @@ const config = {
       hideOnScroll: true,
       items: [
         { to: '/', label: 'Home', position: 'left' },
-        { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: 'Knowledge Base' },
+        { type: 'docSidebar', sidebarId: 'knowledgeSidebar', position: 'left', label: 'Knowledge Base' },
         { to: '/docs/radar/overview', label: 'Project Radar', position: 'left' },
         { to: '/docs/tools/overview', label: 'Tool Stack', position: 'left' },
         { to: '/blog', label: 'Research Log', position: 'left' },
@@ -78,6 +81,7 @@ const config = {
             { label: 'Knowledge Base', to: '/docs/intro' },
             { label: 'Project Radar', to: '/docs/radar/overview' },
             { label: 'Research Log', to: '/blog' },
+            { label: 'Maintenance Workflow', to: '/docs/methodology/maintenance-workflow' },
           ],
         },
         {
@@ -92,8 +96,8 @@ const config = {
         {
           title: 'Operate',
           items: [
-            { label: 'Maintenance Workflow', to: '/docs/methodology/maintenance-workflow' },
-            { label: 'Project Template', to: '/docs/projects/project-template' },
+            { label: 'Daily Intake Template', to: '/docs/operations/daily-intake-template' },
+            { label: 'Project Evaluation Template', to: '/docs/projects/project-template' },
             { label: 'Paper Note Template', to: '/docs/papers/paper-note-template' },
           ],
         },
@@ -101,7 +105,7 @@ const config = {
       copyright: `Copyright © ${new Date().getFullYear()} Windscode. Built as an aerospace simulation intelligence hub.`,
     },
     prism: {
-      additionalLanguages: ['cpp', 'python', 'matlab', 'bash', 'json'],
+      additionalLanguages: ['cpp', 'python', 'matlab', 'bash', 'json', 'yaml'],
     },
   },
 };

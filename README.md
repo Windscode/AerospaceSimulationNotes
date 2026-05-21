@@ -1,36 +1,56 @@
 # Aerospace Simulation Notes
 
-个人航天仿真资料库，用于长期整理航天仿真相关的学习路线、工具链、开源项目、论文笔记和工程实践记录。
+A professional aerospace simulation research portal, project radar and engineering knowledge base.
 
-## 站点定位
+## What this site is
 
-这个仓库不是随手收藏夹，而是一个面向长期积累的技术知识库：
+This repository is not a link dump. It is designed for long-term maintenance of aerospace simulation knowledge:
 
-- 记录航天仿真、轨道力学、六自由度动力学、GNC/ADCS、推进、气动/CFD 等方向的资料。
-- 对开源项目做工程可用性评估，而不是只保存链接。
-- 沉淀自己的复现实验、编译记录、踩坑记录和技术判断。
-- 后续可以扩展为个人博客、项目主页、技术作品集。
+- Orbital mechanics
+- Spacecraft dynamics
+- GNC / ADCS
+- Propulsion
+- Aerodynamics / CFD
+- 6DOF simulation
+- Mission analysis tools
+- Open-source project evaluation
+- Engineering reproduction logs
 
-## 本地运行
-
-需要 Node.js 20 或更高版本。
+## Local development
 
 ```bash
 npm install
 npm run start
 ```
 
-## 构建静态站点
+Open:
+
+```text
+http://localhost:3000/AerospaceSimulationNotes/
+```
+
+## Build
 
 ```bash
 npm run build
 ```
 
-构建产物在 `build/` 目录。
+## Deploy
 
-## 内容原则
+The repository includes a GitHub Pages workflow at `.github/workflows/deploy.yml`.
 
-1. 不上传涉密资料、单位内部资料、商业软件破解资源、未授权 PDF 或模型文件。
-2. 项目索引必须写清楚用途、成熟度、优缺点、是否值得深入研究。
-3. 论文笔记重点写自己的理解、公式推导、工程实现启发，不做全文搬运。
-4. 每个条目都要标注阅读/验证日期，避免多年后误用过期资料。
+In GitHub:
+
+```text
+Settings → Pages → Source → GitHub Actions
+```
+
+Then push to `main`.
+
+## Content workflow
+
+- Daily notes go to `blog/`.
+- Stable knowledge goes to `docs/`.
+- Project evaluations go to `docs/radar/` and `docs/projects/`.
+- Homepage content cards are controlled by `src/data/homeContent.js`.
+- Visual styling is controlled by `src/css/custom.css` and `src/pages/index.module.css`.
