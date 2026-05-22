@@ -1,10 +1,13 @@
 export const visualAssets = {
-  hero: '/img/visual/hero-console-v2.svg',
-  tools: '/img/visual/tool-stack-landscape.jpg',
-  radar: '/img/visual/project-radar.jpg',
-  lab: '/img/visual/reproduction-lab.jpg',
-  intelligence: '/img/visual/intelligence-feed.jpg',
+  hero: '/img/visual/hero-platform-v3.svg',
+  tools: '/img/visual/software-landscape-v3.svg',
+  radar: '/img/visual/project-radar-v3.svg',
+  lab: '/img/visual/reproduction-lab-v3.svg',
+  intelligence: '/img/visual/intelligence-feed-v3.svg',
   knowledge: '/img/visual/knowledge-map.jpg',
+  lunarCase: '/img/visual/case-lunar-landing-v3.svg',
+  constellationCase: '/img/visual/case-constellation-v3.svg',
+  deepSpaceCase: '/img/visual/case-deep-space-v3.svg',
 };
 
 export const intelligenceItems = [
@@ -13,13 +16,19 @@ export const intelligenceItems = [
   { date: '持续', type: '复现', title: '对 A 级项目和论文建立可复现实验记录', status: '进行中', tags: ['Reproduction', 'Validation'] },
 ];
 
+export const caseStudies = [
+  { title: '月球着陆任务仿真', type: '月球任务', desc: '近月制动、下降段制导律、着陆点误差与软着陆剖面复现。', image: '/img/visual/case-lunar-landing-v3.svg', link: '/reproduction-lab' },
+  { title: '星座部署与覆盖分析', type: '星座覆盖', desc: '轨道面、相位、覆盖率、通信窗口和任务效能的系统评估。', image: '/img/visual/case-constellation-v3.svg', link: '/radar' },
+  { title: '深空任务设计与评估', type: '深空任务', desc: '引力辅助、转移窗口、低推力轨迹与脉冲机动方案对比。', image: '/img/visual/case-deep-space-v3.svg', link: '/tools' },
+];
+
 export const domains = [
-  { title: '轨道与任务分析', desc: '轨道传播、摄动、转移、星历、覆盖和任务规划。', link: '/docs/tools/orbit-and-mission-analysis', image: '/img/visual/knowledge-map.jpg' },
-  { title: 'GNC / ADCS', desc: '制导、导航、控制、姿态确定、执行机构和闭环验证。', link: '/docs/intro', image: '/img/visual/hero-console-v2.svg' },
-  { title: '推进与动力系统', desc: '发动机性能、质量流率、推力曲线、CEA 与系统级模型。', link: '/docs/tools/engineering-software-landscape', image: '/img/visual/tool-stack-landscape.jpg' },
-  { title: '气动 / CFD / 再入', desc: '气动数据库、OpenFOAM、SU2、Ansys Fluent、OpenVSP 和热环境。', link: '/docs/tools/cfd-and-aero', image: '/img/visual/tool-stack-landscape.jpg' },
-  { title: '结构 / FEM / 多体', desc: 'Ansys Mechanical、Nastran、Abaqus、Simcenter、Adams 等工程分析。', link: '/tools', image: '/img/visual/reproduction-lab.jpg' },
-  { title: '数字孪生与可视化', desc: 'Cesium、Unreal Engine、Open MCT、ParaView 和任务回放。', link: '/tools', image: '/img/visual/intelligence-feed.jpg' },
+  { title: '轨道与任务分析', desc: '轨道传播、摄动、转移、星历、覆盖和任务规划。', link: '/docs/tools/orbit-and-mission-analysis', image: '/img/visual/case-constellation-v3.svg' },
+  { title: 'GNC / ADCS', desc: '制导、导航、控制、姿态确定、执行机构和闭环验证。', link: '/docs/intro', image: '/img/visual/hero-platform-v3.svg' },
+  { title: '推进与动力系统', desc: '发动机性能、质量流率、推力曲线、CEA 与系统级模型。', link: '/docs/tools/engineering-software-landscape', image: '/img/visual/case-deep-space-v3.svg' },
+  { title: '气动 / CFD / 再入', desc: '气动数据库、OpenFOAM、SU2、Ansys Fluent、OpenVSP 和热环境。', link: '/docs/tools/cfd-and-aero', image: '/img/visual/software-landscape-v3.svg' },
+  { title: '结构 / FEM / 多体', desc: 'Ansys Mechanical、Nastran、Abaqus、Simcenter、Adams 等工程分析。', link: '/tools', image: '/img/visual/reproduction-lab-v3.svg' },
+  { title: '数字孪生与可视化', desc: 'Cesium、Unreal Engine、Open MCT、ParaView 和任务回放。', link: '/tools', image: '/img/visual/intelligence-feed-v3.svg' },
 ];
 
 export const toolCategories = ['全部', '任务分析', '控制与建模', 'CFD/气动', '结构/FEM', '推进', '航天器/GNC', '可视化', '软件工程'];
