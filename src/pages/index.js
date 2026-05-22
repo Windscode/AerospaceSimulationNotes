@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { visualAssets, domains, intelligenceItems, tools, projects, lifecycle } from '../data/siteContent';
+import { visualAssets, domains, intelligenceItems, tools, projects, lifecycle, caseStudies } from '../data/siteContent';
 
 function Img({ src, alt, className = '' }) {
   return <img className={className} src={useBaseUrl(src)} alt={alt} loading="lazy" />;
@@ -27,16 +27,8 @@ function MissionVisual({ activeDomain }) {
   };
   const info = orbitInfo[orbitMode];
   return (
-    <div className="asn-mission-visual">
-      <div className="asn-earth">
-        <span className="asn-earth__glow" />
-        <span className="asn-orbit asn-orbit--one" />
-        <span className="asn-orbit asn-orbit--two" />
-        <span className="asn-orbit asn-orbit--three" />
-        <span className="asn-satellite asn-satellite--a" />
-        <span className="asn-satellite asn-satellite--b" />
-        <span className="asn-satellite asn-satellite--c" />
-      </div>
+    <div className="asn-mission-visual asn-mission-visual--image">
+      <Img src={visualAssets.hero} alt="航天仿真研究平台主视觉" />
       <div className="asn-quick-panel">
         <div className="asn-panel-title">快速任务视图</div>
         <div className="asn-mode-switch">
@@ -59,6 +51,7 @@ function RadarBoard({ projects }) {
   return (
     <div className="asn-radar-board">
       <div className="asn-radar-map">
+        <Img src={visualAssets.radar} alt="项目雷达视觉图" className="asn-radar-bg" />
         <span className="asn-radar-ring asn-radar-ring--1" />
         <span className="asn-radar-ring asn-radar-ring--2" />
         <span className="asn-radar-ring asn-radar-ring--3" />
@@ -122,6 +115,7 @@ export default function Home() {
         <section className="asn-shell asn-domain-switcher">
           {domains.map((domain) => (
             <button key={domain.title} className={activeDomain.title === domain.title ? 'active' : ''} onClick={() => setActiveDomain(domain)}>
+              <Img src={domain.image} alt={domain.title} />
               <span>{domain.title}</span>
               <small>{domain.desc}</small>
             </button>
@@ -139,7 +133,8 @@ export default function Home() {
                 <p>把 MATLAB、Ansys、STK、GMAT、Orekit、Basilisk、SU2 等工具放进统一工程语境。</p>
               </div>
             </div>
-            <div className="asn-console-card">
+            <div className="asn-console-card asn-console-card--image">
+              <Img src={visualAssets.intelligence} alt="研究情报流视觉图" />
               <span>当前选中领域</span>
               <h3>{activeDomain.title}</h3>
               <p>{activeDomain.desc}</p>
@@ -150,15 +145,18 @@ export default function Home() {
 
         <section className="asn-shell asn-section-v3" id="intelligence">
           <SectionHeader eyebrow="Intelligence Feed" title="每日维护的研究情报流">新工具、新论文、新项目、新资料先进入动态层，标记价值、状态和下一步动作，避免知识库污染。</SectionHeader>
-          <div className="asn-feed-grid">
-            {intelligenceItems.map((item) => (
-              <article className="asn-feed-card" key={item.title}>
-                <div><span>{item.date}</span><b>{item.type}</b></div>
-                <h3>{item.title}</h3>
-                <p>{item.status}</p>
-                <footer>{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</footer>
-              </article>
-            ))}
+          <div className="asn-feed-layout">
+            <div className="asn-feed-visual"><Img src={visualAssets.intelligence} alt="研究情报流视觉图" /></div>
+            <div className="asn-feed-grid">
+              {intelligenceItems.map((item) => (
+                <article className="asn-feed-card" key={item.title}>
+                  <div><span>{item.date}</span><b>{item.type}</b></div>
+                  <h3>{item.title}</h3>
+                  <p>{item.status}</p>
+                  <footer>{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</footer>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -166,6 +164,7 @@ export default function Home() {
           <div className="asn-software-layout">
             <div className="asn-software-intro">
               <SectionHeader eyebrow="Tool Stack" title="工程软件生态地图">商业软件与开源工具并列评估：用途、成熟度、学习优先级、替代方案和集成价值。</SectionHeader>
+              <Img src={visualAssets.tools} alt="工程软件生态地图" className="asn-side-visual" />
               <label className="asn-search-v3"><span>搜索</span><input value={toolQuery} onChange={(event) => setToolQuery(event.target.value)} placeholder="MATLAB / STK / CFD / GNC..." /></label>
             </div>
             <div className="asn-tool-grid-v3">
@@ -178,6 +177,18 @@ export default function Home() {
                 </a>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="asn-shell asn-section-v3" id="cases">
+          <SectionHeader eyebrow="Selected Cases" title="精选研究案例">用具体任务场景承载工具、理论和复现实验，不让网站停留在抽象资料列表。</SectionHeader>
+          <div className="asn-case-grid">
+            {caseStudies.map((item) => (
+              <Link className="asn-case-card" to={item.link} key={item.title}>
+                <Img src={item.image} alt={item.title} />
+                <div><span>{item.type}</span><h3>{item.title}</h3><p>{item.desc}</p></div>
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -197,6 +208,7 @@ export default function Home() {
               <span className="asn-kicker-v3">Reproduction Lab</span>
               <h2>复现实验室：让资料变成可信结论。</h2>
               <p>每个高价值工具、论文和项目都要留下环境、依赖、命令、输入、输出、误差和结论。未来的你必须能重新跑通。</p>
+              <Img src={visualAssets.lab} alt="复现实验室视觉图" className="asn-lab-visual" />
             </div>
             <div className="asn-lifecycle-v3">
               {lifecycle.slice(0, 5).map((step, index) => <div key={step.name}><span>{String(index + 1).padStart(2, '0')}</span><strong>{step.name}</strong><em>{step.desc}</em></div>)}
