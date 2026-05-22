@@ -1,34 +1,66 @@
 export const visualAssets = {
-  hero: '/img/visual/hero-platform-v3.svg',
-  tools: '/img/visual/software-landscape-v3.svg',
-  radar: '/img/visual/project-radar-v3.svg',
-  lab: '/img/visual/reproduction-lab-v3.svg',
-  intelligence: '/img/visual/intelligence-feed-v3.svg',
-  knowledge: '/img/visual/knowledge-map.jpg',
-  lunarCase: '/img/visual/case-lunar-landing-v3.svg',
-  constellationCase: '/img/visual/case-constellation-v3.svg',
-  deepSpaceCase: '/img/visual/case-deep-space-v3.svg',
+  hero: '/img/visual/mission-control-atlas.svg',
+  orbit: '/img/visual/orbit-weave-hero.svg',
+  tools: '/img/visual/software-stack-console.svg',
+  radar: '/img/visual/project-radar-array.svg',
+  lab: '/img/visual/reproduction-lab-bay.svg',
+  intelligence: '/img/visual/research-intelligence-wall.svg',
+  knowledge: '/img/visual/knowledge-fabric-map.svg',
+  lunarCase: '/img/visual/lunar-landing-case.svg',
+  constellationCase: '/img/visual/constellation-analysis-case.svg',
+  deepSpaceCase: '/img/visual/deep-space-transfer-case.svg',
 };
 
+export const dashboardStats = [
+  { value: '7', label: '研究域', detail: '轨道 / GNC / 推进 / 气动 / 结构 / 软件 / 可视化' },
+  { value: 'A-D', label: '项目评级', detail: '成熟度、许可证、复现难度、工程价值' },
+  { value: '6步', label: '内容生命周期', detail: '发现 → 评估 → 复现 → 验证 → 归档 → 废弃' },
+];
+
+export const researchPillars = [
+  {
+    title: '研究情报流',
+    label: 'INTAKE',
+    desc: '每天新增新闻、论文、项目、工具、公开数据与教程，先做轻量标注，不直接污染知识库。',
+    link: '/intelligence',
+    image: visualAssets.intelligence,
+  },
+  {
+    title: '工程软件栈',
+    label: 'TOOLCHAIN',
+    desc: '把商业软件、开源库、工程数据与验证工具放在同一张地图里，明确学习优先级和替代关系。',
+    link: '/tools',
+    image: visualAssets.tools,
+  },
+  {
+    title: '复现实验室',
+    label: 'VALIDATION',
+    desc: '把高价值资料转成可复现记录：环境、输入、命令、输出、误差、结论和下一步。',
+    link: '/reproduction-lab',
+    image: visualAssets.lab,
+  },
+];
+
 export const intelligenceItems = [
-  { date: '每日', type: '收集', title: '新增论文、工具、项目和行业动态', status: '待评估', tags: ['Daily Intake', '情报'] },
-  { date: '每周', type: '整理', title: '把高价值条目沉淀到知识库和工具矩阵', status: '归档中', tags: ['Weekly Digest', '知识库'] },
-  { date: '持续', type: '复现', title: '对 A 级项目和论文建立可复现实验记录', status: '进行中', tags: ['Reproduction', 'Validation'] },
+  { date: '每日', type: '收集', title: '新增论文、工具、项目和行业动态', status: '进入 Intake 队列，先标注来源、领域、可信度和下一步动作。', tags: ['Daily Intake', '情报'] },
+  { date: '每周', type: '整理', title: '把高价值条目沉淀到知识库和工具矩阵', status: '按领域、工具链、复现价值重组，避免变成普通收藏夹。', tags: ['Weekly Digest', '知识库'] },
+  { date: '持续', type: '复现', title: '对 A 级项目和论文建立可复现实验记录', status: '记录环境、依赖、输入输出、误差对比与结论，留下可追溯证据。', tags: ['Reproduction', 'Validation'] },
+  { date: '长期', type: '公开数据', title: '整理航天器、火箭、轨道与任务公开数据线索', status: '区分真实公开数据、教材示例、工程假设数据和推测建模方法。', tags: ['Open Data', 'Modeling'] },
 ];
 
 export const caseStudies = [
-  { title: '月球着陆任务仿真', type: '月球任务', desc: '近月制动、下降段制导律、着陆点误差与软着陆剖面复现。', image: '/img/visual/case-lunar-landing-v3.svg', link: '/reproduction-lab' },
-  { title: '星座部署与覆盖分析', type: '星座覆盖', desc: '轨道面、相位、覆盖率、通信窗口和任务效能的系统评估。', image: '/img/visual/case-constellation-v3.svg', link: '/radar' },
-  { title: '深空任务设计与评估', type: '深空任务', desc: '引力辅助、转移窗口、低推力轨迹与脉冲机动方案对比。', image: '/img/visual/case-deep-space-v3.svg', link: '/tools' },
+  { title: '月球着陆任务仿真', type: '月球任务', desc: '近月制动、下降段制导律、着陆点误差、软着陆剖面与可视化回放。', image: visualAssets.lunarCase, link: '/reproduction-lab' },
+  { title: '星座部署与覆盖分析', type: '星座覆盖', desc: '轨道面、相位、覆盖率、通信窗口、传感器指向和任务效能评估。', image: visualAssets.constellationCase, link: '/radar' },
+  { title: '深空转移任务设计', type: '深空任务', desc: '转移窗口、引力辅助、低推力轨迹、脉冲机动与多工具交叉验证。', image: visualAssets.deepSpaceCase, link: '/tools' },
 ];
 
 export const domains = [
-  { title: '轨道与任务分析', desc: '轨道传播、摄动、转移、星历、覆盖和任务规划。', link: '/docs/tools/orbit-and-mission-analysis', image: '/img/visual/case-constellation-v3.svg' },
-  { title: 'GNC / ADCS', desc: '制导、导航、控制、姿态确定、执行机构和闭环验证。', link: '/docs/intro', image: '/img/visual/hero-platform-v3.svg' },
-  { title: '推进与动力系统', desc: '发动机性能、质量流率、推力曲线、CEA 与系统级模型。', link: '/docs/tools/engineering-software-landscape', image: '/img/visual/case-deep-space-v3.svg' },
-  { title: '气动 / CFD / 再入', desc: '气动数据库、OpenFOAM、SU2、Ansys Fluent、OpenVSP 和热环境。', link: '/docs/tools/cfd-and-aero', image: '/img/visual/software-landscape-v3.svg' },
-  { title: '结构 / FEM / 多体', desc: 'Ansys Mechanical、Nastran、Abaqus、Simcenter、Adams 等工程分析。', link: '/tools', image: '/img/visual/reproduction-lab-v3.svg' },
-  { title: '数字孪生与可视化', desc: 'Cesium、Unreal Engine、Open MCT、ParaView 和任务回放。', link: '/tools', image: '/img/visual/intelligence-feed-v3.svg' },
+  { title: '轨道与任务分析', desc: '轨道传播、摄动、转移、星历、覆盖、通信窗口和任务规划。', link: '/docs/tools/orbit-and-mission-analysis', image: visualAssets.constellationCase, accent: 'Orbital Mechanics' },
+  { title: 'GNC / ADCS', desc: '制导、导航、控制、姿态确定、执行机构、传感器模型和闭环验证。', link: '/docs/intro', image: visualAssets.hero, accent: 'Closed-loop Simulation' },
+  { title: '推进与动力系统', desc: '发动机性能、质量流率、推力曲线、CEA、燃烧室和系统级模型。', link: '/docs/tools/engineering-software-landscape', image: visualAssets.deepSpaceCase, accent: 'Propulsion Model' },
+  { title: '气动 / CFD / 再入', desc: '气动数据库、外形建模、OpenFOAM、SU2、Fluent、热流与再入环境。', link: '/docs/tools/cfd-and-aero', image: visualAssets.tools, accent: 'Aero Database' },
+  { title: '结构 / FEM / 多体', desc: '结构强度、热-结构耦合、模态、有限元、多体动力学和载荷路径。', link: '/tools', image: visualAssets.lab, accent: 'Structural Loop' },
+  { title: '飞行软件 / 数字孪生', desc: 'cFS、F Prime、Open MCT、Cesium、UE、遥测回放与仿真中台。', link: '/tools', image: visualAssets.intelligence, accent: 'Digital Thread' },
 ];
 
 export const toolCategories = ['全部', '任务分析', '控制与建模', 'CFD/气动', '结构/FEM', '推进', '航天器/GNC', '可视化', '软件工程'];
@@ -65,23 +97,23 @@ export const tools = [
 ];
 
 export const projects = [
-  { name: 'Orekit', domain: '轨道与任务分析', language: 'Java', license: 'Apache-2.0', rating: 'A', maturity: '工程参考', reproduction: '待复现', value: '适合做轨道传播和事件计算基准。', url: 'https://www.orekit.org/' },
-  { name: 'Tudat', domain: '轨道与任务分析', language: 'C++/Python', license: 'BSD', rating: 'A', maturity: '研究框架', reproduction: '待复现', value: '适合高保真航天动力学研究。', url: 'https://tudat-space.readthedocs.io/' },
-  { name: 'Basilisk', domain: '航天器/GNC', language: 'C++/Python', license: 'BSD', rating: 'A', maturity: '研究框架', reproduction: '待复现', value: '适合 ADCS 和闭环任务仿真。', url: 'https://hanspeterschaub.info/basilisk/' },
-  { name: 'NASA 42', domain: '航天器/GNC', language: 'C', license: 'NASA Open Source', rating: 'A', maturity: '研究工具', reproduction: '待复现', value: '适合姿态动力学和环境模型学习。', url: 'https://sourceforge.net/projects/fortytwospacecraftsimulation/' },
-  { name: 'GMAT', domain: '轨道与任务分析', language: 'C++', license: 'Apache-like', rating: 'A', maturity: '验证基准', reproduction: '计划复现', value: '适合作为轨道任务设计的结果对照。', url: 'https://gmat.gsfc.nasa.gov/' },
-  { name: 'OpenVSP', domain: '气动/外形', language: 'C++', license: 'NASA Open Source', rating: 'A', maturity: '工程参考', reproduction: '待复现', value: '适合外形建模与气动前处理。', url: 'https://openvsp.org/' },
-  { name: 'SU2', domain: 'CFD/气动', language: 'C++/Python', license: 'LGPL', rating: 'A', maturity: '工程参考', reproduction: '待复现', value: '适合 CFD 和气动优化研究。', url: 'https://su2code.github.io/' },
-  { name: 'Open MCT', domain: '任务控制/遥测', language: 'JavaScript', license: 'Apache-2.0', rating: 'A', maturity: '工程参考', reproduction: '待评估', value: '适合任务控制和遥测 UI 参考。', url: 'https://github.com/nasa/openmct' },
-  { name: 'cFS', domain: '飞行软件', language: 'C', license: 'NASA Open Source', rating: 'A', maturity: '飞控参考', reproduction: '待评估', value: '适合作为航天飞行软件架构参考。', url: 'https://github.com/nasa/cFS' },
-  { name: 'F Prime', domain: '飞行软件', language: 'C++/Python', license: 'Apache-2.0', rating: 'A', maturity: '飞控参考', reproduction: '待评估', value: '适合小型航天器软件框架研究。', url: 'https://fprime.jpl.nasa.gov/' },
+  { name: 'Orekit', domain: '轨道与任务分析', language: 'Java', license: 'Apache-2.0', rating: 'A', maturity: '工程参考', reproduction: '待复现', value: '适合做轨道传播、事件探测和星历处理基准。', url: 'https://www.orekit.org/' },
+  { name: 'Tudat', domain: '轨道与任务分析', language: 'C++/Python', license: 'BSD', rating: 'A', maturity: '研究框架', reproduction: '待复现', value: '适合高保真航天动力学、参数估计和任务研究。', url: 'https://tudat-space.readthedocs.io/' },
+  { name: 'Basilisk', domain: '航天器/GNC', language: 'C++/Python', license: 'BSD', rating: 'A', maturity: '研究框架', reproduction: '待复现', value: '适合 ADCS、航天器动力学和闭环任务仿真。', url: 'https://hanspeterschaub.info/basilisk/' },
+  { name: 'NASA 42', domain: '航天器/GNC', language: 'C', license: 'NASA Open Source', rating: 'A', maturity: '研究工具', reproduction: '待复现', value: '适合姿态动力学、环境模型和多体系统学习。', url: 'https://sourceforge.net/projects/fortytwospacecraftsimulation/' },
+  { name: 'GMAT', domain: '轨道与任务分析', language: 'C++', license: 'Apache-like', rating: 'A', maturity: '验证基准', reproduction: '计划复现', value: '适合作为轨道任务设计和转移优化的结果对照。', url: 'https://gmat.gsfc.nasa.gov/' },
+  { name: 'OpenVSP', domain: '气动/外形', language: 'C++', license: 'NASA Open Source', rating: 'A', maturity: '工程参考', reproduction: '待复现', value: '适合外形建模、几何生成与初步气动分析。', url: 'https://openvsp.org/' },
+  { name: 'SU2', domain: 'CFD/气动', language: 'C++/Python', license: 'LGPL', rating: 'A', maturity: '工程参考', reproduction: '待复现', value: '适合 CFD、伴随优化和气动数据生成。', url: 'https://su2code.github.io/' },
+  { name: 'Open MCT', domain: '任务控制/遥测', language: 'JavaScript', license: 'Apache-2.0', rating: 'A', maturity: '工程参考', reproduction: '待评估', value: '适合任务控制、遥测 UI 和可视化信息架构参考。', url: 'https://github.com/nasa/openmct' },
+  { name: 'cFS', domain: '飞行软件', language: 'C', license: 'NASA Open Source', rating: 'A', maturity: '飞控参考', reproduction: '待评估', value: '适合作为航天飞行软件架构和组件化设计参考。', url: 'https://github.com/nasa/cFS' },
+  { name: 'F Prime', domain: '飞行软件', language: 'C++/Python', license: 'Apache-2.0', rating: 'A', maturity: '飞控参考', reproduction: '待评估', value: '适合小型航天器软件框架、组件和遥测链路研究。', url: 'https://fprime.jpl.nasa.gov/' },
 ];
 
 export const lifecycle = [
-  { step: '01', name: '发现', desc: '从论文、官网、GitHub、技术报告和新闻中收集候选条目。' },
-  { step: '02', name: '评估', desc: '判断领域相关性、工程成熟度、授权风险和学习优先级。' },
-  { step: '03', name: '复现', desc: '建立环境、运行示例、记录命令、问题和结果。' },
-  { step: '04', name: '验证', desc: '与权威工具、论文结果或独立实现做交叉对比。' },
-  { step: '05', name: '归档', desc: '把结论沉淀为工具条目、项目评估、论文笔记或实验日志。' },
-  { step: '06', name: '废弃', desc: '对过时、不可复现或价值不足的资料标记原因，避免误用。' },
+  { step: '01', name: '发现', desc: '从论文、官网、GitHub、技术报告、新闻和公开课程中收集候选条目。' },
+  { step: '02', name: '评估', desc: '判断领域相关性、工程成熟度、授权风险、学习优先级和复现成本。' },
+  { step: '03', name: '复现', desc: '建立环境、运行示例、记录命令、依赖、问题、输入和输出。' },
+  { step: '04', name: '验证', desc: '与权威工具、论文结果、公开数据或独立实现做交叉对比。' },
+  { step: '05', name: '归档', desc: '沉淀为工具条目、项目评估、论文笔记、案例页面或实验日志。' },
+  { step: '06', name: '废弃', desc: '对过时、不可复现、授权不清或价值不足的资料标记原因，避免误用。' },
 ];
