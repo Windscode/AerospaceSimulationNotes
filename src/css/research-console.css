@@ -1,0 +1,30 @@
+.asn-hero--showcase { min-height: 820px; }
+.asn-hero--compact { min-height: 560px; padding: 78px 0 64px; }
+.asn-section--dense { padding-top: 72px; }
+.asn-atlas-card--prime { transform: perspective(1200px) rotateY(-4deg); }
+.asn-ops-rail { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; position: relative; }
+.asn-ops-rail article { min-height: 260px; padding: 22px; border-radius: 26px; border: 1px solid rgba(126,229,255,.16); background: linear-gradient(180deg, rgba(10,27,60,.76), rgba(4,12,30,.82)); box-shadow: 0 20px 70px rgba(0,0,0,.22); }
+.asn-ops-rail span, .asn-inference-grid span { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 16px; color: #06111f; background: linear-gradient(135deg, var(--asn-blue), var(--asn-green)); font-weight: 950; }
+.asn-ops-rail h3, .asn-inference-grid h3, .asn-dossier-card h3, .asn-lane-card h3 { color: #fff; margin: 18px 0 10px; letter-spacing: -.03em; }
+.asn-ops-rail p, .asn-inference-grid p, .asn-dossier-card p, .asn-lane-card p { color: #9fb3c7; line-height: 1.75; margin: 0; }
+.asn-pillar-grid--editorial .asn-pillar-card:first-child { grid-column: span 2; }
+.asn-editorial-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: start; }
+.asn-side-visual-card--tall img { height: 520px; }
+.asn-dossier-list { display: grid; gap: 18px; }
+.asn-dossier-card { display: grid; grid-template-columns: 260px 1fr; gap: 22px; align-items: stretch; padding: 16px; border-radius: 30px; border: 1px solid rgba(255,255,255,.1); background: linear-gradient(135deg, rgba(13,30,63,.72), rgba(7,16,34,.82)); box-shadow: 0 20px 70px rgba(0,0,0,.24); }
+.asn-dossier-card img { width: 100%; height: 100%; min-height: 210px; object-fit: cover; border-radius: 22px; border: 1px solid rgba(255,255,255,.1); }
+.asn-dossier-card div { padding: 10px 10px 10px 0; }
+.asn-dossier-card span { color: #8eefff; font-size: 12px; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; }
+.asn-dossier-card footer, .asn-lane-card div { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.asn-dossier-card em, .asn-lane-card span { font-style: normal; padding: 7px 10px; border-radius: 999px; color: #c9f6ff; border: 1px solid rgba(126,229,255,.18); background: rgba(91,220,255,.07); font-size: 12px; font-weight: 800; }
+.asn-inference-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.asn-inference-grid article { min-height: 320px; padding: 24px; border-radius: 28px; border: 1px solid rgba(255,255,255,.1); background: radial-gradient(circle at 20% 0%, rgba(91,220,255,.13), transparent 45%), linear-gradient(180deg, rgba(13,30,63,.68), rgba(7,16,34,.84)); box-shadow: 0 20px 70px rgba(0,0,0,.22); }
+.asn-inference-grid strong { display: block; margin-top: 18px; color: var(--asn-gold); line-height: 1.55; }
+.asn-lane-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.asn-lane-card { min-height: 260px; padding: 24px; border-radius: 28px; border: 1px solid rgba(255,255,255,.1); background: linear-gradient(180deg, rgba(13,30,63,.68), rgba(7,16,34,.84)); box-shadow: 0 20px 70px rgba(0,0,0,.22); }
+.asn-filter--console { padding: 14px; border-radius: 24px; border: 1px solid rgba(126,229,255,.16); background: rgba(255,255,255,.035); }
+.asn-data-card--rich { min-height: 238px; }
+.asn-data-card__meta { color: #92a9bc; font-size: 13px; line-height: 1.5; }
+.asn-priority { min-width: 42px; height: 42px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; color: var(--asn-gold); border: 1px solid rgba(255,209,109,.32); background: rgba(255,209,109,.11); font-weight: 950; }
+@media (max-width: 1120px) { .asn-ops-rail, .asn-inference-grid, .asn-lane-grid { grid-template-columns: repeat(2, 1fr); } .asn-editorial-split { grid-template-columns: 1fr; } .asn-pillar-grid--editorial .asn-pillar-card:first-child { grid-column: auto; } }
+@media (max-width: 720px) { .asn-ops-rail, .asn-inference-grid, .asn-lane-grid { grid-template-columns: 1fr; } .asn-dossier-card { grid-template-columns: 1fr; } .asn-dossier-card div { padding: 0; } .asn-atlas-card--prime { transform: none; } .asn-hero--showcase, .asn-hero--compact { min-height: auto; } }
