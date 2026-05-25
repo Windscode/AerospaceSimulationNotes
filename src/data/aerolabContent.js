@@ -1,0 +1,51 @@
+export const labImages = {
+  hero: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/hero-space-bg-YHvkmpNxSVxNCCu23TdtPX.webp',
+  orbit: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/orbital-mechanics-Z4xfALucPGCDkxdQjgUArX.webp',
+  control: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/mission-control-aNWcsXgkGpMWjmbyo7cWWr.webp',
+  data: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/simulation-data-4VYVML2wbibR3BeBfBkwQh.webp',
+};
+
+export const quickAccess = [
+  { title: 'Knowledge Base', cn: '知识库', href: '/docs/intro', code: 'KB' },
+  { title: 'Open Source Radar', cn: '开源项目', href: '/radar', code: 'OS' },
+  { title: 'Tools & Software', cn: '工程软件', href: '/tools', code: 'TS' },
+  { title: 'Data Archive', cn: '公开数据', href: '/data', code: 'DA' },
+];
+
+export const latestUpdates = [
+  { date: '05-25', title: '重构航天仿真研究站视觉系统', type: 'DESIGN' },
+  { date: '05-24', title: '整理轨道任务分析工具链：STK / GMAT / Orekit / Tudat', type: 'TOOLS' },
+  { date: '05-22', title: '建立公开数据与参数推断方法入口', type: 'DATA' },
+  { date: '05-21', title: '筛选可复现开源项目：Basilisk / Open MCT / cFS', type: 'RADAR' },
+];
+
+export const missionStats = [
+  { label: 'MISSION STATUS', value: 'RESEARCH ACTIVE' },
+  { label: 'ORBIT SIMULATION', value: 'LEO · 400KM' },
+  { label: 'VELOCITY', value: '7.67 KM/S' },
+  { label: 'DATA PIPELINE', value: 'OPEN / ESTIMATED' },
+  { label: 'SYSTEMS', value: 'ALL NOMINAL' },
+];
+
+export const featuredProjects = [
+  { title: 'Orbital Dynamics Stack', cn: '轨道动力学工具链', image: labImages.orbit, tags: ['GMAT', 'Orekit', 'Tudat'], desc: '用商业工具和开源库交叉验证轨道传播、转移窗口、事件探测与覆盖分析。' },
+  { title: 'AeroSim CFD', cn: '再入与气动仿真', image: labImages.hero, tags: ['OpenVSP', 'SU2', 'OpenFOAM'], desc: '从公开外形、低阶气动模型到 CFD 可视化，建立可解释的气动数据路径。' },
+  { title: 'Mission Control Data', cn: '任务控制与遥测', image: labImages.control, tags: ['Open MCT', 'Cesium', 'UE'], desc: '把仿真输出变成任务控制视角的遥测、轨迹、事件和结论回放。' },
+  { title: 'Data Inference Lab', cn: '公开数据推断实验室', image: labImages.data, tags: ['TLE', 'News', 'Papers'], desc: '公开数据不足时，严格区分事实、假设、反推参数和不确定性。' },
+];
+
+export const researchDomains = [
+  { name: '轨道与任务分析', text: '轨道传播、摄动、转移、覆盖、通信窗口和任务剖面。' },
+  { name: 'GNC / ADCS', text: '制导、导航、控制、姿态确定、执行机构和闭环验证。' },
+  { name: '推进与动力系统', text: '推力曲线、质量流率、比冲、CEA 和系统级性能估计。' },
+  { name: '气动 / CFD / 再入', text: '外形建模、低阶气动数据库、CFD、热环境与再入走廊。' },
+  { name: '工程软件与开源项目', text: 'STK、GMAT、Orekit、Tudat、Basilisk、SU2、Open MCT 等。' },
+  { name: '数据与参数推断', text: '从公开资料、论文图表、新闻、TLE 和任务页面建立可追溯参数。' },
+];
+
+export const methodCards = [
+  { title: '从公开发射新闻反推轨道约束', meta: 'Launch News → Orbit Guess', text: '用发射场、目标高度、倾角、卫星批次、TLE 和任务描述估计仿真初始条件。' },
+  { title: '从发动机公开参数建立推进模型', meta: 'Isp / Thrust → Mass Flow', text: '用推力、比冲、推进剂类型、燃烧时间和级间质量估计推力曲线与不确定性。' },
+  { title: '从外形与尺寸建立气动初值', meta: 'Geometry → Aero Database', text: '用 OpenVSP / DATCOM / CFD 生成初始 CL、CD、Cm 数据库并标注适用范围。' },
+  { title: '从论文曲线提取验证门限', meta: 'Paper Figure → Validation Gate', text: '把论文图表、误差、终端约束转为可复现实验指标，而不是只摘录文字。' },
+];
