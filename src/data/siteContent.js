@@ -12,40 +12,61 @@ export const visualAssets = {
 };
 
 export const dashboardStats = [
-  { value: '7', label: '研究域', detail: '轨道 / GNC / 推进 / 气动 / 结构 / 软件 / 可视化' },
-  { value: 'A-D', label: '项目评级', detail: '成熟度、许可证、复现难度、工程价值' },
-  { value: '6步', label: '内容生命周期', detail: '发现 → 评估 → 复现 → 验证 → 归档 → 废弃' },
+  { value: '42+', label: '工具 / 项目条目', detail: '商业软件、开源框架、验证工具和可视化链路' },
+  { value: '7', label: '仿真研究域', detail: '轨道、GNC、推进、气动、结构、飞行软件、数字孪生' },
+  { value: '6步', label: '证据生命周期', detail: '发现 → 评估 → 复现 → 验证 → 建模 → 归档' },
+];
+
+export const operatingModel = [
+  { step: '01', title: 'Intake', desc: '把每天看到的论文、新闻、仓库、工具、公开数据先放入情报流，只记录来源、可信度、相关领域和下一步。' },
+  { step: '02', title: 'Triage', desc: '判断它是不是值得进入稳定知识库：是否有工程价值、是否可复现、是否有权威出处、是否能支撑模型。' },
+  { step: '03', title: 'Model', desc: '把资料翻译成仿真对象：状态量、方程、输入、输出、参数范围、误差来源和验证指标。' },
+  { step: '04', title: 'Reproduce', desc: '建立可重新运行的环境和命令，用 GMAT / Orekit / Tudat / Basilisk / CFD 工具做对照验证。' },
+  { step: '05', title: 'Archive', desc: '只把可解释、可复查、可继续扩展的结论沉淀到知识库，低价值条目标记废弃原因。' },
 ];
 
 export const researchPillars = [
   {
-    title: '研究情报流',
-    label: 'INTAKE',
-    desc: '每天新增新闻、论文、项目、工具、公开数据与教程，先做轻量标注，不直接污染知识库。',
+    title: '研究情报雷达',
+    label: 'INTELLIGENCE',
+    desc: '每天搜集论文、行业动态、开源仓库、工具更新和公开数据，但先做可信度和工程价值筛选。',
     link: '/intelligence',
     image: visualAssets.intelligence,
   },
   {
-    title: '工程软件栈',
+    title: '工程软件星图',
     label: 'TOOLCHAIN',
-    desc: '把商业软件、开源库、工程数据与验证工具放在同一张地图里，明确学习优先级和替代关系。',
+    desc: '把 STK、GMAT、Orekit、Tudat、Basilisk、SU2、OpenFOAM、Open MCT 等放到任务链路里，而不是简单罗列。',
     link: '/tools',
     image: visualAssets.tools,
   },
   {
     title: '复现实验室',
     label: 'VALIDATION',
-    desc: '把高价值资料转成可复现记录：环境、输入、命令、输出、误差、结论和下一步。',
+    desc: '每个高价值条目都留下环境、输入、命令、输出、误差、对照工具和结论，形成证据链。',
     link: '/reproduction-lab',
     image: visualAssets.lab,
   },
 ];
 
 export const intelligenceItems = [
-  { date: '每日', type: '收集', title: '新增论文、工具、项目和行业动态', status: '进入 Intake 队列，先标注来源、领域、可信度和下一步动作。', tags: ['Daily Intake', '情报'] },
-  { date: '每周', type: '整理', title: '把高价值条目沉淀到知识库和工具矩阵', status: '按领域、工具链、复现价值重组，避免变成普通收藏夹。', tags: ['Weekly Digest', '知识库'] },
-  { date: '持续', type: '复现', title: '对 A 级项目和论文建立可复现实验记录', status: '记录环境、依赖、输入输出、误差对比与结论，留下可追溯证据。', tags: ['Reproduction', 'Validation'] },
-  { date: '长期', type: '公开数据', title: '整理航天器、火箭、轨道与任务公开数据线索', status: '区分真实公开数据、教材示例、工程假设数据和推测建模方法。', tags: ['Open Data', 'Modeling'] },
+  { date: '每日', type: '论文 / 报告', title: '轨道、GNC、推进、气动、结构、飞控软件相关资料收集', status: '先进入 Intake，不直接写进稳定知识库。记录 DOI / 来源 / 是否有数据 / 是否能复现。', tags: ['Paper', 'Technical Report'] },
+  { date: '每日', type: '开源项目', title: 'GitHub / NASA / ESA / 大学实验室项目跟踪', status: '按许可证、语言、活跃度、样例质量、文档质量和集成价值评级。', tags: ['Open Source', 'Project Radar'] },
+  { date: '每周', type: '工具链', title: '工程软件与开源工具的工作流整理', status: '从“工具是什么”升级为“在哪个任务阶段使用、输入输出是什么、能和谁交叉验证”。', tags: ['STK', 'GMAT', 'Orekit'] },
+  { date: '持续', type: '公开数据', title: '从公开新闻、论文、手册、任务页面中提取可用仿真参数', status: '区分真实公开数据、教材示例、工程假设、反推参数和不可用传闻。', tags: ['Open Data', 'Parameter Inference'] },
+];
+
+export const missionDossiers = [
+  { title: '小型运载火箭入轨仿真', type: 'Launch Vehicle', image: visualAssets.deepSpaceCase, desc: '从质量估计、发动机参数、飞行程序、气动阻力、重力转弯到入轨误差，形成一条可复现实验链。', metrics: ['6DOF / 3DOF', 'CEA / 推力曲线', '轨迹验证'] },
+  { title: '月球软着陆任务剖面', type: 'Lunar Lander', image: visualAssets.lunarCase, desc: '近月制动、下降段制导、速度高度剖面、着陆点误差和推力余量，适合做 GNC 与任务分析交叉验证。', metrics: ['下降制导', '误差预算', '任务回放'] },
+  { title: '低轨星座覆盖与通信窗口', type: 'Constellation', image: visualAssets.constellationCase, desc: '轨道面、相位、覆盖率、链路窗口、载荷视场和任务效能，适合 STK / Orekit / Cesium 多工具对照。', metrics: ['Coverage', 'Access', 'Visualization'] },
+];
+
+export const modelInferenceMethods = [
+  { title: '从公开发射新闻反推任务轨道', desc: '用发射场、目标轨道高度、倾角、卫星批次、TLE 和新闻措辞估计任务约束，作为仿真初始条件。', output: '轨道高度 / 倾角 / RAAN 近似范围' },
+  { title: '从发动机公开参数建立推进模型', desc: '用推力、比冲、推进剂类型、级间质量和燃烧时间估计质量流率与推力曲线，不把猜测伪装成真实数据。', output: '推力曲线 / 质量流率 / 不确定性' },
+  { title: '从外形图和公开尺寸构建气动低阶模型', desc: '用 OpenVSP / DATCOM / CFD 建立初始气动数据库，并标记适用马赫数、攻角范围和验证缺口。', output: 'CL / CD / Cm 初始数据库' },
+  { title: '从任务论文复现实验指标', desc: '把论文图表里的曲线、误差、终端约束转成可跑的验证指标，而不是只摘录文字。', output: '验证门限 / 误差曲线 / 复现实验记录' },
 ];
 
 export const caseStudies = [
@@ -64,6 +85,13 @@ export const domains = [
 ];
 
 export const toolCategories = ['全部', '任务分析', '控制与建模', 'CFD/气动', '结构/FEM', '推进', '航天器/GNC', '可视化', '软件工程'];
+
+export const toolLanes = [
+  { title: '任务设计与轨道基准', desc: '先用成熟工具建立任务级基准，再用开源库复现关键计算。', tools: ['Ansys STK', 'GMAT', 'Orekit', 'Tudat'] },
+  { title: '动力学 / 控制闭环', desc: '把控制律、姿态动力学、执行机构和传感器误差放到闭环仿真里验证。', tools: ['MATLAB', 'Simulink', 'Basilisk', 'NASA 42'] },
+  { title: '外形 / 气动 / 热环境', desc: '用低阶方法快速建库，再用 CFD 或试验数据校正关键区域。', tools: ['OpenVSP', 'Digital DATCOM', 'SU2', 'OpenFOAM', 'Fluent'] },
+  { title: '遥测 / 可视化 / 数字孪生', desc: '把仿真结果做成任务控制视角，而不是只保留 CSV 和曲线。', tools: ['Open MCT', 'CesiumJS', 'Unreal Engine', 'ParaView'] },
+];
 
 export const tools = [
   { name: 'MATLAB', vendor: 'MathWorks', category: '控制与建模', type: '商业', maturity: '行业标准', priority: 'A', role: '算法原型、数值分析、控制律设计、数据处理。', domains: ['GNC','轨道','数据分析'], url: 'https://www.mathworks.com/products/matlab.html' },
@@ -109,11 +137,20 @@ export const projects = [
   { name: 'F Prime', domain: '飞行软件', language: 'C++/Python', license: 'Apache-2.0', rating: 'A', maturity: '飞控参考', reproduction: '待评估', value: '适合小型航天器软件框架、组件和遥测链路研究。', url: 'https://fprime.jpl.nasa.gov/' },
 ];
 
+export const validationGates = [
+  { title: '环境可重建', desc: '操作系统、编译器、Python / Java / C++ 版本、依赖、数据下载来源必须可复查。' },
+  { title: '命令可复制', desc: '所有构建、运行、后处理命令写清楚，不只截图结果。' },
+  { title: '输入可追溯', desc: '初始条件、参数来源、公开数据、假设值和手工估计值必须分开标注。' },
+  { title: '输出可比较', desc: '结果要能和论文曲线、STK/GMAT/Orekit 等工具或独立脚本做对照。' },
+  { title: '误差可解释', desc: '说明误差来自模型简化、数值积分、坐标系、单位、初始条件还是数据质量。' },
+  { title: '结论可归档', desc: '只有能说明价值、适用范围和局限的实验，才进入稳定知识库。' },
+];
+
 export const lifecycle = [
   { step: '01', name: '发现', desc: '从论文、官网、GitHub、技术报告、新闻和公开课程中收集候选条目。' },
   { step: '02', name: '评估', desc: '判断领域相关性、工程成熟度、授权风险、学习优先级和复现成本。' },
-  { step: '03', name: '复现', desc: '建立环境、运行示例、记录命令、依赖、问题、输入和输出。' },
-  { step: '04', name: '验证', desc: '与权威工具、论文结果、公开数据或独立实现做交叉对比。' },
-  { step: '05', name: '归档', desc: '沉淀为工具条目、项目评估、论文笔记、案例页面或实验日志。' },
-  { step: '06', name: '废弃', desc: '对过时、不可复现、授权不清或价值不足的资料标记原因，避免误用。' },
+  { step: '03', name: '建模', desc: '抽取状态量、输入输出、参数来源、假设边界和误差来源。' },
+  { step: '04', name: '复现', desc: '建立环境、运行示例、记录命令、依赖、问题、输入和输出。' },
+  { step: '05', name: '验证', desc: '与权威工具、论文结果、公开数据或独立实现做交叉对比。' },
+  { step: '06', name: '归档', desc: '沉淀为工具条目、项目评估、论文笔记、案例页面或实验日志。' },
 ];
