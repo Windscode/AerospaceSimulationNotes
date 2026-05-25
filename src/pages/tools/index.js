@@ -1,16 +1,25 @@
 import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import { tools, toolCategories, visualAssets } from '../../data/siteContent';
+import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
+import { labImages } from '../../data/aerolabContent';
+import { tools, toolCategories, toolLanes } from '../../data/siteContent';
 
 export default function ToolsPage() {
   const [cat, setCat] = useState('全部');
   const [q, setQ] = useState('');
   const result = useMemo(() => tools.filter(t => (cat === '全部' || t.category === cat) && JSON.stringify(t).toLowerCase().includes(q.toLowerCase())), [cat, q]);
-  return <Layout title="工程软件栈" description="航天仿真工程软件矩阵与工具评估">
-    <main className="asn-page">
-      <section className="asn-hero"><img className="asn-hero__image" src={useBaseUrl(visualAssets.tools)} alt="工程软件生态地图"/><div className="container asn-hero__content"><div><div className="asn-badge">工程软件栈</div><h1>把工具放进工作流，而不是只列软件名。</h1><p>覆盖 MATLAB / Simulink、Ansys STK / ODTK / ModelCenter、Fluent、GMAT、Orekit、Tudat、Basilisk、OpenFOAM、SU2、OpenVSP、RocketCEA、Open MCT、Cesium 和 Unreal Engine。</p></div><div className="asn-command-panel"><h3>筛选维度</h3><div className="asn-metric"><span>类别</span><strong>{toolCategories.length - 1}</strong></div><div className="asn-metric"><span>工具条目</span><strong>{tools.length}</strong></div><div className="asn-metric"><span>优先级</span><strong>A / B</strong></div></div></div></section>
-      <section className="asn-section container"><div className="asn-filter"><input className="asn-search" value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索工具、厂商、领域，例如 MATLAB、STK、CFD" />{toolCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div><div className="asn-grid asn-grid--3">{result.map(tool => <a className="asn-card asn-data-card" href={tool.url} target="_blank" rel="noreferrer" key={tool.name}><div className="asn-data-card__top"><div><div className="asn-kicker">{tool.category}</div><h3>{tool.name}</h3><div className="asn-data-card__meta">{tool.vendor} · {tool.type} · {tool.maturity}</div></div><span className="asn-priority">{tool.priority}</span></div><p>{tool.role}</p><div className="asn-tags">{tool.domains.map(d => <span className="asn-tag" key={d}>{d}</span>)}</div></a>)}</div></section>
-    </main>
+  return <Layout title="工程软件" description="航天仿真工程软件星图与工作流评估">
+    <AeroLabFrame active="TOOLS">
+      <LabPageHero eyebrow="ENGINEERING TOOLCHAIN" title="TOOLS & SOFTWARE" text="把商业软件、开源库、数据工具和可视化平台放入同一条任务链路：任务设计、建模、传播、控制、气动、验证和回放。" image={labImages.control} stats={[{label:'TOOL ITEMS', value:String(tools.length)}, {label:'CATEGORIES', value:String(toolCategories.length - 1)}, {label:'PRIORITY', value:'A / B'}]} />
+      <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>WORKFLOW LANES</span><h2>先看工具在任务阶段中的位置。</h2></div><p>一个工具是否值得学习，不只看名气，而看它在仿真链路里的输入、输出、替代关系和验证价值。</p></div>
+        <div className="lab-table-grid">{toolLanes.map(lane => <article key={lane.title}><span>LANE</span><h3>{lane.title}</h3><p>{lane.desc}</p><footer>{lane.tools.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
+      </section>
+      <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>TOOL MATRIX</span><h2>工程软件矩阵</h2></div><p>后续每天维护时，只新增条目和判断，不重新改页面结构。</p></div>
+        <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 MATLAB / STK / GMAT / CFD / GNC" />{toolCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
+        <div className="lab-table-grid">{result.map(tool => <article key={tool.name}><span>{tool.category}</span><h3>{tool.name}</h3><p>{tool.vendor} · {tool.type} · {tool.maturity}</p><p>{tool.role}</p><footer>{tool.domains.map(d => <em key={d}>{d}</em>)}</footer></article>)}</div>
+      </section>
+    </AeroLabFrame>
   </Layout>;
 }
