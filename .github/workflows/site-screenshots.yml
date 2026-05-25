@@ -1,0 +1,47 @@
+name: Capture deployed site screenshots
+
+on:
+  workflow_run:
+    workflows: ["Deploy Docusaurus site to GitHub Pages"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: site-screenshots
+  cancel-in-progress: true
+
+jobs:
+  screenshots:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Capture screenshots
+        env:
+          SITE_BASE_URL: https://windscode.github.io/AerospaceSimulationNotes/
+        run: node scripts/capture-site-screenshots.mjs
+
+      - name: Upload screenshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aerosim-site-screenshots-${{ github.run_id }}
+          path: site-screenshots
+          retention-days: 30
+          if-no-files-found: error
