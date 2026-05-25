@@ -1,22 +1,23 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import { labImages, quickAccess, latestUpdates, missionStats, featuredProjects, researchDomains, methodCards } from '../data/aerolabContent';
+import { labImages, quickAccess, latestUpdates, missionStats, featuredProjects, researchDomains, methodCards, missionDossiers } from '../data/aerolabContent';
 
 function SideNav() {
   const items = [
     { label: 'HOME', href: '/' },
     { label: 'DISCOVER', href: '/intelligence' },
-    { label: 'LIBRARY', href: '/docs/intro' },
+    { label: 'MISSIONS', href: '/missions' },
     { label: 'PROJECTS', href: '/radar' },
     { label: 'TOOLS', href: '/tools' },
     { label: 'DATA', href: '/data' },
+    { label: 'LAB', href: '/reproduction-lab' },
   ];
-  return <aside className="lab-side-nav">{items.map((item, i) => <Link key={item.label} to={item.href} className={i === 0 ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
+  return <aside className="lab-side-nav lab-side-nav--seven">{items.map((item, i) => <Link key={item.label} to={item.href} className={i === 0 ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
 }
 
 function TopNav() {
-  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>AEROSIM</strong><em>RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">EXPLORE</Link><Link to="/docs/intro">KNOWLEDGE</Link><Link to="/radar">PROJECTS</Link><Link to="/tools">TOOLS</Link><Link to="/data">DATA</Link><Link to="/reproduction-lab">LAB</Link></nav><Link className="lab-log-btn" to="/blog">MISSION LOG ↗</Link></header>;
+  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>AEROSIM</strong><em>RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">EXPLORE</Link><Link to="/docs/intro">KNOWLEDGE</Link><Link to="/missions">MISSIONS</Link><Link to="/radar">PROJECTS</Link><Link to="/tools">TOOLS</Link><Link to="/data">DATA</Link></nav><Link className="lab-log-btn" to="/blog">MISSION LOG ↗</Link></header>;
 }
 
 function Hero() {
@@ -31,12 +32,16 @@ function Projects() {
   return <section className="lab-section lab-projects"><div className="lab-section-index">01</div><div className="lab-section-head"><span>FEATURED PROJECTS</span><h2>把工具、数据与任务案例组织成可复现研究资产。</h2></div><div className="lab-project-grid">{featuredProjects.map((p, i) => <article className={i === 0 ? 'large' : ''} key={p.title}><img src={p.image} alt={p.title}/><div><span>{p.title}</span><h3>{p.cn}</h3><p>{p.desc}</p><footer>{p.tags.map(tag => <em key={tag}>{tag}</em>)}</footer></div></article>)}</div></section>;
 }
 
+function MissionDossiers() {
+  return <section className="lab-section lab-projects"><div className="lab-section-index">02</div><div className="lab-section-head"><span>MISSION DOSSIERS</span><h2>用真实任务对象承载知识，而不是只堆工具名。</h2></div><div className="lab-mission-strip">{missionDossiers.map(m => <Link to="/missions" key={m.title}><img src={m.image} alt={m.cn}/><div><span>{m.phase}</span><h3>{m.cn}</h3><p>{m.desc}</p><footer>{m.tags.map(t => <em key={t}>{t}</em>)}</footer></div></Link>)}</div></section>;
+}
+
 function SimulationPreview() {
-  return <section className="lab-simulation-preview"><div className="lab-section-index">02</div><div className="lab-sim-copy"><span>SIMULATION PREVIEW</span><h2>从轨道、气动、控制到任务回放。</h2><p>网站不是只记录资料，而是把公开信息、工程假设、软件工具和复现实验连接起来，形成可追踪的仿真研究链路。</p><Link to="/reproduction-lab">VIEW SIMULATION ↗</Link></div><img src={labImages.orbit} alt="轨道仿真预览"/><div className="lab-sim-metrics"><div><span>MACH</span><strong>25.3</strong></div><div><span>AOA</span><strong>12.5°</strong></div><div><span>DENSITY</span><strong>0.012</strong></div></div></section>;
+  return <section className="lab-simulation-preview"><div className="lab-section-index">03</div><div className="lab-sim-copy"><span>SIMULATION PREVIEW</span><h2>从轨道、气动、控制到任务回放。</h2><p>网站不是只记录资料，而是把公开信息、工程假设、软件工具和复现实验连接起来，形成可追踪的仿真研究链路。</p><Link to="/reproduction-lab">VIEW SIMULATION ↗</Link></div><img src={labImages.orbit} alt="轨道仿真预览"/><div className="lab-sim-metrics"><div><span>MACH</span><strong>25.3</strong></div><div><span>AOA</span><strong>12.5°</strong></div><div><span>DENSITY</span><strong>0.012</strong></div></div></section>;
 }
 
 function DomainsAndMethods() {
-  return <section className="lab-section lab-domain-methods"><div className="lab-section-index">03</div><div className="lab-section-head"><span>KNOWLEDGE & METHODS</span><h2>日常维护时，内容进入固定结构，而不是随意堆文章。</h2></div><div className="lab-domain-grid">{researchDomains.map(d => <article key={d.name}><h3>{d.name}</h3><p>{d.text}</p></article>)}</div><div className="lab-method-grid">{methodCards.map(m => <article key={m.title}><span>{m.meta}</span><h3>{m.title}</h3><p>{m.text}</p></article>)}</div></section>;
+  return <section className="lab-section lab-domain-methods"><div className="lab-section-index">04</div><div className="lab-section-head"><span>KNOWLEDGE & METHODS</span><h2>日常维护时，内容进入固定结构，而不是随意堆文章。</h2></div><div className="lab-domain-grid">{researchDomains.map(d => <article key={d.name}><h3>{d.name}</h3><p>{d.text}</p></article>)}</div><div className="lab-method-grid">{methodCards.map(m => <article key={m.title}><span>{m.meta}</span><h3>{m.title}</h3><p>{m.text}</p></article>)}</div></section>;
 }
 
 function DataSources() {
@@ -44,5 +49,5 @@ function DataSources() {
 }
 
 export default function Home() {
-  return <Layout title="首页" description="航天仿真研究、工程软件、开源项目、公开数据与复现实验的个人研究控制台"><main className="lab-site"><SideNav/><TopNav/><Hero/><ConsoleBand/><Projects/><SimulationPreview/><DomainsAndMethods/><DataSources/></main></Layout>;
+  return <Layout title="首页" description="航天仿真研究、工程软件、开源项目、公开数据与复现实验的个人研究控制台"><main className="lab-site"><SideNav/><TopNav/><Hero/><ConsoleBand/><Projects/><MissionDossiers/><SimulationPreview/><DomainsAndMethods/><DataSources/></main></Layout>;
 }
