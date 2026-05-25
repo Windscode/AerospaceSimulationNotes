@@ -10,7 +10,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: { defaultLocale: 'zh-CN', locales: ['zh-CN'] },
-  presets: [[ 'classic', { docs: { sidebarPath: require.resolve('./sidebars.js'), routeBasePath: 'docs', editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/' }, blog: { showReadingTime: true, routeBasePath: 'blog', blogTitle: '研究日志', blogDescription: '每日研究动态、论文笔记、项目评估和复现实验记录', postsPerPage: 9, editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/', onUntruncatedBlogPosts: 'ignore' }, theme: { customCss: require.resolve('./src/css/custom.css') } }]],
+  presets: [[ 'classic', { docs: { sidebarPath: require.resolve('./sidebars.js'), routeBasePath: 'docs', editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/' }, blog: { showReadingTime: true, routeBasePath: 'blog', blogTitle: '研究日志', blogDescription: '每日研究动态、论文笔记、项目评估和复现实验记录', postsPerPage: 9, editUrl: 'https://github.com/Windscode/AerospaceSimulationNotes/edit/main/', onUntruncatedBlogPosts: 'ignore' }, theme: { customCss: [require.resolve('./src/css/custom.css'), require.resolve('./src/css/visual-fixes.css')] } }]],
   themeConfig: {
     image: 'img/visual/mission-control-atlas.svg',
     metadata: [{ name: 'keywords', content: '航天仿真, MATLAB, Simulink, Ansys STK, GMAT, Orekit, Tudat, Basilisk, CFD, GNC, 轨道力学, 复现实验, 开源航天项目, 航天知识库' }, { name: 'theme-color', content: '#050916' }],
