@@ -4,8 +4,15 @@ import Layout from '@theme/Layout';
 import { labImages, quickAccess, latestUpdates, missionStats, featuredProjects, researchDomains, methodCards } from '../data/aerolabContent';
 
 function SideNav() {
-  const items = ['HOME', 'DISCOVER', 'LIBRARY', 'PROJECTS', 'TOOLS', 'DATA'];
-  return <aside className="lab-side-nav">{items.map((item, i) => <a key={item} href={i === 0 ? '/' : `/${item.toLowerCase()}`} className={i === 0 ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item}</b></a>)}</aside>;
+  const items = [
+    { label: 'HOME', href: '/' },
+    { label: 'DISCOVER', href: '/intelligence' },
+    { label: 'LIBRARY', href: '/docs/intro' },
+    { label: 'PROJECTS', href: '/radar' },
+    { label: 'TOOLS', href: '/tools' },
+    { label: 'DATA', href: '/data' },
+  ];
+  return <aside className="lab-side-nav">{items.map((item, i) => <Link key={item.label} to={item.href} className={i === 0 ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
 }
 
 function TopNav() {
@@ -17,7 +24,7 @@ function Hero() {
 }
 
 function ConsoleBand() {
-  return <section className="lab-console-band"><div className="lab-update-card"><span>LATEST UPDATE</span><div><img src={labImages.data} alt="最新研究更新"/><article><em>2024-05-25</em><h3>重构航天仿真研究控制台视觉系统</h3><p>ENGINE · SIMULATION</p></article></div></div><div className="lab-digest"><span>DAILY RESEARCH DIGEST</span>{latestUpdates.map(item => <a key={item.title}><b>{item.title}</b><em>{item.date}</em></a>)}<Link to="/intelligence">VIEW ALL NEWS ↗</Link></div><div className="lab-quick"><span>QUICK ACCESS</span><div>{quickAccess.map(item => <Link key={item.title} to={item.href}><b>{item.title}</b><em>{item.cn}</em></Link>)}</div></div><div className="lab-orbit-widget"><div className="lab-orbit-rings"><i/><i/><i/><button>▶</button></div></div></section>;
+  return <section className="lab-console-band"><div className="lab-update-card"><span>LATEST UPDATE</span><div><img src={labImages.data} alt="最新研究更新"/><article><em>2024-05-25</em><h3>重构航天仿真研究控制台视觉系统</h3><p>ENGINE · SIMULATION</p></article></div></div><div className="lab-digest"><span>DAILY RESEARCH DIGEST</span>{latestUpdates.map(item => <div key={item.title}><b>{item.title}</b><em>{item.date}</em></div>)}<Link to="/intelligence">VIEW ALL NEWS ↗</Link></div><div className="lab-quick"><span>QUICK ACCESS</span><div>{quickAccess.map(item => <Link key={item.title} to={item.href}><b>{item.title}</b><em>{item.cn}</em></Link>)}</div></div><div className="lab-orbit-widget"><div className="lab-orbit-rings"><i/><i/><i/><button>▶</button></div></div></section>;
 }
 
 function Projects() {
