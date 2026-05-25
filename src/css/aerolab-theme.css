@@ -40,8 +40,8 @@ body:has(.lab-site) { background: #02060d; }
 .lab-update-card em, .lab-digest em { color: rgba(255,255,255,.48); font-style: normal; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
 .lab-update-card h3 { margin: 10px 0 12px; font-size: 16px; line-height: 1.5; color: #fff; }
 .lab-update-card p { margin: 0; color: rgba(126,229,255,.62); font-size: 10px; letter-spacing: .22em; }
-.lab-digest a { display: flex; justify-content: space-between; gap: 20px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.1); color: rgba(238,246,255,.76); font-size: 13px; }
-.lab-digest a:last-child { margin-top: 8px; justify-content: center; border: 1px solid rgba(255,255,255,.15); padding: 10px; color: #fff; font-size: 10px; letter-spacing: .15em; }
+.lab-digest > div, .lab-digest a { display: flex; justify-content: space-between; gap: 20px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.1); color: rgba(238,246,255,.76); font-size: 13px; }
+.lab-digest > a:last-child { margin-top: 8px; justify-content: center; border: 1px solid rgba(255,255,255,.15); padding: 10px; color: #fff; font-size: 10px; letter-spacing: .15em; }
 .lab-quick > div { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .lab-quick a { min-height: 64px; padding: 14px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.035); }
 .lab-quick b { display: block; color: #fff; font-size: 12px; }
