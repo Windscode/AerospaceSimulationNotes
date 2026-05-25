@@ -7,8 +7,8 @@ export const labImages = {
 
 export const quickAccess = [
   { title: 'Knowledge Base', cn: '知识库', href: '/docs/intro', code: 'KB' },
+  { title: 'Mission Dossiers', cn: '任务案例', href: '/missions', code: 'MS' },
   { title: 'Open Source Radar', cn: '开源项目', href: '/radar', code: 'OS' },
-  { title: 'Tools & Software', cn: '工程软件', href: '/tools', code: 'TS' },
   { title: 'Data Archive', cn: '公开数据', href: '/data', code: 'DA' },
 ];
 
@@ -32,6 +32,13 @@ export const featuredProjects = [
   { title: 'AeroSim CFD', cn: '再入与气动仿真', image: labImages.hero, tags: ['OpenVSP', 'SU2', 'OpenFOAM'], desc: '从公开外形、低阶气动模型到 CFD 可视化，建立可解释的气动数据路径。' },
   { title: 'Mission Control Data', cn: '任务控制与遥测', image: labImages.control, tags: ['Open MCT', 'Cesium', 'UE'], desc: '把仿真输出变成任务控制视角的遥测、轨迹、事件和结论回放。' },
   { title: 'Data Inference Lab', cn: '公开数据推断实验室', image: labImages.data, tags: ['TLE', 'News', 'Papers'], desc: '公开数据不足时，严格区分事实、假设、反推参数和不确定性。' },
+];
+
+export const missionDossiers = [
+  { title: 'Launch Vehicle Ascent', cn: '小型运载火箭入轨仿真', image: labImages.hero, phase: 'LAUNCH', tags: ['6DOF', 'Propulsion', 'Trajectory'], desc: '从质量估计、发动机参数、推力曲线、飞行程序、重力转弯、气动阻力到入轨误差，建立一条可复现实验链。', data: ['公开发射新闻', '发动机参数', '轨道目标', 'TLE 对照'], tools: ['RocketCEA', 'GMAT', 'Python', 'Cesium'] },
+  { title: 'LEO Constellation Coverage', cn: '低轨星座覆盖与通信窗口', image: labImages.orbit, phase: 'ORBIT', tags: ['Coverage', 'Access', 'TLE'], desc: '用轨道面、相位、覆盖率、通信窗口、载荷视场和任务效能，把 STK / Orekit / Cesium 的结果放在同一套验证逻辑里。', data: ['TLE', '目标区域', '载荷视场', '链路窗口'], tools: ['STK', 'Orekit', 'CesiumJS', 'Python'] },
+  { title: 'Lunar Descent Profile', cn: '月球软着陆任务剖面', image: labImages.control, phase: 'LUNAR', tags: ['GNC', 'Guidance', 'Landing'], desc: '围绕近月制动、动力下降、速度高度剖面、着陆点误差和推力余量，构建任务分析与控制律验证案例。', data: ['任务论文', '下降曲线', '引力模型', '终端约束'], tools: ['Basilisk', 'Simulink', 'GMAT', 'Python'] },
+  { title: 'Reentry Aero-Thermal Corridor', cn: '再入飞行器气动热环境', image: labImages.data, phase: 'REENTRY', tags: ['CFD', 'Aero', 'Heating'], desc: '从外形、速度高度走廊、攻角范围和低阶气动数据库出发，用 CFD 与经验方法建立再入热环境初始模型。', data: ['外形尺寸', '马赫数范围', '论文曲线', '经验公式'], tools: ['OpenVSP', 'SU2', 'OpenFOAM', 'ParaView'] },
 ];
 
 export const researchDomains = [
