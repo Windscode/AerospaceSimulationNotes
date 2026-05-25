@@ -1,9 +1,25 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Link from '@docusaurus/Link';
-import { intelligenceItems, visualAssets, lifecycle } from '../../data/siteContent';
+import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
+import { labImages, latestUpdates } from '../../data/aerolabContent';
+import { intelligenceItems, lifecycle } from '../../data/siteContent';
 
 export default function IntelligencePage(){
-  return <Layout title="研究情报" description="每日研究动态与资料收集入口"><main className="asn-page"><section className="asn-hero"><img className="asn-hero__image" src={useBaseUrl(visualAssets.intelligence)} alt="每日研究情报流视觉图"/><div className="container asn-hero__content"><div><div className="asn-badge">研究情报</div><h1>每日资料先进入情报流，再沉淀到知识库。</h1><p>这里用于记录当天发现的文章、论文、工具、项目、新闻、教程和复现实验线索。不要一开始就写成长文，先做轻量判断。</p><div className="asn-actions"><Link className="asn-button asn-button--primary" to="/docs/operations/daily-intake-template">查看每日收集模板</Link></div></div><div className="asn-command-panel"><h3>情报状态</h3><div className="asn-metric"><span>待评估</span><strong>Discovered</strong></div><div className="asn-metric"><span>正在阅读</span><strong>Reading</strong></div><div className="asn-metric"><span>准备复现</span><strong>Reproducing</strong></div></div></div></section><section className="asn-section container"><div className="asn-grid asn-grid--3">{intelligenceItems.map(item => <article className="asn-card" key={item.title}><div className="asn-kicker">{item.date} · {item.type}</div><h3>{item.title}</h3><p>{item.status}</p><div className="asn-tags">{item.tags.map(t => <span className="asn-tag" key={t}>{t}</span>)}</div></article>)}</div></section><section className="asn-section container"><div className="asn-visual-band"><img src={useBaseUrl(visualAssets.knowledge)} alt="知识图谱视觉图"/><div><h2>内容生命周期</h2><p>发现、评估、复现、验证、归档、废弃，每一步都要有状态和结论。</p></div></div><div className="asn-grid asn-grid--3" style={{marginTop: 22}}>{lifecycle.map(s => <article className="asn-card" key={s.step}><div className="asn-kicker">{s.step}</div><h3>{s.name}</h3><p>{s.desc}</p></article>)}</div></section></main></Layout>;
+  return <Layout title="研究情报" description="每日研究动态与资料收集入口">
+    <AeroLabFrame active="DISCOVER">
+      <LabPageHero eyebrow="RESEARCH INTELLIGENCE" title="DISCOVER STREAM" text="每天看到的新论文、新工具、新项目、新任务动态和公开数据先进入情报流。这里不是最终结论，而是研究线索、可信度判断和下一步动作。" image={labImages.data} stats={[{label:'INTAKE', value:'DAILY'}, {label:'STATUS', value:'TRIAGE'}, {label:'OUTPUT', value:'KNOWLEDGE'}]} />
+      <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>DAILY DIGEST</span><h2>今日研究简报</h2></div><p>轻量记录，后续再沉淀到知识库、工具矩阵、项目雷达或复现实验。</p></div>
+        <div className="lab-feature-list">{latestUpdates.map((item, i) => <article className="lab-feature-row" key={item.title}><img src={[labImages.hero, labImages.orbit, labImages.control, labImages.data][i % 4]} alt={item.title}/><div><span>{item.type}</span><h3>{item.title}</h3><p>进入情报流后需要标注来源、可信度、关联领域、是否可复现以及下一步动作。</p></div><strong>{item.date}</strong></article>)}</div>
+      </section>
+      <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>INTAKE QUEUE</span><h2>情报入口</h2></div><p>新资料先进入队列，不要直接污染稳定知识库。</p></div>
+        <div className="lab-table-grid">{intelligenceItems.map(item => <article key={item.title}><span>{item.date} · {item.type}</span><h3>{item.title}</h3><p>{item.status}</p><footer>{item.tags.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
+      </section>
+      <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>LIFECYCLE</span><h2>从发现到归档</h2></div><p>每天维护的关键不是多，而是每条资料都有状态、有判断、有去向。</p></div>
+        <div className="lab-table-grid">{lifecycle.map(s => <article key={s.step}><span>{s.step}</span><h3>{s.name}</h3><p>{s.desc}</p></article>)}</div>
+      </section>
+    </AeroLabFrame>
+  </Layout>;
 }
