@@ -33,5 +33,23 @@
 .lab-feature-row h3 { margin: 8px 0; color: #fff; font-size: 22px; }
 .lab-feature-row p { margin: 0; color: rgba(238,246,255,.64); line-height: 1.65; }
 .lab-feature-row strong { justify-self: end; width: 50px; height: 50px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.2); color: #fff; font-size: 20px; }
-@media (max-width: 1100px) { .lab-sub-hero, .lab-page-section { margin-left: 0; } .lab-sub-hero-content { grid-template-columns: 1fr; padding: 100px 24px 42px; } .lab-sub-hero-content aside { display: none; } .lab-table-grid { grid-template-columns: repeat(2, 1fr); } .lab-feature-row { grid-template-columns: 1fr; } .lab-feature-row img { width: 100%; height: 190px; } }
-@media (max-width: 720px) { .lab-sub-hero-content h1 { font-size: 3.1rem; } .lab-page-section { padding: 32px 24px 40px; } .lab-table-grid { grid-template-columns: 1fr; } .lab-page-head { display: block; } .lab-filter-row input { min-width: 100%; } }
+.lab-mission-strip { margin-left: 92px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.lab-mission-strip a { position: relative; min-height: 360px; overflow: hidden; border: 1px solid rgba(255,255,255,.13); background: #07111f; }
+.lab-mission-strip img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .78; transition: transform .7s ease; }
+.lab-mission-strip a:hover img { transform: scale(1.07); }
+.lab-mission-strip a::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(2,6,13,.96), rgba(2,6,13,.3) 64%, rgba(2,6,13,.06)); }
+.lab-mission-strip a > div { position: absolute; z-index: 2; left: 18px; right: 18px; bottom: 18px; }
+.lab-mission-strip span, .lab-mission-grid span { color: rgba(126,229,255,.78); font-size: 10px; letter-spacing: .22em; font-weight: 900; }
+.lab-mission-strip h3, .lab-mission-grid h3 { color: #fff; margin: 10px 0 8px; font-size: 22px; }
+.lab-mission-strip p, .lab-mission-grid p { color: rgba(238,246,255,.66); line-height: 1.65; font-size: 13px; }
+.lab-mission-strip footer, .lab-mission-grid footer { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.lab-mission-strip em, .lab-mission-grid em { font-style: normal; color: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.055); padding: 5px 8px; font-size: 10px; }
+.lab-mission-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 18px; }
+.lab-mission-grid article { position: relative; min-height: 360px; overflow: hidden; border: 1px solid rgba(255,255,255,.13); background: #07111f; }
+.lab-mission-grid article.featured { grid-row: span 2; min-height: 738px; }
+.lab-mission-grid img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .8; }
+.lab-mission-grid article::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(2,6,13,.96), rgba(2,6,13,.28) 62%, rgba(2,6,13,.04)); }
+.lab-mission-grid article > div { position: absolute; z-index: 2; left: 22px; right: 22px; bottom: 22px; }
+.lab-mission-grid h4 { color: rgba(255,255,255,.48); margin: 0 0 12px; font-size: 12px; letter-spacing: .12em; font-weight: 700; }
+@media (max-width: 1100px) { .lab-sub-hero, .lab-page-section { margin-left: 0; } .lab-sub-hero-content { grid-template-columns: 1fr; padding: 100px 24px 42px; } .lab-sub-hero-content aside { display: none; } .lab-table-grid { grid-template-columns: repeat(2, 1fr); } .lab-feature-row { grid-template-columns: 1fr; } .lab-feature-row img { width: 100%; height: 190px; } .lab-mission-strip, .lab-mission-grid { margin-left: 0; grid-template-columns: repeat(2, 1fr); } .lab-mission-grid article.featured { grid-row: auto; min-height: 420px; } }
+@media (max-width: 720px) { .lab-sub-hero-content h1 { font-size: 3.1rem; } .lab-page-section { padding: 32px 24px 40px; } .lab-table-grid { grid-template-columns: 1fr; } .lab-page-head { display: block; } .lab-filter-row input { min-width: 100%; } .lab-mission-strip, .lab-mission-grid { grid-template-columns: 1fr; } }
