@@ -1,16 +1,33 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
-import { labImages, methodCards } from '../../data/aerolabContent';
+import { labImages, methodCards, missionDossiers } from '../../data/aerolabContent';
 import { validationGates, lifecycle } from '../../data/siteContent';
+
+const labVisuals = [
+  { title: 'Reproducible Environment', cn: '可重建环境', image: labImages.control, tag: 'ENVIRONMENT', desc: '记录操作系统、依赖、版本、数据下载来源和运行命令，避免实验只停留在截图。' },
+  { title: 'Mission Replay', cn: '任务回放', image: labImages.orbit, tag: 'REPLAY', desc: '把轨道、姿态、遥测、事件和图像输出组织成可复查的任务回放。' },
+  { title: 'Evidence-linked Conclusion', cn: '证据链结论', image: labImages.data, tag: 'EVIDENCE', desc: '结论必须能追溯到输入、假设、工具、误差和对照基准。' },
+];
 
 export default function LabPage(){
   return <Layout title="复现实验室" description="航天仿真复现实验、验证和归档流程">
-    <AeroLabFrame active="DATA">
+    <AeroLabFrame active="LAB">
       <LabPageHero eyebrow="REPRODUCTION LAB" title="VALIDATION LAB" text="能重新跑通，才算进入知识库。实验室负责把工具构建、论文复现、项目运行、基准对比、参数假设和误差分析沉淀成证据链。" image={labImages.control} stats={[{label:'ENVIRONMENT', value:'REBUILDABLE'}, {label:'COMMANDS', value:'TRACEABLE'}, {label:'RESULTS', value:'COMPARABLE'}]} />
       <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>LAB CONTROL</span><h2>复现实验室需要像控制台，不像说明文档。</h2></div><p>先让用户看到实验场景，再进入门禁、证据链、参数推断和任务案例。</p></div>
+        <div className="lab-cinema-grid">{labVisuals.map((item, i) => <article className={`lab-cinema-card ${i===0?'wide':''}`} key={item.title}><img src={item.image} alt={item.cn}/><div><span>{item.tag}</span><h3>{item.cn}</h3><p>{item.desc}</p><footer><em>{item.title}</em></footer></div></article>)}</div>
+      </section>
+      <section className="lab-page-section">
         <div className="lab-page-head"><div><span>VALIDATION GATES</span><h2>复现实验要过六个门禁。</h2></div><p>没有来源、输入、输出、误差和适用范围，就不能成为稳定知识。</p></div>
-        <div className="lab-table-grid">{validationGates.map(c => <article key={c.title}><span>CHECK</span><h3>{c.title}</h3><p>{c.desc}</p></article>)}</div>
+        <div className="lab-status-grid">{validationGates.map((c, i) => <article key={c.title}><span>GATE {String(i+1).padStart(2,'0')}</span><strong>{c.title}</strong><p>{c.desc}</p></article>)}</div>
+      </section>
+      <section className="lab-page-section">
+        <div className="lab-overlay-panel"><img src={labImages.hero} alt="任务复现实验"/><div><span>MISSION-BASED VALIDATION</span><h3>实验应该围绕任务对象，而不是围绕一堆孤立资料。</h3><p>后续每个案例都会把工具链、公开数据、反推参数、运行脚本和可视化结果连接起来，形成真正可维护的航天仿真研究资产。</p></div></div>
+      </section>
+      <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>MISSION CASES</span><h2>可复现实验候选任务</h2></div><p>这些任务案例后续会逐步扩展为完整实验记录。</p></div>
+        <div className="lab-table-grid">{missionDossiers.map(m => <article key={m.title}><span>{m.phase}</span><h3>{m.cn}</h3><p>{m.desc}</p><footer>{m.tools.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>PARAMETER INFERENCE</span><h2>公开数据不足时，必须诚实标注假设。</h2></div><p>把公开事实、工程估计、低阶模型和猜测分开，是个人研究站可信度的底线。</p></div>
