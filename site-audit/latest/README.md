@@ -1,7 +1,7 @@
 # Deployed site screenshots
 
 Base URL: https://windscode.github.io/AerospaceSimulationNotes/
-Captured: 2026-05-26T09:42:57.192Z
+Captured: 2026-05-26T09:48:02.849Z
 
 | Viewport | Page | Status | Height | Screenshot | URL |
 | --- | --- | --- | --- | --- | --- |
@@ -26,4 +26,4 @@ Captured: 2026-05-26T09:42:57.192Z
 | mobile | data | 200 | 4691 | [data.png](./mobile/data.png) | https://windscode.github.io/AerospaceSimulationNotes/data/ |
 | mobile | log | 200 | 7125 | [log.png](./mobile/log.png) | https://windscode.github.io/AerospaceSimulationNotes/log/ |
 | mobile | blog-archive | 200 | 844 | [blog-archive.png](./mobile/blog-archive.png) | https://windscode.github.io/AerospaceSimulationNotes/blog/ |
-| mobile | knowledge-intro | 200 | 1171 | [knowledge-intro.png](./mobile/knowledge-intro.png) | https://windscode.github.io/AerospaceSimulationNotes/docs/intro/ |
+| mobile | knowledge-intro | 200 | 1247 | [knowledge-intro.png](./mobile/knowledge-intro.png) | https://windscode.github.io/AerospaceSimulationNotes/docs/intro/ |
