@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import { labImages } from '../data/aerolabContent';
 
 export function LabTopNav() {
-  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>AEROSIM</strong><em>RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">EXPLORE</Link><Link to="/knowledge">KNOWLEDGE</Link><Link to="/missions">MISSIONS</Link><Link to="/radar">PROJECTS</Link><Link to="/tools">TOOLS</Link><Link to="/data">DATA</Link><Link to="/reproduction-lab">LAB</Link></nav><Link className="lab-log-btn" to="/blog">MISSION LOG ↗</Link></header>;
+  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>AEROSIM</strong><em>RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">EXPLORE</Link><Link to="/knowledge">KNOWLEDGE</Link><Link to="/missions">MISSIONS</Link><Link to="/radar">PROJECTS</Link><Link to="/tools">TOOLS</Link><Link to="/data">DATA</Link><Link to="/reproduction-lab">LAB</Link></nav><Link className="lab-log-btn" to="/log">MISSION LOG ↗</Link></header>;
 }
 
 export function LabSideNav({ active = 'HOME' }) {
