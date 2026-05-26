@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
-import { labImages } from '../../data/aerolabContent';
+import { labImages, featuredProjects } from '../../data/aerolabContent';
 import { tools, toolCategories, toolLanes } from '../../data/siteContent';
 
 export default function ToolsPage() {
@@ -12,8 +12,14 @@ export default function ToolsPage() {
     <AeroLabFrame active="TOOLS">
       <LabPageHero eyebrow="ENGINEERING TOOLCHAIN" title="TOOLS & SOFTWARE" text="把商业软件、开源库、数据工具和可视化平台放入同一条任务链路：任务设计、建模、传播、控制、气动、验证和回放。" image={labImages.control} stats={[{label:'TOOL ITEMS', value:String(tools.length)}, {label:'CATEGORIES', value:String(toolCategories.length - 1)}, {label:'PRIORITY', value:'A / B'}]} />
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>WORKFLOW LANES</span><h2>先看工具在任务阶段中的位置。</h2></div><p>一个工具是否值得学习，不只看名气，而看它在仿真链路里的输入、输出、替代关系和验证价值。</p></div>
-        <div className="lab-table-grid">{toolLanes.map(lane => <article key={lane.title}><span>LANE</span><h3>{lane.title}</h3><p>{lane.desc}</p><footer>{lane.tools.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
+        <div className="lab-page-head"><div><span>VISUAL TOOLCHAINS</span><h2>先把软件栈设计成任务控制台，而不是表格。</h2></div><p>重点展示工具链如何参与任务，而不是单纯罗列软件名字。</p></div>
+        <div className="lab-cinema-grid">
+          {featuredProjects.map((item, i) => <article className={`lab-cinema-card ${i===0?'wide':''}`} key={item.title}><img src={item.image} alt={item.cn}/><div><span>{item.title}</span><h3>{item.cn}</h3><p>{item.desc}</p><footer>{item.tags.map(tag => <em key={tag}>{tag}</em>)}</footer></div></article>)}
+        </div>
+      </section>
+      <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>WORKFLOW LANES</span><h2>工具在任务阶段中的位置。</h2></div><p>一个工具是否值得学习，不只看名气，而看它在仿真链路里的输入、输出、替代关系和验证价值。</p></div>
+        <div className="lab-status-grid">{toolLanes.map((lane, i) => <article key={lane.title}><span>{String(i+1).padStart(2,'0')}</span><strong>{lane.title}</strong><p>{lane.desc}</p></article>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>TOOL MATRIX</span><h2>工程软件矩阵</h2></div><p>后续每天维护时，只新增条目和判断，不重新改页面结构。</p></div>
