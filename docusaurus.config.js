@@ -16,7 +16,8 @@ const config = {
       require.resolve('./src/css/custom.css'),
       require.resolve('./src/css/visual-fixes.css'),
       require.resolve('./src/css/aerolab-theme.css'),
-      require.resolve('./src/css/aerolab-sections.css')
+      require.resolve('./src/css/aerolab-sections.css'),
+      require.resolve('./src/css/aerolab-polish.css')
     ] }
   }]],
   themeConfig: {
@@ -26,9 +27,10 @@ const config = {
     navbar: { title: '航天仿真研究库', logo: { alt: '航天仿真研究库', src: 'img/brand/orbital-mark.svg' }, hideOnScroll: true, items: [
       { to: '/', label: '首页', position: 'left' },
       { to: '/intelligence', label: '研究情报', position: 'left' },
+      { to: '/missions', label: '任务案例', position: 'left' },
       { to: '/tools', label: '工程软件', position: 'left' },
       { to: '/radar', label: '项目雷达', position: 'left' },
-      { to: '/reproduction-lab', label: '复现实验室', position: 'left' },
+      { to: '/data', label: '数据方法', position: 'left' },
       { type: 'docSidebar', sidebarId: 'mainSidebar', position: 'left', label: '知识库' },
       { to: '/blog', label: '研究日志', position: 'right' }
     ] },
