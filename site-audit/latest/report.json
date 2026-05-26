@@ -1,0 +1,156 @@
+[
+  {
+    "folder": "desktop",
+    "name": "home",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/",
+    "status": 200,
+    "file": "site-screenshots/desktop/home.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "intelligence",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/intelligence/",
+    "status": 200,
+    "file": "site-screenshots/desktop/intelligence.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "knowledge",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/knowledge/",
+    "status": 200,
+    "file": "site-screenshots/desktop/knowledge.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "missions",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/missions/",
+    "status": 200,
+    "file": "site-screenshots/desktop/missions.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "tools",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/tools/",
+    "status": 200,
+    "file": "site-screenshots/desktop/tools.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "radar",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/radar/",
+    "status": 200,
+    "file": "site-screenshots/desktop/radar.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "reproduction-lab",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/reproduction-lab/",
+    "status": 200,
+    "file": "site-screenshots/desktop/reproduction-lab.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "data",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/data/",
+    "status": 200,
+    "file": "site-screenshots/desktop/data.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "log",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/log/",
+    "status": 200,
+    "file": "site-screenshots/desktop/log.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "blog-archive",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/blog/",
+    "status": 200,
+    "file": "site-screenshots/desktop/blog-archive.png"
+  },
+  {
+    "folder": "desktop",
+    "name": "knowledge-intro",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/docs/intro/",
+    "status": 200,
+    "file": "site-screenshots/desktop/knowledge-intro.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "home",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/",
+    "status": 200,
+    "file": "site-screenshots/mobile/home.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "intelligence",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/intelligence/",
+    "status": 200,
+    "file": "site-screenshots/mobile/intelligence.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "knowledge",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/knowledge/",
+    "status": 200,
+    "file": "site-screenshots/mobile/knowledge.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "missions",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/missions/",
+    "status": 200,
+    "file": "site-screenshots/mobile/missions.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "tools",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/tools/",
+    "status": 200,
+    "file": "site-screenshots/mobile/tools.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "radar",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/radar/",
+    "status": 200,
+    "file": "site-screenshots/mobile/radar.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "reproduction-lab",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/reproduction-lab/",
+    "status": 200,
+    "file": "site-screenshots/mobile/reproduction-lab.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "data",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/data/",
+    "status": 200,
+    "file": "site-screenshots/mobile/data.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "log",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/log/",
+    "status": 200,
+    "file": "site-screenshots/mobile/log.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "blog-archive",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/blog/",
+    "status": 200,
+    "file": "site-screenshots/mobile/blog-archive.png"
+  },
+  {
+    "folder": "mobile",
+    "name": "knowledge-intro",
+    "url": "https://windscode.github.io/AerospaceSimulationNotes/docs/intro/",
+    "status": 200,
+    "file": "site-screenshots/mobile/knowledge-intro.png"
+  }
+]
