@@ -18,7 +18,8 @@ const config = {
       require.resolve('./src/css/aerolab-theme.css'),
       require.resolve('./src/css/aerolab-sections.css'),
       require.resolve('./src/css/aerolab-polish.css'),
-      require.resolve('./src/css/aerolab-cn.css')
+      require.resolve('./src/css/aerolab-cn.css'),
+      require.resolve('./src/css/aerolab-audit-fixes.css')
     ] }
   }]],
   themeConfig: {
