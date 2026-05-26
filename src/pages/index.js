@@ -1,24 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import AeroLabFrame from '../components/AeroLabFrame';
 import { labImages, quickAccess, latestUpdates, missionStats, featuredProjects, researchDomains, methodCards, missionDossiers } from '../data/aerolabContent';
-
-function SideNav() {
-  const items = [
-    { label: 'HOME', href: '/' },
-    { label: 'DISCOVER', href: '/intelligence' },
-    { label: 'MISSIONS', href: '/missions' },
-    { label: 'PROJECTS', href: '/radar' },
-    { label: 'TOOLS', href: '/tools' },
-    { label: 'DATA', href: '/data' },
-    { label: 'LAB', href: '/reproduction-lab' },
-  ];
-  return <aside className="lab-side-nav lab-side-nav--seven">{items.map((item, i) => <Link key={item.label} to={item.href} className={i === 0 ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
-}
-
-function TopNav() {
-  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>AEROSIM</strong><em>RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">EXPLORE</Link><Link to="/docs/intro">KNOWLEDGE</Link><Link to="/missions">MISSIONS</Link><Link to="/radar">PROJECTS</Link><Link to="/tools">TOOLS</Link><Link to="/data">DATA</Link></nav><Link className="lab-log-btn" to="/blog">MISSION LOG ↗</Link></header>;
-}
 
 function Hero() {
   return <section className="lab-hero"><img className="lab-hero-bg" src={labImages.hero} alt="航天仿真研究主视觉"/><div className="lab-hero-shade"/><div className="lab-hero-content"><div className="lab-hero-copy"><div className="lab-kicker">AEROSPACE SIMULATION RESEARCH</div><h1>SIMULATE.<br/>ANALYZE.<br/>EXPLORE.</h1><p>探索天工程的边界，通过仿真、数据与开源知识推动个人航天仿真研究。</p><div className="lab-hero-actions"><Link to="/intelligence">START EXPLORING ↗</Link><span>SCROLL TO DISCOVER</span></div></div><div className="lab-status-panel">{missionStats.map(item => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}<svg viewBox="0 0 220 44" aria-hidden="true"><path d="M2 28 C45 5, 80 42, 115 24 S180 16, 218 6"/><circle cx="55" cy="19" r="4"/><circle cx="118" cy="25" r="4"/><circle cx="178" cy="13" r="4"/></svg></div></div></section>;
@@ -49,5 +33,5 @@ function DataSources() {
 }
 
 export default function Home() {
-  return <Layout title="首页" description="航天仿真研究、工程软件、开源项目、公开数据与复现实验的个人研究控制台"><main className="lab-site"><SideNav/><TopNav/><Hero/><ConsoleBand/><Projects/><MissionDossiers/><SimulationPreview/><DomainsAndMethods/><DataSources/></main></Layout>;
+  return <Layout title="首页" description="航天仿真研究、工程软件、开源项目、公开数据与复现实验的个人研究控制台"><AeroLabFrame active="HOME"><Hero/><ConsoleBand/><Projects/><MissionDossiers/><SimulationPreview/><DomainsAndMethods/><DataSources/></AeroLabFrame></Layout>;
 }
