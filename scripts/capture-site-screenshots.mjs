@@ -12,6 +12,8 @@ const pages = [
   ['radar', 'radar/'],
   ['reproduction-lab', 'reproduction-lab/'],
   ['data', 'data/'],
+  ['log', 'log/'],
+  ['blog-archive', 'blog/'],
   ['knowledge-intro', 'docs/intro/'],
 ];
 const viewports = [
