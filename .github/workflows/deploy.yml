@@ -3,6 +3,8 @@ name: Deploy Docusaurus site to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'site-audit/**'
   workflow_dispatch:
 
 permissions:
