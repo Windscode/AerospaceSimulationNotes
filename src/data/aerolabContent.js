@@ -1,5 +1,6 @@
 export const labImages = {
-  hero: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/hero-space-bg-YHvkmpNxSVxNCCu23TdtPX.webp',
+  hero: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/orbital-mechanics-Z4xfALucPGCDkxdQjgUArX.webp',
+  space: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/hero-space-bg-YHvkmpNxSVxNCCu23TdtPX.webp',
   orbit: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/orbital-mechanics-Z4xfALucPGCDkxdQjgUArX.webp',
   control: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/mission-control-aNWcsXgkGpMWjmbyo7cWWr.webp',
   data: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663685306936/Y7FZqsoqWAdBfk4uFUGt86/simulation-data-4VYVML2wbibR3BeBfBkwQh.webp',
@@ -29,13 +30,13 @@ export const missionStats = [
 
 export const featuredProjects = [
   { title: 'Orbital Dynamics Stack', cn: '轨道动力学工具链', image: labImages.orbit, tags: ['GMAT', 'Orekit', 'Tudat'], desc: '用商业工具和开源库交叉验证轨道传播、转移窗口、事件探测与覆盖分析。' },
-  { title: 'AeroSim CFD', cn: '再入与气动仿真', image: labImages.hero, tags: ['OpenVSP', 'SU2', 'OpenFOAM'], desc: '从公开外形、低阶气动模型到 CFD 可视化，建立可解释的气动数据路径。' },
+  { title: 'AeroSim CFD', cn: '再入与气动仿真', image: labImages.space, tags: ['OpenVSP', 'SU2', 'OpenFOAM'], desc: '从公开外形、低阶气动模型到 CFD 可视化，建立可解释的气动数据路径。' },
   { title: 'Mission Control Data', cn: '任务控制与遥测', image: labImages.control, tags: ['Open MCT', 'Cesium', 'UE'], desc: '把仿真输出变成任务控制视角的遥测、轨迹、事件和结论回放。' },
   { title: 'Data Inference Lab', cn: '公开数据推断实验室', image: labImages.data, tags: ['TLE', '新闻线索', '论文'], desc: '公开数据不足时，严格区分事实、假设、反推参数和不确定性。' },
 ];
 
 export const missionDossiers = [
-  { title: 'Launch Vehicle Ascent', cn: '小型运载火箭入轨仿真', image: labImages.hero, phase: '发射入轨', tags: ['六自由度', '推进', '轨迹'], desc: '从质量估计、发动机参数、推力曲线、飞行程序、重力转弯、气动阻力到入轨误差，建立一条可复现实验链。', data: ['公开发射新闻', '发动机参数', '轨道目标', 'TLE 对照'], tools: ['RocketCEA', 'GMAT', 'Python', 'Cesium'] },
+  { title: 'Launch Vehicle Ascent', cn: '小型运载火箭入轨仿真', image: labImages.space, phase: '发射入轨', tags: ['六自由度', '推进', '轨迹'], desc: '从质量估计、发动机参数、推力曲线、飞行程序、重力转弯、气动阻力到入轨误差，建立一条可复现实验链。', data: ['公开发射新闻', '发动机参数', '轨道目标', 'TLE 对照'], tools: ['RocketCEA', 'GMAT', 'Python', 'Cesium'] },
   { title: 'LEO Constellation Coverage', cn: '低轨星座覆盖与通信窗口', image: labImages.orbit, phase: '轨道覆盖', tags: ['覆盖分析', '访问窗口', 'TLE'], desc: '用轨道面、相位、覆盖率、通信窗口、载荷视场和任务效能，把 STK / Orekit / Cesium 的结果放在同一套验证逻辑里。', data: ['TLE', '目标区域', '载荷视场', '链路窗口'], tools: ['STK', 'Orekit', 'CesiumJS', 'Python'] },
   { title: 'Lunar Descent Profile', cn: '月球软着陆任务剖面', image: labImages.control, phase: '月面着陆', tags: ['GNC', '制导', '着陆'], desc: '围绕近月制动、动力下降、速度高度剖面、着陆点误差和推力余量，构建任务分析与控制律验证案例。', data: ['任务论文', '下降曲线', '引力模型', '终端约束'], tools: ['Basilisk', 'Simulink', 'GMAT', 'Python'] },
   { title: 'Reentry Aero-Thermal Corridor', cn: '再入飞行器气动热环境', image: labImages.data, phase: '再入热环境', tags: ['CFD', '气动', '热流'], desc: '从外形、速度高度走廊、攻角范围和低阶气动数据库出发，用 CFD 与经验方法建立再入热环境初始模型。', data: ['外形尺寸', '马赫数范围', '论文曲线', '经验公式'], tools: ['OpenVSP', 'SU2', 'OpenFOAM', 'ParaView'] },
