@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
-import { labImages, featuredProjects } from '../../data/aerolabContent';
+import { labImages, featuredProjects, missionDossiers } from '../../data/aerolabContent';
 import { projects } from '../../data/siteContent';
 
 const domains = ['全部', ...Array.from(new Set(projects.map(p => p.domain)))];
@@ -14,8 +14,17 @@ export default function RadarPage() {
     <AeroLabFrame active="PROJECTS">
       <LabPageHero eyebrow="OPEN SOURCE RADAR" title="PROJECT RADAR" text="不再把 GitHub 仓库当收藏夹。项目必须被放进任务链路，判断成熟度、许可证、复现难度、工程价值和下一步动作。" image={labImages.orbit} stats={[{label:'A-RATED', value:String(projects.filter(p=>p.rating==='A').length)}, {label:'DOMAINS', value:String(domains.length - 1)}, {label:'STATUS', value:'TRIAGE'}]} />
       <section className="lab-page-section">
+        <div className="lab-page-head"><div><span>SCOUTING RADAR</span><h2>项目雷达应该像一套任务侦察界面。</h2></div><p>先用高质量视觉和任务适配解释为什么跟踪这些项目，再把详细矩阵留给后续维护。</p></div>
+        <div className="lab-cinema-grid">
+          {[...featuredProjects.slice(0,2), ...missionDossiers.slice(0,2)].map((p, i) => <article className={`lab-cinema-card ${i===0?'wide':''}`} key={p.title}><img src={p.image} alt={p.cn}/><div><span>{p.title}</span><h3>{p.cn}</h3><p>{p.desc}</p><footer>{(p.tags || []).map(t => <em key={t}>{t}</em>)}</footer></div></article>)}
+        </div>
+      </section>
+      <section className="lab-page-section">
         <div className="lab-page-head"><div><span>MISSION FIT</span><h2>项目先服务任务，再进入复现。</h2></div><p>开源项目只有能支撑轨道传播、GNC 闭环、CFD 建库、遥测显示或任务回放，才值得长期跟踪。</p></div>
-        <div className="lab-feature-list">{featuredProjects.map((p, i) => <article className="lab-feature-row" key={p.title}><img src={p.image} alt={p.title}/><div><span>{p.title}</span><h3>{p.cn}</h3><p>{p.desc}</p></div><strong>{String(i + 1).padStart(2,'0')}</strong></article>)}</div>
+        <div className="lab-status-grid">{missionDossiers.map((m, i) => <article key={m.title}><span>FIT {String(i+1).padStart(2,'0')}</span><strong>{m.phase}</strong><p>{m.cn}</p><p>{m.tools.join(' / ')}</p></article>)}</div>
+      </section>
+      <section className="lab-page-section">
+        <div className="lab-overlay-panel"><img src={labImages.data} alt="开源项目评估"/><div><span>EVALUATION MATRIX</span><h3>不是收藏项目，而是评估它能否进入你的研究链路。</h3><p>每个开源项目都要回答：能解决什么仿真问题，是否能复现，许可证是否清楚，是否值得作为工具链基准，是否能支撑某个任务案例。</p></div></div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>PROJECT MATRIX</span><h2>开源项目评估矩阵</h2></div><p>这里不追求条目数量，先把项目用途、复现状态和工程价值写清楚。</p></div>
