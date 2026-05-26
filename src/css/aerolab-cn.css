@@ -1,0 +1,22 @@
+.lab-brand strong { font-size: 17px; letter-spacing: .08em; }
+.lab-brand em { letter-spacing: .22em; }
+.lab-top-nav nav a { font-size: 12px; letter-spacing: .08em; }
+.lab-log-btn { font-size: 12px; letter-spacing: .08em; }
+.lab-side-nav--eight a { font-size: 10px; letter-spacing: .08em; }
+.lab-side-nav a b { transform: none; font-weight: 850; }
+.lab-hero-copy h1 { letter-spacing: -.04em; font-weight: 520; line-height: 1.05; }
+.lab-hero-copy p { font-size: 16px; letter-spacing: .01em; max-width: 680px; }
+.lab-hero-actions a, .lab-hero-actions span { letter-spacing: .04em; }
+.lab-kicker { letter-spacing: .28em; }
+.lab-sub-hero-content h1 { letter-spacing: -.05em; font-weight: 520; line-height: 1.05; }
+.lab-sub-hero-content p { font-size: 16px; }
+.lab-sub-hero-content span { letter-spacing: .12em; }
+.lab-page-head span, .lab-console-band span, .lab-section-head span, .lab-sim-copy span, .lab-data-strip span { letter-spacing: .08em; }
+.lab-page-head h2, .lab-section-head h2, .lab-sim-copy h2, .lab-overlay-panel h3 { letter-spacing: -.04em; font-weight: 560; }
+.lab-cinema-card h3, .lab-project-grid h3, .lab-mission-grid h3, .lab-mission-strip h3, .lab-feature-row h3, .lab-table-grid article h3 { letter-spacing: -.02em; }
+.lab-status-grid strong { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 22px; line-height: 1.25; }
+.lab-status-grid span, .lab-table-grid article span, .lab-cinema-card span, .lab-mission-strip span, .lab-mission-grid span { letter-spacing: .08em; }
+.lab-filter-row input, .lab-filter-row button { font-size: 13px; }
+.lab-source-row { font-size: 24px; letter-spacing: .08em; }
+@media (max-width: 1100px) { .lab-top-nav nav { display: none; } .lab-brand strong { font-size: 15px; } }
+@media (max-width: 720px) { .lab-hero-copy h1 { font-size: 3.4rem; } .lab-sub-hero-content h1 { font-size: 3.2rem; } .lab-brand strong { font-size: 14px; letter-spacing: .04em; } .lab-log-btn { min-width: 108px; } }
