@@ -40,31 +40,6 @@ async function loadWithRetry(page, url) {
   throw lastError;
 }
 
-async function captureSegments(page, folder, name, width, height) {
-  const metrics = await page.evaluate(() => ({
-    scrollHeight: document.documentElement.scrollHeight,
-    clientHeight: document.documentElement.clientHeight,
-  }));
-
-  const firstFile = path.join('site-screenshots', folder, `${name}__first-screen.png`);
-  await page.screenshot({ path: firstFile, fullPage: false });
-
-  const segments = [];
-  const segmentStep = Math.max(1, height - 120);
-  const maxSegments = Math.ceil(metrics.scrollHeight / segmentStep);
-  for (let index = 0; index < maxSegments; index += 1) {
-    const y = Math.min(index * segmentStep, Math.max(0, metrics.scrollHeight - height));
-    await page.evaluate(scrollY => window.scrollTo(0, scrollY), y);
-    await page.waitForTimeout(250);
-    const file = path.join('site-screenshots', folder, `${name}__segment-${String(index + 1).padStart(2, '0')}.png`);
-    await page.screenshot({ path: file, fullPage: false });
-    segments.push({ index: index + 1, y, file });
-    if (y >= metrics.scrollHeight - height) break;
-  }
-  await page.evaluate(() => window.scrollTo(0, 0));
-  return { scrollHeight: metrics.scrollHeight, clientHeight: metrics.clientHeight, firstFile, segments };
-}
-
 const browser = await chromium.launch();
 const report = [];
 
@@ -74,12 +49,15 @@ for (const [folder, width, height, scale] of viewports) {
   for (const [name, route] of pages) {
     const url = new URL(route, baseUrl).toString();
     const page = await context.newPage();
-    const fullFile = path.join('site-screenshots', folder, `${name}__full.png`);
+    const file = path.join('site-screenshots', folder, `${name}.png`);
     try {
       const status = await loadWithRetry(page, url);
-      const segmentInfo = await captureSegments(page, folder, name, width, height);
-      await page.screenshot({ path: fullFile, fullPage: true });
-      report.push({ folder, name, url, status, fullFile, ...segmentInfo });
+      const metrics = await page.evaluate(() => ({
+        scrollHeight: document.documentElement.scrollHeight,
+        clientHeight: document.documentElement.clientHeight,
+      }));
+      await page.screenshot({ path: file, fullPage: true });
+      report.push({ folder, name, url, status, file, scrollHeight: metrics.scrollHeight, clientHeight: metrics.clientHeight });
       console.log(`captured ${folder}/${name}`);
     } catch (error) {
       const errorFile = path.join('site-screenshots', folder, `${name}.error.txt`);
@@ -101,24 +79,8 @@ const lines = [
   `Base URL: ${baseUrl}`,
   `Captured: ${new Date().toISOString()}`,
   '',
-  '## Gallery',
-  '',
+  '| Viewport | Page | Status | Height | Screenshot | URL |',
+  '| --- | --- | --- | --- | --- | --- |',
+  ...report.map(item => `| ${item.folder} | ${item.name} | ${item.error ? `ERROR: ${item.error.replace(/\|/g, '/')}` : item.status} | ${item.scrollHeight || ''} | ${item.file ? `[${path.basename(item.file)}](${item.file.replace('site-screenshots/', './')})` : ''} | ${item.url} |`),
 ];
-for (const item of report) {
-  lines.push(`### ${item.folder} / ${item.name}`);
-  lines.push('');
-  if (item.error) {
-    lines.push(`ERROR: ${item.error}`);
-  } else {
-    lines.push(`- URL: ${item.url}`);
-    lines.push(`- Full height: ${item.scrollHeight}px`);
-    lines.push(`- Full page: [${path.basename(item.fullFile)}](${item.fullFile.replace('site-screenshots/', './')})`);
-    lines.push(`- First screen: [${path.basename(item.firstFile)}](${item.firstFile.replace('site-screenshots/', './')})`);
-    lines.push('- Segments:');
-    for (const segment of item.segments) {
-      lines.push(`  - ${segment.index}: y=${segment.y}px — [${path.basename(segment.file)}](${segment.file.replace('site-screenshots/', './')})`);
-    }
-  }
-  lines.push('');
-}
 fs.writeFileSync('site-screenshots/README.md', lines.join('\n'));
