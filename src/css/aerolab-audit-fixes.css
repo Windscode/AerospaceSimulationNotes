@@ -1,0 +1,70 @@
+body:has(.lab-site) .footer,
+body:has(.asn-page) .footer,
+body:has(.asn-home) .footer,
+body:has(.blog-wrapper) .footer,
+body:has(.theme-doc-markdown) .footer {
+  background: #02060d !important;
+  border-top: 1px solid rgba(126, 229, 255, .12) !important;
+  color: rgba(238, 246, 255, .58) !important;
+}
+body:has(.lab-site) .footer__links,
+body:has(.asn-page) .footer__links,
+body:has(.asn-home) .footer__links {
+  display: none;
+}
+body:has(.theme-doc-markdown) main,
+body:has(.blog-wrapper) main {
+  background: #02060d;
+}
+body:has(.theme-doc-markdown) .navbar,
+body:has(.blog-wrapper) .navbar {
+  background: rgba(2, 6, 13, .92) !important;
+  border-bottom: 1px solid rgba(126, 229, 255, .13) !important;
+}
+body:has(.theme-doc-markdown) .theme-doc-sidebar-container {
+  background: rgba(3, 11, 22, .78) !important;
+  border-right: 1px solid rgba(126, 229, 255, .12) !important;
+}
+body:has(.theme-doc-markdown) .theme-doc-markdown,
+body:has(.blog-wrapper) article {
+  max-width: 980px;
+}
+body:has(.theme-doc-markdown) .theme-doc-markdown h1,
+body:has(.blog-wrapper) h1 {
+  color: #fff;
+  letter-spacing: -.05em;
+}
+body:has(.theme-doc-markdown) .theme-doc-markdown h2,
+body:has(.blog-wrapper) h2 {
+  color: #fff;
+  letter-spacing: -.03em;
+}
+body:has(.theme-doc-markdown) .theme-doc-markdown p,
+body:has(.theme-doc-markdown) .theme-doc-markdown li,
+body:has(.blog-wrapper) p,
+body:has(.blog-wrapper) li {
+  color: rgba(238, 246, 255, .78);
+  line-height: 1.9;
+}
+body:has(.theme-doc-markdown) .pagination-nav__link {
+  background: rgba(255,255,255,.025);
+  border-color: rgba(126, 229, 255, .18);
+}
+body:has(.blog-wrapper) .container {
+  max-width: 1180px !important;
+}
+body:has(.blog-wrapper) article {
+  border: 1px solid rgba(126,229,255,.12);
+  background: rgba(255,255,255,.018);
+  padding: 28px;
+}
+body:has(.blog-wrapper) .col--2,
+body:has(.blog-wrapper) aside {
+  opacity: .85;
+}
+.lab-hero-bg { object-position: center center; }
+.lab-hero-shade { background: radial-gradient(circle at 65% 40%, rgba(6,18,34,.04), rgba(2,6,13,.70) 58%, #02060d 100%), linear-gradient(90deg, rgba(2,6,13,.94) 0%, rgba(2,6,13,.50) 42%, rgba(2,6,13,.16) 100%); }
+.lab-data-strip { background: #02060d; }
+.lab-data-strip > div { background: rgba(255,255,255,.012); }
+.lab-site .footer { margin-left: 82px; }
+@media (max-width: 1100px) { .lab-site .footer { margin-left: 0; } }
