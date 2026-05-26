@@ -6,6 +6,7 @@ const baseUrl = process.env.SITE_BASE_URL || 'https://windscode.github.io/Aerosp
 const pages = [
   ['home', ''],
   ['intelligence', 'intelligence/'],
+  ['knowledge', 'knowledge/'],
   ['missions', 'missions/'],
   ['tools', 'tools/'],
   ['radar', 'radar/'],
