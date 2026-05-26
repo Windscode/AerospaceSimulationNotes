@@ -3,20 +3,21 @@ import Link from '@docusaurus/Link';
 import { labImages } from '../data/aerolabContent';
 
 export function LabTopNav() {
-  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>AEROSIM</strong><em>RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">EXPLORE</Link><Link to="/docs/intro">KNOWLEDGE</Link><Link to="/missions">MISSIONS</Link><Link to="/radar">PROJECTS</Link><Link to="/tools">TOOLS</Link><Link to="/data">DATA</Link><Link to="/reproduction-lab">LAB</Link></nav><Link className="lab-log-btn" to="/blog">MISSION LOG ↗</Link></header>;
+  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>AEROSIM</strong><em>RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">EXPLORE</Link><Link to="/knowledge">KNOWLEDGE</Link><Link to="/missions">MISSIONS</Link><Link to="/radar">PROJECTS</Link><Link to="/tools">TOOLS</Link><Link to="/data">DATA</Link><Link to="/reproduction-lab">LAB</Link></nav><Link className="lab-log-btn" to="/blog">MISSION LOG ↗</Link></header>;
 }
 
 export function LabSideNav({ active = 'HOME' }) {
   const items = [
     { label: 'HOME', href: '/' },
     { label: 'DISCOVER', href: '/intelligence' },
+    { label: 'KNOWLEDGE', href: '/knowledge' },
     { label: 'MISSIONS', href: '/missions' },
     { label: 'PROJECTS', href: '/radar' },
     { label: 'TOOLS', href: '/tools' },
     { label: 'DATA', href: '/data' },
     { label: 'LAB', href: '/reproduction-lab' },
   ];
-  return <aside className="lab-side-nav lab-side-nav--seven">{items.map((item, i) => <Link key={item.label} to={item.href} className={item.label === active ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
+  return <aside className="lab-side-nav lab-side-nav--eight">{items.map((item, i) => <Link key={item.label} to={item.href} className={item.label === active ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
 }
 
 export function LabPageHero({ eyebrow, title, text, image = labImages.hero, stats = [] }) {
