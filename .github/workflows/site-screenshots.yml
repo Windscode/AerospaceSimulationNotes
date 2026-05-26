@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 concurrency:
@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -45,3 +47,18 @@ jobs:
           path: site-screenshots
           retention-days: 30
           if-no-files-found: error
+
+      - name: Publish latest screenshots to repository
+        run: |
+          rm -rf site-audit/latest
+          mkdir -p site-audit/latest
+          cp -R site-screenshots/* site-audit/latest/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site-audit/latest
+          if git diff --cached --quiet; then
+            echo "No screenshot changes to commit."
+          else
+            git commit -m "Update deployed site screenshots"
+            git push
+          fi
