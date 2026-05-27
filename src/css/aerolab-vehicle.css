@@ -1,0 +1,50 @@
+.lab-vehicle-explorer { width: min(1180px, calc(100vw - 96px)); margin: 0 auto; padding: 84px 0; border-bottom: 1px solid rgba(126,229,255,.1); }
+.lab-vehicle-head > span { color: #5bdcff; font-size: 12px; letter-spacing: .16em; font-weight: 950; }
+.lab-vehicle-head h2 { color: #fff; max-width: 720px; margin: 14px 0 16px; font-size: clamp(2.2rem, 4.2vw, 4.9rem); line-height: 1.03; letter-spacing: -.07em; }
+.lab-vehicle-head p { color: #9fb3c7; max-width: 680px; line-height: 1.8; }
+.lab-vehicle-layout { display: grid; grid-template-columns: 230px minmax(420px, 1fr) 330px; gap: 18px; margin-top: 36px; }
+.lab-vehicle-list { display: grid; gap: 10px; align-content: start; }
+.lab-vehicle-list button { min-height: 86px; padding: 15px; text-align: left; color: #d8e9f6; border: 1px solid rgba(126,229,255,.14); background: rgba(255,255,255,.025); cursor: pointer; }
+.lab-vehicle-list button:hover, .lab-vehicle-list button.active { color: #fff; border-color: rgba(126,229,255,.5); background: rgba(91,220,255,.08); }
+.lab-vehicle-list em { display: block; color: #5bdcff; font-style: normal; font-size: 11px; font-weight: 950; letter-spacing: .08em; }
+.lab-vehicle-list strong { display: block; margin: 7px 0 5px; font-size: 18px; }
+.lab-vehicle-list span { display: block; color: #8da2b5; font-size: 12px; }
+.lab-vehicle-stage { min-height: 580px; border: 1px solid rgba(126,229,255,.18); background: radial-gradient(circle at 50% 50%, rgba(126,229,255,.1), transparent 34%), linear-gradient(180deg, rgba(7,18,44,.58), rgba(2,8,19,.86)); position: relative; overflow: hidden; }
+.lab-vehicle-stage::before { content: ''; position: absolute; inset: 0; opacity: .22; background-image: linear-gradient(rgba(126,229,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(126,229,255,.1) 1px, transparent 1px); background-size: 54px 54px; }
+.lab-vehicle-orbit { position: absolute; inset: 28px; border: 1px solid rgba(126,229,255,.14); border-radius: 50%; transform: rotate(-8deg); }
+.lab-vehicle-orbit::before, .lab-vehicle-orbit::after { content: ''; position: absolute; border-radius: 50%; border: 1px solid rgba(126,229,255,.11); inset: 62px; }
+.lab-vehicle-orbit::after { inset: 124px; border-color: rgba(255,255,255,.08); }
+.lab-vehicle-core { position: absolute; left: 50%; top: 50%; width: 184px; min-height: 122px; transform: translate(-50%, -50%) rotate(8deg); display: grid; place-items: center; align-content: center; text-align: center; padding: 18px; border: 1px solid rgba(126,229,255,.42); background: rgba(3,12,28,.86); box-shadow: 0 0 58px rgba(91,220,255,.15); }
+.lab-vehicle-core span { color: #5bdcff; font-size: 12px; letter-spacing: .12em; font-weight: 950; }
+.lab-vehicle-core strong { color: #fff; font-size: 24px; margin-top: 7px; }
+.lab-vehicle-orbit .phase { position: absolute; width: 118px; min-height: 48px; padding: 8px 10px; transform: rotate(8deg); color: #d8f8ff; border: 1px solid rgba(126,229,255,.2); background: rgba(4,12,29,.9); box-shadow: 0 0 24px rgba(91,220,255,.08); font-style: normal; }
+.lab-vehicle-orbit .phase b { display: block; color: #7ee5ff; font-size: 11px; }
+.lab-vehicle-orbit .phase span { display: block; margin-top: 3px; font-size: 12px; font-weight: 850; }
+.lab-vehicle-orbit .phase-1 { left: 47%; top: -4%; }
+.lab-vehicle-orbit .phase-2 { right: 5%; top: 16%; }
+.lab-vehicle-orbit .phase-3 { right: -4%; top: 48%; }
+.lab-vehicle-orbit .phase-4 { right: 14%; bottom: 6%; }
+.lab-vehicle-orbit .phase-5 { left: 17%; bottom: 7%; }
+.lab-vehicle-orbit .phase-6 { left: -4%; top: 45%; }
+.lab-vehicle-orbit .phase-7 { left: 9%; top: 13%; }
+.lab-vehicle-brief { padding: 20px; border: 1px solid rgba(126,229,255,.15); background: rgba(255,255,255,.025); }
+.lab-vehicle-brief h3 { color: #fff; margin: 12px 0 10px; font-size: 28px; }
+.lab-vehicle-brief p { color: #a9bbcc; line-height: 1.7; }
+.lab-vehicle-params { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin: 18px 0; }
+.lab-vehicle-params div { padding: 12px; border: 1px solid rgba(126,229,255,.12); background: rgba(255,255,255,.025); }
+.lab-vehicle-params span { display: block; color: #7ee5ff; font-size: 11px; font-weight: 950; letter-spacing: .08em; }
+.lab-vehicle-params strong { display: block; margin-top: 7px; color: #fff; font-size: 17px; }
+.lab-vehicle-mini-grid { display: grid; gap: 10px; }
+.lab-vehicle-mini-grid article { padding: 13px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); }
+.lab-vehicle-mini-grid span { display: block; color: #5bdcff; font-size: 11px; font-weight: 950; letter-spacing: .12em; margin-bottom: 6px; }
+.lab-vehicle-mini-grid p { margin: 0; font-size: 13px; }
+.lab-vehicle-flow { display: grid; grid-template-columns: 1.2fr repeat(4, 1fr); gap: 10px; margin-top: 18px; border-top: 1px solid rgba(126,229,255,.12); padding-top: 18px; }
+.lab-vehicle-flow > div, .lab-vehicle-flow article { min-height: 116px; padding: 18px; border: 1px solid rgba(126,229,255,.13); background: rgba(255,255,255,.02); }
+.lab-vehicle-flow > div span { color: #5bdcff; font-size: 11px; letter-spacing: .14em; font-weight: 950; }
+.lab-vehicle-flow > div h3 { color: #fff; margin: 9px 0 0; font-size: 22px; }
+.lab-vehicle-flow article em { display: block; color: #7ee5ff; font-style: normal; font-weight: 950; margin-bottom: 10px; }
+.lab-vehicle-flow article p { margin: 0; color: #a9bbcc; line-height: 1.65; }
+.lab-vehicle-flow footer { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
+.lab-vehicle-flow footer b { color: #c9f6ff; border: 1px solid rgba(126,229,255,.16); background: rgba(91,220,255,.06); padding: 7px 10px; font-size: 12px; }
+@media (max-width: 1180px) { .lab-vehicle-explorer { width: min(980px, calc(100vw - 56px)); } .lab-vehicle-layout { grid-template-columns: 1fr; } .lab-vehicle-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } .lab-vehicle-flow { grid-template-columns: repeat(2, 1fr); } .lab-vehicle-flow > div { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .lab-vehicle-explorer { width: calc(100vw - 28px); padding: 48px 0; } .lab-vehicle-list, .lab-vehicle-flow { grid-template-columns: 1fr; } .lab-vehicle-stage { min-height: auto; padding: 14px; } .lab-vehicle-stage::before, .lab-vehicle-orbit::before, .lab-vehicle-orbit::after { display: none; } .lab-vehicle-orbit { position: static; inset: auto; border-radius: 0; transform: none; display: grid; gap: 10px; border: 0; } .lab-vehicle-core, .lab-vehicle-orbit .phase { position: static; width: auto; transform: none; } .lab-vehicle-params { grid-template-columns: 1fr; } }
