@@ -2,6 +2,7 @@ import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
 import StatusPill from '../../components/StatusPill';
+import ToolStageExplorer from '../../components/ToolStageExplorer';
 import { labImages, featuredProjects } from '../../data/aerolabContent';
 import { tools, toolCategories, toolLanes } from '../../data/tools';
 
@@ -18,6 +19,7 @@ export default function ToolsPage() {
   return <Layout title="工具库" description="航天仿真专业工具、使用指南、工具链组合和使用示例">
     <AeroLabFrame active="TOOLS">
       <LabPageHero eyebrow="TOOL LIBRARY · 工具库" title="工具库" text="搜集航天仿真相关商业软件、开源工具、可视化平台和开发工具链。重点回答：这个工具用来干什么、怎么入门、在哪个任务阶段使用、能和哪些工具组合。" image={labImages.control} stats={[{label:'工具条目', value:String(tools.length)}, {label:'分类数量', value:String(toolCategories.length - 1)}, {label:'维护方式', value:'数据驱动'}]} />
+      <ToolStageExplorer lanes={toolLanes} tools={tools}/>
       <section className="lab-page-section lab-tools-stacks">
         <div className="lab-page-head"><div><span>推荐链路</span><h2>入门工具链</h2></div><p>新用户先理解工具之间的输入输出关系，再进入完整矩阵。</p></div>
         <div className="lab-status-grid">{recommendedStacks.map((stack, i) => <article key={stack.title}><span>链路 {String(i+1).padStart(2,'0')}</span><strong>{stack.title}</strong><p>{stack.desc}</p><footer>{stack.tags.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
