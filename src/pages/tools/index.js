@@ -2,7 +2,7 @@ import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
 import { labImages, featuredProjects } from '../../data/aerolabContent';
-import { tools, toolCategories, toolLanes } from '../../data/siteContent';
+import { tools, toolCategories, toolLanes } from '../../data/tools';
 
 const recommendedStacks = [
   { title: '轨道任务入门链', desc: 'GMAT / Orekit / Cesium：先跑通轨道传播、事件和可视化。', tags: ['轨道传播', '事件探测', '三维回放'] },
@@ -16,14 +16,14 @@ export default function ToolsPage() {
   const result = useMemo(() => tools.filter(t => (cat === '全部' || t.category === cat) && JSON.stringify(t).toLowerCase().includes(q.toLowerCase())), [cat, q]);
   return <Layout title="工具库" description="航天仿真专业工具、使用指南、工具链组合和使用示例">
     <AeroLabFrame active="TOOLS">
-      <LabPageHero eyebrow="TOOL LIBRARY · 工具库" title="工具库" text="搜集航天仿真相关商业软件、开源工具、可视化平台和开发工具链。重点回答：这个工具用来干什么、怎么入门、在哪个任务阶段使用、能和哪些工具组合。" image={labImages.control} stats={[{label:'工具条目', value:String(tools.length)}, {label:'推荐链路', value:String(recommendedStacks.length)}, {label:'维护方式', value:'指南 + 示例'}]} />
+      <LabPageHero eyebrow="TOOL LIBRARY · 工具库" title="工具库" text="搜集航天仿真相关商业软件、开源工具、可视化平台和开发工具链。重点回答：这个工具用来干什么、怎么入门、在哪个任务阶段使用、能和哪些工具组合。" image={labImages.control} stats={[{label:'工具条目', value:String(tools.length)}, {label:'分类数量', value:String(toolCategories.length - 1)}, {label:'维护方式', value:'数据驱动'}]} />
       <section className="lab-page-section lab-tools-stacks">
         <div className="lab-page-head"><div><span>推荐链路</span><h2>入门工具链</h2></div><p>新用户先理解工具之间的输入输出关系，再进入完整矩阵。</p></div>
         <div className="lab-status-grid">{recommendedStacks.map((stack, i) => <article key={stack.title}><span>链路 {String(i+1).padStart(2,'0')}</span><strong>{stack.title}</strong><p>{stack.desc}</p><footer>{stack.tags.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>能力地图</span><h2>任务阶段</h2></div><p>工具是否值得学习，要看它在仿真链路里的输入、输出、替代关系和验证价值。</p></div>
-        <div className="lab-status-grid">{toolLanes.map((lane, i) => <article key={lane.title}><span>{String(i+1).padStart(2,'0')}</span><strong>{lane.title}</strong><p>{lane.desc}</p></article>)}</div>
+        <div className="lab-status-grid">{toolLanes.map((lane, i) => <article key={lane.title}><span>{String(i+1).padStart(2,'0')}</span><strong>{lane.title}</strong><p>{lane.desc}</p><footer>{lane.tools.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>工具链场景</span><h2>典型组合</h2></div><p>工具库不是软件名录，而是服务任务分析、建模、验证和可视化的组合入口。</p></div>
@@ -32,9 +32,9 @@ export default function ToolsPage() {
         </div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>工具矩阵</span><h2>完整工具库</h2></div><p>完整列表用于维护和查询，后续可以继续扩展使用指南和示例。</p></div>
+        <div className="lab-page-head"><div><span>工具矩阵</span><h2>完整工具库</h2></div><p>每个工具条目都要说明类别、商业/开源、难度、典型用途、推荐入门任务和相关工具。</p></div>
         <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 MATLAB / STK / GMAT / CFD / GNC" />{toolCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
-        <div className="lab-table-grid">{result.map(tool => <article key={tool.name}><span>{tool.category}</span><h3>{tool.name}</h3><p>{tool.vendor} · {tool.type} · {tool.maturity}</p><p>{tool.role}</p><footer>{tool.domains.map(d => <em key={d}>{d}</em>)}</footer></article>)}</div>
+        <div className="lab-table-grid lab-tool-database">{result.map(tool => <article key={tool.id}><span>{tool.category} · {tool.licenseType} · 难度 {tool.difficulty}</span><h3>{tool.title}</h3><p>{tool.summary}</p><p><b>典型用途：</b>{tool.typicalUse}</p><p><b>入门任务：</b>{tool.starterTask}</p><footer>{tool.relatedTools.map(d => <em key={d}>{d}</em>)}</footer></article>)}</div>
       </section>
     </AeroLabFrame>
   </Layout>;
