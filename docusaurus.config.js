@@ -20,7 +20,8 @@ const config = {
       require.resolve('./src/css/aerolab-polish.css'),
       require.resolve('./src/css/aerolab-cn.css'),
       require.resolve('./src/css/aerolab-audit-fixes.css'),
-      require.resolve('./src/css/aerolab-final-polish.css')
+      require.resolve('./src/css/aerolab-final-polish.css'),
+      require.resolve('./src/css/orbital-console.css')
     ] }
   }]],
   themeConfig: {
