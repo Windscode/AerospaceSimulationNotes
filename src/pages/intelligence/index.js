@@ -2,6 +2,8 @@ import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
 import OrbitalResearchConsole from '../../components/OrbitalResearchConsole';
+import IntelligenceRadar from '../../components/IntelligenceRadar';
+import StatusPill from '../../components/StatusPill';
 import { labImages, latestUpdates, missionDossiers, featuredProjects } from '../../data/aerolabContent';
 import { intelligenceCategories, intelligenceQueue, intelligenceWorkflow, intelligenceSignals } from '../../data/intelligence';
 
@@ -12,6 +14,7 @@ export default function IntelligencePage(){
   return <Layout title="前沿情报" description="航天新闻、研究进展、工程软件更新和可利用线索">
     <AeroLabFrame active="FRONTIER">
       <LabPageHero eyebrow="FRONTIER INTELLIGENCE · 前沿情报" title="前沿情报" text="跟踪航天新闻、研究进展、工程软件更新、开源项目动态和可马上利用的公开线索。这里不是新闻堆叠，而是判断哪些信息值得进入研究链路。" image={labImages.data} stats={[{label:'情报条目', value:String(intelligenceQueue.length)}, {label:'分类数量', value:String(intelligenceCategories.length - 1)}, {label:'输出方向', value:'工具 / 案例'}]} />
+      <IntelligenceRadar items={intelligenceQueue} />
       <OrbitalResearchConsole compact />
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>情报墙</span><h2>任务情报墙</h2></div><p>资料入口不是普通新闻列表，而是从任务、工具、开源项目和数据来源中筛选值得继续研究的线索。</p></div>
@@ -21,7 +24,7 @@ export default function IntelligencePage(){
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>价值信号</span><h2>筛选规则</h2></div><p>每天看到的资料很多，先判断它是否有可复现、可建模或可补充任务对象的价值。</p></div>
-        <div className="lab-status-grid">{intelligenceSignals.map((s, i) => <article key={s.title}><span>信号 {String(i+1).padStart(2,'0')} · {s.score}</span><strong>{s.title}</strong><p>{s.desc}</p></article>)}</div>
+        <div className="lab-status-grid">{intelligenceSignals.map((s, i) => <article key={s.title}><span>信号 {String(i+1).padStart(2,'0')}</span><StatusPill label="价值" value={s.score}/><strong>{s.title}</strong><p>{s.desc}</p></article>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>每日简报</span><h2>今日简报</h2></div><p>轻量记录，后续再沉淀到工具库、开源与数据、飞行器与任务或知识图谱。</p></div>
@@ -33,7 +36,7 @@ export default function IntelligencePage(){
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>情报入口</span><h2>入口队列</h2></div><p>新资料先进入队列，不要直接污染稳定知识体系。</p></div>
         <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 新闻 / 论文 / 工具 / 开源 / 数据" />{intelligenceCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
-        <div className="lab-table-grid">{result.map((item, i) => <article key={item.id}><span>{String(i+1).padStart(2,'0')} · {item.category} · {item.priority}</span><h3>{item.title}</h3><p>{item.summary}</p><p><b>来源：</b>{item.sourceHint}</p><p><b>下一步：</b>{item.nextAction}</p><footer>{item.routes.map(r => <em key={r}>{r}</em>)}</footer></article>)}</div>
+        <div className="lab-table-grid">{result.map((item, i) => <article key={item.id}><div className="lab-card-status-row"><StatusPill label="优先级" value={item.priority}/><StatusPill label="状态" value={item.status}/><StatusPill label="可信度" value={item.confidence}/></div><span>{String(i+1).padStart(2,'0')} · {item.category} · {item.value}</span><h3>{item.title}</h3><p>{item.summary}</p><p><b>来源：</b>{item.sourceHint}</p><p><b>下一步：</b>{item.nextAction}</p><footer>{item.routes.map(r => <em key={r}>{r}</em>)}</footer></article>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>流转生命周期</span><h2>流转路径</h2></div><p>每天维护的关键不是多，而是每条资料都有状态、有判断、有去向。</p></div>
