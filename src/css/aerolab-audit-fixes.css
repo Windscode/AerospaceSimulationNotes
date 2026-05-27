@@ -23,9 +23,7 @@ body:has(.blog-wrapper) .navbar {
   backdrop-filter: blur(16px);
 }
 body:has(.theme-doc-markdown) .navbar__title,
-body:has(.blog-wrapper) .navbar__title {
-  letter-spacing: .04em;
-}
+body:has(.blog-wrapper) .navbar__title { letter-spacing: .04em; }
 body:has(.theme-doc-markdown) .theme-doc-sidebar-container {
   background: linear-gradient(180deg, rgba(5,14,27,.96), rgba(2,6,13,.96)) !important;
   border-right: 1px solid rgba(126, 229, 255, .13) !important;
@@ -42,9 +40,7 @@ body:has(.theme-doc-markdown) .menu__link:hover {
   background: rgba(126,229,255,.07);
 }
 body:has(.theme-doc-markdown) .theme-doc-markdown,
-body:has(.blog-wrapper) article {
-  max-width: 980px;
-}
+body:has(.blog-wrapper) article { max-width: 980px; }
 body:has(.theme-doc-markdown) .theme-doc-markdown {
   padding-top: 32px;
 }
@@ -77,28 +73,55 @@ body:has(.blog-wrapper) li {
   font-size: 16px;
 }
 body:has(.theme-doc-markdown) .theme-doc-breadcrumbs,
-body:has(.theme-doc-markdown) .table-of-contents {
-  border-color: rgba(126,229,255,.13);
-}
+body:has(.theme-doc-markdown) .table-of-contents { border-color: rgba(126,229,255,.13); }
 body:has(.theme-doc-markdown) .pagination-nav__link {
   background: rgba(255,255,255,.025);
   border-color: rgba(126, 229, 255, .18);
   border-radius: 0;
 }
-body:has(.theme-doc-markdown) .pagination-nav__label {
-  color: #8eeaff;
-}
-body:has(.blog-wrapper) .container {
-  max-width: 1180px !important;
-}
+body:has(.theme-doc-markdown) .pagination-nav__label { color: #8eeaff; }
+body:has(.blog-wrapper) .container { max-width: 1180px !important; }
 body:has(.blog-wrapper) article {
   border: 1px solid rgba(126,229,255,.12);
   background: rgba(255,255,255,.018);
   padding: 28px;
 }
 body:has(.blog-wrapper) .col--2,
-body:has(.blog-wrapper) aside {
-  opacity: .85;
+body:has(.blog-wrapper) aside { opacity: .85; }
+body:has(.theme-doc-markdown) .main-wrapper,
+body:has(.blog-wrapper) .main-wrapper {
+  background:
+    radial-gradient(circle at 70px 90px, rgba(126,229,255,.09), transparent 330px),
+    radial-gradient(circle at calc(100% - 120px) 120px, rgba(105,120,255,.08), transparent 360px),
+    #02060d !important;
+}
+body:has(.theme-doc-markdown) .theme-doc-markdown,
+body:has(.blog-wrapper) article {
+  position: relative;
+}
+body:has(.theme-doc-markdown) .theme-doc-markdown::before,
+body:has(.blog-wrapper) article::before {
+  content: 'AEROSIM RESEARCH FILE';
+  display: block;
+  color: rgba(126,229,255,.72);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .18em;
+  margin: 0 0 18px;
+}
+body:has(.blog-wrapper) article header h2,
+body:has(.blog-wrapper) article header h1 {
+  font-size: clamp(2.1rem, 3.6vw, 4rem) !important;
+  line-height: 1.08;
+}
+body:has(.blog-wrapper) article + article { margin-top: 26px; }
+body:has(.blog-wrapper) .pagination-nav,
+body:has(.blog-wrapper) .pagination-nav__link {
+  border-color: rgba(126,229,255,.14);
+}
+body:has(.blog-wrapper) .avatar,
+body:has(.blog-wrapper) time {
+  color: rgba(238,246,255,.58) !important;
 }
 .doc-mission-panel {
   display: grid;
@@ -129,7 +152,8 @@ body:has(.blog-wrapper) aside {
 }
 .doc-mission-panel p { margin: 0; font-size: 14px !important; }
 .doc-step-grid,
-.doc-layer-grid {
+.doc-layer-grid,
+.doc-architecture-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-left: 1px solid rgba(126,229,255,.13);
@@ -137,20 +161,23 @@ body:has(.blog-wrapper) aside {
   margin: 24px 0 44px;
 }
 .doc-step-grid article,
-.doc-layer-grid article {
+.doc-layer-grid article,
+.doc-architecture-grid article {
   padding: 24px;
   border-right: 1px solid rgba(126,229,255,.13);
   border-bottom: 1px solid rgba(126,229,255,.13);
   background: rgba(255,255,255,.018);
 }
 .doc-step-grid h3,
-.doc-layer-grid h3 {
+.doc-layer-grid h3,
+.doc-architecture-grid h3 {
   color: #fff;
   margin: 0 0 10px;
   font-size: 20px;
 }
 .doc-step-grid p,
-.doc-layer-grid p { margin: 0; font-size: 14px !important; }
+.doc-layer-grid p,
+.doc-architecture-grid p { margin: 0; font-size: 14px !important; }
 .doc-rule-list {
   border: 1px solid rgba(126,229,255,.13);
   background: rgba(255,255,255,.018);
@@ -167,4 +194,4 @@ body:has(.blog-wrapper) aside {
 .lab-data-strip { background: #02060d; }
 .lab-data-strip > div { background: rgba(255,255,255,.012); }
 .lab-site .footer { margin-left: 82px; }
-@media (max-width: 1100px) { .lab-site .footer { margin-left: 0; } .doc-mission-panel, .doc-step-grid, .doc-layer-grid { grid-template-columns: 1fr; } .doc-mission-panel > div { border-right: 0; border-bottom: 1px solid rgba(126,229,255,.12); } }
+@media (max-width: 1100px) { .lab-site .footer { margin-left: 0; } .doc-mission-panel, .doc-step-grid, .doc-layer-grid, .doc-architecture-grid { grid-template-columns: 1fr; } .doc-mission-panel > div { border-right: 0; border-bottom: 1px solid rgba(126,229,255,.12); } }
