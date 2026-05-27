@@ -1,0 +1,67 @@
+.home-mission-control, .experiment-flow-console { width: min(1180px, calc(100vw - 96px)); margin: 0 auto; padding: 86px 0; border-bottom: 1px solid rgba(126,229,255,.1); }
+.home-mission-head > span, .experiment-flow-head > span { color: #5bdcff; font-size: 12px; letter-spacing: .16em; font-weight: 950; }
+.home-mission-head h2, .experiment-flow-head h2 { color: #fff; max-width: 720px; margin: 14px 0 16px; font-size: clamp(2.2rem, 4.2vw, 4.9rem); line-height: 1.03; letter-spacing: -.07em; }
+.home-mission-head p, .experiment-flow-head p { color: #9fb3c7; max-width: 690px; line-height: 1.8; }
+.home-mission-grid { display: grid; grid-template-columns: 230px minmax(420px, 1fr) 330px; gap: 18px; margin-top: 36px; }
+.home-mission-lanes { display: grid; gap: 10px; align-content: start; }
+.home-mission-lanes button { min-height: 84px; padding: 15px; text-align: left; color: #d8e9f6; border: 1px solid rgba(126,229,255,.14); background: rgba(255,255,255,.025); cursor: pointer; }
+.home-mission-lanes button:hover, .home-mission-lanes button.active { color: #fff; border-color: rgba(126,229,255,.5); background: rgba(91,220,255,.08); }
+.home-mission-lanes em { color: #5bdcff; font-style: normal; font-size: 11px; font-weight: 950; }
+.home-mission-lanes strong, .home-mission-lanes span { display: block; }
+.home-mission-lanes strong { margin: 7px 0 5px; font-size: 18px; }
+.home-mission-lanes span { color: #8da2b5; font-size: 12px; }
+.home-mission-orbit { position: relative; min-height: 540px; overflow: hidden; border: 1px solid rgba(126,229,255,.18); background: radial-gradient(circle at 50% 50%, rgba(91,220,255,.12), transparent 34%), linear-gradient(180deg, rgba(7,18,44,.58), rgba(2,8,19,.86)); }
+.home-mission-orbit::before { content: ''; position: absolute; inset: 34px; border: 1px solid rgba(126,229,255,.14); border-radius: 50%; }
+.home-mission-orbit::after { content: ''; position: absolute; inset: 104px; border: 1px solid rgba(126,229,255,.09); border-radius: 50%; }
+.home-mission-core { position: absolute; left: 50%; top: 50%; width: 166px; height: 166px; transform: translate(-50%, -50%); display: grid; place-items: center; align-content: center; text-align: center; border-radius: 50%; border: 1px solid rgba(126,229,255,.42); background: rgba(3,12,28,.86); box-shadow: 0 0 58px rgba(91,220,255,.15); }
+.home-mission-core span { color: #5bdcff; font-size: 11px; letter-spacing: .12em; font-weight: 950; }
+.home-mission-core strong { color: #fff; font-size: 44px; line-height: 1; margin: 7px 0; }
+.home-mission-core em { color: #9fb3c7; font-style: normal; font-size: 12px; }
+.home-mission-node { position: absolute; min-width: 96px; min-height: 56px; padding: 8px 10px; border: 1px solid rgba(126,229,255,.2); background: rgba(4,12,29,.9); color: #d8f8ff; cursor: pointer; text-align: left; }
+.home-mission-node b { display: block; color: #7ee5ff; font-size: 18px; }
+.home-mission-node span { font-size: 12px; font-weight: 850; }
+.home-mission-node.active, .home-mission-node:hover { color: #04101f; border-color: rgba(126,229,255,.82); background: linear-gradient(135deg, #5bdcff, #43f0d0); box-shadow: 0 0 34px rgba(91,220,255,.35); }
+.home-mission-node.active b, .home-mission-node:hover b { color: #04101f; }
+.home-mission-node.node-1 { left: 42%; top: 8%; }
+.home-mission-node.node-2 { right: 8%; top: 29%; }
+.home-mission-node.node-3 { right: 12%; bottom: 16%; }
+.home-mission-node.node-4 { left: 14%; bottom: 15%; }
+.home-mission-node.node-5 { left: 8%; top: 29%; }
+.home-mission-brief, .experiment-flow-brief { padding: 20px; border: 1px solid rgba(126,229,255,.15); background: rgba(255,255,255,.025); }
+.home-mission-brief h3, .experiment-flow-brief h3 { color: #fff; margin: 12px 0 10px; font-size: 28px; }
+.home-mission-brief p, .experiment-flow-brief p { color: #a9bbcc; line-height: 1.7; }
+.home-mission-list { display: grid; gap: 9px; margin: 18px 0; }
+.home-mission-list a { display: grid; grid-template-columns: 36px 1fr; gap: 10px; padding: 11px; text-decoration: none !important; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02); }
+.home-mission-list em { color: #5bdcff; font-style: normal; font-weight: 950; }
+.home-mission-list strong { display: block; color: #fff; font-size: 14px; }
+.home-mission-list span { color: #8da2b5; font-size: 12px; }
+.home-mission-entry { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; color: #c9f6ff; text-decoration: none !important; border: 1px solid rgba(126,229,255,.18); background: rgba(91,220,255,.06); font-size: 12px; font-weight: 850; }
+.experiment-flow-layout { display: grid; grid-template-columns: 240px minmax(420px, 1fr) 320px; gap: 18px; margin-top: 36px; }
+.experiment-flow-list { display: grid; gap: 10px; align-content: start; }
+.experiment-flow-list button { min-height: 92px; padding: 15px; text-align: left; color: #d8e9f6; border: 1px solid rgba(126,229,255,.14); background: rgba(255,255,255,.025); cursor: pointer; }
+.experiment-flow-list button:hover, .experiment-flow-list button.active { color: #fff; border-color: rgba(126,229,255,.5); background: rgba(91,220,255,.08); }
+.experiment-flow-list em { color: #5bdcff; font-style: normal; font-size: 11px; font-weight: 950; }
+.experiment-flow-list strong, .experiment-flow-list span { display: block; }
+.experiment-flow-list strong { margin: 7px 0 5px; font-size: 17px; }
+.experiment-flow-list span { color: #8da2b5; font-size: 12px; }
+.experiment-flow-pipeline { position: relative; min-height: 560px; border: 1px solid rgba(126,229,255,.18); background: radial-gradient(circle at 50% 50%, rgba(91,220,255,.1), transparent 34%), linear-gradient(180deg, rgba(7,18,44,.58), rgba(2,8,19,.86)); overflow: hidden; }
+.experiment-flow-pipeline::before { content: ''; position: absolute; left: 10%; right: 10%; top: 50%; height: 1px; background: linear-gradient(90deg, transparent, rgba(126,229,255,.6), transparent); }
+.experiment-flow-core { position: absolute; left: 50%; top: 50%; width: 250px; min-height: 150px; transform: translate(-50%, -50%); padding: 20px; text-align: center; border: 1px solid rgba(126,229,255,.42); background: rgba(3,12,28,.9); box-shadow: 0 0 58px rgba(91,220,255,.15); }
+.experiment-flow-core span { color: #5bdcff; font-size: 11px; letter-spacing: .12em; font-weight: 950; }
+.experiment-flow-core strong { display: block; color: #fff; margin: 8px 0; font-size: 21px; }
+.experiment-flow-core p { color: #9fb3c7; line-height: 1.55; margin: 0; font-size: 13px; }
+.experiment-flow-lane { position: absolute; width: 210px; min-height: 162px; padding: 16px; border: 1px solid rgba(126,229,255,.18); background: rgba(4,12,29,.9); }
+.experiment-flow-lane.lane-1 { left: 5%; top: 8%; }
+.experiment-flow-lane.lane-2 { right: 5%; top: 8%; }
+.experiment-flow-lane.lane-3 { left: 5%; bottom: 8%; }
+.experiment-flow-lane.lane-4 { right: 5%; bottom: 8%; }
+.experiment-flow-lane em { color: #5bdcff; font-style: normal; font-size: 11px; font-weight: 950; letter-spacing: .12em; }
+.experiment-flow-lane h3 { color: #fff; margin: 8px 0 10px; font-size: 20px; }
+.experiment-flow-lane ul { padding-left: 18px; margin: 0; color: #a9bbcc; line-height: 1.55; font-size: 13px; }
+.experiment-flow-brief > div:not(.lab-card-status-row) { margin: 18px 0; padding: 14px; border: 1px solid rgba(126,229,255,.12); background: rgba(255,255,255,.025); }
+.experiment-flow-brief > div span { display: block; color: #5bdcff; font-size: 11px; font-weight: 950; letter-spacing: .12em; margin-bottom: 8px; }
+.experiment-flow-brief > div strong { color: #fff; }
+.experiment-flow-brief footer { display: flex; flex-wrap: wrap; gap: 8px; }
+.experiment-flow-brief footer b { color: #c9f6ff; border: 1px solid rgba(126,229,255,.16); background: rgba(91,220,255,.06); padding: 7px 10px; font-size: 12px; }
+@media (max-width: 1180px) { .home-mission-control, .experiment-flow-console { width: min(980px, calc(100vw - 56px)); } .home-mission-grid, .experiment-flow-layout { grid-template-columns: 1fr; } .home-mission-lanes, .experiment-flow-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .home-mission-control, .experiment-flow-console { width: calc(100vw - 28px); padding: 48px 0; } .home-mission-lanes, .experiment-flow-list { grid-template-columns: 1fr; } .home-mission-orbit, .experiment-flow-pipeline { min-height: auto; display: grid; gap: 10px; padding: 14px; } .home-mission-orbit::before, .home-mission-orbit::after, .experiment-flow-pipeline::before { display: none; } .home-mission-core, .home-mission-node, .experiment-flow-core, .experiment-flow-lane { position: static; width: auto; height: auto; transform: none; } }
