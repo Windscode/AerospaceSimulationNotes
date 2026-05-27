@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
+import OrbitalResearchConsole from '../../components/OrbitalResearchConsole';
 import { labImages, latestUpdates, missionDossiers, featuredProjects } from '../../data/aerolabContent';
 import { intelligenceItems, lifecycle } from '../../data/siteContent';
 
@@ -8,6 +9,7 @@ export default function IntelligencePage(){
   return <Layout title="研究情报" description="每日研究动态与资料收集入口">
     <AeroLabFrame active="DISCOVER">
       <LabPageHero eyebrow="RESEARCH INTELLIGENCE · 研究情报" title="研究情报流" text="每天看到的新论文、新工具、新项目、新任务动态和公开数据先进入情报流。这里不是最终结论，而是研究线索、可信度判断和下一步动作。" image={labImages.data} stats={[{label:'接收节奏', value:'每日'}, {label:'当前状态', value:'筛选中'}, {label:'输出方向', value:'知识库'}]} />
+      <OrbitalResearchConsole compact />
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>情报墙</span><h2>研究情报页先要像一面任务情报墙。</h2></div><p>资料入口不是普通新闻列表，而是从任务、工具、开源项目和数据来源中筛选值得继续研究的线索。</p></div>
         <div className="lab-cinema-grid">
