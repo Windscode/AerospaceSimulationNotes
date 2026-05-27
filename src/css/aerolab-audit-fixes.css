@@ -18,21 +18,50 @@ body:has(.blog-wrapper) main {
 }
 body:has(.theme-doc-markdown) .navbar,
 body:has(.blog-wrapper) .navbar {
-  background: rgba(2, 6, 13, .92) !important;
+  background: rgba(2, 6, 13, .95) !important;
   border-bottom: 1px solid rgba(126, 229, 255, .13) !important;
+  backdrop-filter: blur(16px);
+}
+body:has(.theme-doc-markdown) .navbar__title,
+body:has(.blog-wrapper) .navbar__title {
+  letter-spacing: .04em;
 }
 body:has(.theme-doc-markdown) .theme-doc-sidebar-container {
-  background: rgba(3, 11, 22, .78) !important;
-  border-right: 1px solid rgba(126, 229, 255, .12) !important;
+  background: linear-gradient(180deg, rgba(5,14,27,.96), rgba(2,6,13,.96)) !important;
+  border-right: 1px solid rgba(126, 229, 255, .13) !important;
+}
+body:has(.theme-doc-markdown) .menu__link {
+  border-radius: 0;
+  color: rgba(238,246,255,.72);
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  padding: 12px 14px;
+}
+body:has(.theme-doc-markdown) .menu__link--active,
+body:has(.theme-doc-markdown) .menu__link:hover {
+  color: #8eeaff;
+  background: rgba(126,229,255,.07);
 }
 body:has(.theme-doc-markdown) .theme-doc-markdown,
 body:has(.blog-wrapper) article {
   max-width: 980px;
 }
+body:has(.theme-doc-markdown) .theme-doc-markdown {
+  padding-top: 32px;
+}
 body:has(.theme-doc-markdown) .theme-doc-markdown h1,
 body:has(.blog-wrapper) h1 {
   color: #fff;
   letter-spacing: -.05em;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.05;
+}
+body:has(.theme-doc-markdown) .theme-doc-markdown h1::after {
+  content: '';
+  display: block;
+  width: 92px;
+  height: 1px;
+  margin-top: 22px;
+  background: linear-gradient(90deg, rgba(126,229,255,.85), transparent);
 }
 body:has(.theme-doc-markdown) .theme-doc-markdown h2,
 body:has(.blog-wrapper) h2 {
@@ -45,10 +74,19 @@ body:has(.blog-wrapper) p,
 body:has(.blog-wrapper) li {
   color: rgba(238, 246, 255, .78);
   line-height: 1.9;
+  font-size: 16px;
+}
+body:has(.theme-doc-markdown) .theme-doc-breadcrumbs,
+body:has(.theme-doc-markdown) .table-of-contents {
+  border-color: rgba(126,229,255,.13);
 }
 body:has(.theme-doc-markdown) .pagination-nav__link {
   background: rgba(255,255,255,.025);
   border-color: rgba(126, 229, 255, .18);
+  border-radius: 0;
+}
+body:has(.theme-doc-markdown) .pagination-nav__label {
+  color: #8eeaff;
 }
 body:has(.blog-wrapper) .container {
   max-width: 1180px !important;
