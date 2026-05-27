@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import { labImages } from '../data/aerolabContent';
+import ResearchCommandPalette from './ResearchCommandPalette';
 
 export function LabTopNav() {
-  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>航天仿真研究库</strong><em>AEROSIM RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">前沿情报</Link><Link to="/missions">飞行器与任务</Link><Link to="/tools">工具库</Link><Link to="/open-source-data">开源与数据</Link><Link to="/knowledge">知识图谱</Link><Link to="/my-projects">我的项目</Link></nav><Link className="lab-log-btn" to="/log">研究日志 ↗</Link></header>;
+  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>航天仿真研究库</strong><em>AEROSIM RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">前沿情报</Link><Link to="/missions">飞行器与任务</Link><Link to="/tools">工具库</Link><Link to="/open-source-data">开源与数据</Link><Link to="/knowledge">知识图谱</Link><Link to="/my-projects">我的项目</Link></nav><div className="lab-nav-actions"><ResearchCommandPalette/><Link className="lab-log-btn" to="/log">研究日志 ↗</Link></div></header>;
 }
 
 export function LabSideNav({ active = 'HOME' }) {
