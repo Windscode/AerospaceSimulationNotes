@@ -25,7 +25,8 @@ const config = {
       require.resolve('./src/css/aerolab-interactions.css'),
       require.resolve('./src/css/aerolab-vehicle.css'),
       require.resolve('./src/css/aerolab-controlroom.css'),
-      require.resolve('./src/css/aerolab-resources.css')
+      require.resolve('./src/css/aerolab-resources.css'),
+      require.resolve('./src/css/aerolab-screenshot-audit.css')
     ] }
   }]],
   themeConfig: {
