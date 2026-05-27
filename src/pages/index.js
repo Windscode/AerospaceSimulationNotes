@@ -3,15 +3,30 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import AeroLabFrame from '../components/AeroLabFrame';
 import OrbitalResearchConsole from '../components/OrbitalResearchConsole';
-import { labImages, quickAccess, latestUpdates, missionStats, featuredProjects, researchDomains, methodCards, missionDossiers } from '../data/aerolabContent';
+import { labImages, quickAccess, latestUpdates, featuredProjects, researchDomains, methodCards, missionDossiers } from '../data/aerolabContent';
+import { tools } from '../data/tools';
+import { openSourceProjects, datasets } from '../data/openSource';
+import { vehicles } from '../data/vehicles';
+import { intelligenceQueue } from '../data/intelligence';
+import { knowledgeDomains } from '../data/knowledge';
+import { experimentCandidates } from '../data/experiments';
+
+const siteStats = [
+  { label: '工具条目', value: String(tools.length) },
+  { label: '开源项目', value: String(openSourceProjects.length) },
+  { label: '公开数据', value: String(datasets.length) },
+  { label: '飞行器档案', value: String(vehicles.length) },
+  { label: '知识节点', value: String(knowledgeDomains.length) },
+  { label: '复现实验', value: String(experimentCandidates.length) },
+];
 
 function Hero() {
-  return <section className="lab-hero"><img className="lab-hero-bg" src={labImages.hero} alt="航天仿真研究主视觉"/><div className="lab-hero-shade"/><div className="lab-hero-content"><div className="lab-hero-copy"><div className="lab-kicker">AEROSPACE SIMULATION RESEARCH</div><h1>仿真。<br/>分析。<br/>探索。</h1><p>面向中文用户的航天仿真研究入口：跟踪前沿情报、真实飞行器、工程工具、开源数据、理论图谱和个人项目。</p><div className="lab-hero-actions"><Link to="/intelligence">开始探索 ↗</Link><span>前沿情报 · 飞行器与任务 · 工具库</span></div></div><div className="lab-status-panel">{missionStats.map(item => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}<svg viewBox="0 0 220 44" aria-hidden="true"><path d="M2 28 C45 5, 80 42, 115 24 S180 16, 218 6"/><circle cx="55" cy="19" r="4"/><circle cx="118" cy="25" r="4"/><circle cx="178" cy="13" r="4"/></svg></div></div></section>;
+  return <section className="lab-hero"><img className="lab-hero-bg" src={labImages.hero} alt="航天仿真研究主视觉"/><div className="lab-hero-shade"/><div className="lab-hero-content"><div className="lab-hero-copy"><div className="lab-kicker">AEROSPACE SIMULATION RESEARCH</div><h1>仿真。<br/>分析。<br/>探索。</h1><p>面向中文用户的航天仿真研究入口：工程软件、开源项目、飞行器档案、公开数据、仿真方法、前沿情报与个人实验记录。</p><div className="lab-hero-actions"><Link to="/intelligence">开始探索 ↗</Link><span>前沿情报 · 飞行器与任务 · 工具库</span></div></div><div className="lab-status-panel lab-status-panel--data">{siteStats.map(item => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}<svg viewBox="0 0 220 44" aria-hidden="true"><path d="M2 28 C45 5, 80 42, 115 24 S180 16, 218 6"/><circle cx="55" cy="19" r="4"/><circle cx="118" cy="25" r="4"/><circle cx="178" cy="13" r="4"/></svg></div></div></section>;
 }
 
 function ConsoleBand() {
-  const digest = latestUpdates.slice(0, 3);
-  return <section className="lab-console-band lab-console-band--compact"><div className="lab-update-card"><span>最新更新</span><div><img src={labImages.orbit} alt="最新研究更新"/><article><em>2026-05-25</em><h3>中文航天仿真研究库重构</h3><p>信息架构 · 视觉系统 · 可维护</p></article></div></div><div className="lab-digest"><span>今日研究简报</span>{digest.map(item => <div key={item.title}><b>{item.title}</b><em>{item.date}</em></div>)}<Link to="/intelligence">进入前沿情报 ↗</Link></div><div className="lab-quick"><span>核心入口</span><div>{quickAccess.map(item => <Link key={item.title} to={item.href}><b>{item.cn}</b><em>{item.code}</em></Link>)}</div></div><div className="lab-orbit-widget"><div className="lab-orbit-rings"><i/><i/><i/><button>▶</button></div></div></section>;
+  const digest = intelligenceQueue.slice(0, 3);
+  return <section className="lab-console-band lab-console-band--compact"><div className="lab-update-card"><span>最新更新</span><div><img src={labImages.orbit} alt="最新研究更新"/><article><em>2026-05-25</em><h3>中文航天仿真研究库重构</h3><p>信息架构 · 数据驱动 · 研究控制台</p></article></div></div><div className="lab-digest"><span>今日研究简报</span>{digest.map(item => <div key={item.title}><b>{item.title}</b><em>{item.priority}</em></div>)}<Link to="/intelligence">进入前沿情报 ↗</Link></div><div className="lab-quick"><span>核心入口</span><div>{quickAccess.map(item => <Link key={item.title} to={item.href}><b>{item.cn}</b><em>{item.code}</em></Link>)}</div></div><div className="lab-orbit-widget"><div className="lab-orbit-rings"><i/><i/><i/><button>▶</button></div></div></section>;
 }
 
 function Projects() {
@@ -23,7 +38,7 @@ function MissionDossiers() {
 }
 
 function SimulationPreview() {
-  return <section className="lab-simulation-preview"><div className="lab-section-index">03</div><div className="lab-sim-copy"><span>任务回放</span><h2>仿真链路</h2><p>把公开信息、工程假设、软件工具、模型结果和复现实验连接起来，形成可追踪的仿真研究路径。</p><Link to="/my-projects">查看我的项目 ↗</Link></div><img src={labImages.orbit} alt="轨道仿真预览"/><div className="lab-sim-metrics"><div><span>马赫数</span><strong>25.3</strong></div><div><span>攻角</span><strong>12.5°</strong></div><div><span>密度</span><strong>0.012</strong></div></div></section>;
+  return <section className="lab-simulation-preview"><div className="lab-section-index">03</div><div className="lab-sim-copy"><span>任务回放</span><h2>仿真链路</h2><p>把公开信息、工程假设、软件工具、模型结果和复现实验连接起来，形成可追踪的仿真研究路径。</p><Link to="/my-projects">查看我的项目 ↗</Link></div><img src={labImages.orbit} alt="轨道仿真预览"/><div className="lab-sim-metrics"><div><span>工具</span><strong>{tools.length}</strong></div><div><span>案例</span><strong>{vehicles.length}</strong></div><div><span>实验</span><strong>{experimentCandidates.length}</strong></div></div></section>;
 }
 
 function DomainsAndMethods() {
