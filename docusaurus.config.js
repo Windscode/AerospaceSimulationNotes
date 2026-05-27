@@ -30,12 +30,12 @@ const config = {
     colorMode: { defaultMode: 'dark', disableSwitch: false, respectPrefersColorScheme: false },
     navbar: { title: '航天仿真研究库', logo: { alt: '航天仿真研究库', src: 'img/brand/orbital-mark.svg' }, hideOnScroll: true, items: [
       { to: '/', label: '首页', position: 'left' },
-      { to: '/intelligence', label: '研究情报', position: 'left' },
-      { to: '/knowledge', label: '知识库', position: 'left' },
-      { to: '/missions', label: '任务案例', position: 'left' },
-      { to: '/tools', label: '工程软件', position: 'left' },
-      { to: '/radar', label: '项目雷达', position: 'left' },
-      { to: '/data', label: '数据方法', position: 'left' },
+      { to: '/intelligence', label: '前沿情报', position: 'left' },
+      { to: '/missions', label: '飞行器与任务', position: 'left' },
+      { to: '/tools', label: '工具库', position: 'left' },
+      { to: '/open-source-data', label: '开源与数据', position: 'left' },
+      { to: '/knowledge', label: '知识图谱', position: 'left' },
+      { to: '/my-projects', label: '我的项目', position: 'left' },
       { to: '/log', label: '研究日志', position: 'right' }
     ] },
     footer: { style: 'dark', copyright: `Copyright © ${new Date().getFullYear()} Windscode. AeroSim Research Lab.` },
