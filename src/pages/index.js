@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import AeroLabFrame from '../components/AeroLabFrame';
+import OrbitalResearchConsole from '../components/OrbitalResearchConsole';
 import { labImages, quickAccess, latestUpdates, missionStats, featuredProjects, researchDomains, methodCards, missionDossiers } from '../data/aerolabContent';
 
 function Hero() {
@@ -34,5 +35,5 @@ function DataSources() {
 }
 
 export default function Home() {
-  return <Layout title="首页" description="航天仿真研究、工程软件、开源项目、公开数据与复现实验的个人研究控制台"><AeroLabFrame active="HOME"><Hero/><ConsoleBand/><Projects/><MissionDossiers/><SimulationPreview/><DomainsAndMethods/><DataSources/></AeroLabFrame></Layout>;
+  return <Layout title="首页" description="航天仿真研究、工程软件、开源项目、公开数据与复现实验的个人研究控制台"><AeroLabFrame active="HOME"><Hero/><ConsoleBand/><OrbitalResearchConsole/><Projects/><MissionDossiers/><SimulationPreview/><DomainsAndMethods/><DataSources/></AeroLabFrame></Layout>;
 }
