@@ -11,7 +11,7 @@ const config = {
   i18n: { defaultLocale: 'zh-CN', locales: ['zh-CN'] },
   presets: [[ 'classic', {
     docs: { sidebarPath: require.resolve('./sidebars.js'), routeBasePath: 'docs' },
-    blog: { showReadingTime: true, routeBasePath: 'blog', blogTitle: '研究日志', postsPerPage: 9, onUntruncatedBlogPosts: 'ignore' },
+    blog: { showReadingTime: true, routeBasePath: 'blog-archive', blogTitle: '研究日志原始归档', postsPerPage: 9, onUntruncatedBlogPosts: 'ignore' },
     theme: { customCss: [
       require.resolve('./src/css/custom.css'),
       require.resolve('./src/css/visual-fixes.css'),
