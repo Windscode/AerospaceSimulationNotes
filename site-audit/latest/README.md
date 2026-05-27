@@ -1,12 +1,12 @@
 # Deployed site screenshots
 
 Base URL: https://windscode.github.io/AerospaceSimulationNotes/
-Captured: 2026-05-27T01:39:04.949Z
+Captured: 2026-05-27T01:57:34.959Z
 
 | Viewport | Page | Status | Height | Screenshot | URL |
 | --- | --- | --- | --- | --- | --- |
-| desktop | home | 200 | 4329 | [home.png](./desktop/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
-| desktop | intelligence | 200 | 4276 | [intelligence.png](./desktop/intelligence.png) | https://windscode.github.io/AerospaceSimulationNotes/intelligence/ |
+| desktop | home | 200 | 5089 | [home.png](./desktop/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
+| desktop | intelligence | 200 | 4996 | [intelligence.png](./desktop/intelligence.png) | https://windscode.github.io/AerospaceSimulationNotes/intelligence/ |
 | desktop | knowledge | 200 | 4164 | [knowledge.png](./desktop/knowledge.png) | https://windscode.github.io/AerospaceSimulationNotes/knowledge/ |
 | desktop | missions | 200 | 3130 | [missions.png](./desktop/missions.png) | https://windscode.github.io/AerospaceSimulationNotes/missions/ |
 | desktop | tools | 200 | 5118 | [tools.png](./desktop/tools.png) | https://windscode.github.io/AerospaceSimulationNotes/tools/ |
@@ -16,8 +16,8 @@ Captured: 2026-05-27T01:39:04.949Z
 | desktop | log | 200 | 4509 | [log.png](./desktop/log.png) | https://windscode.github.io/AerospaceSimulationNotes/log/ |
 | desktop | blog-archive | 200 | 5255 | [blog-archive.png](./desktop/blog-archive.png) | https://windscode.github.io/AerospaceSimulationNotes/blog/ |
 | desktop | knowledge-intro | 200 | 2448 | [knowledge-intro.png](./desktop/knowledge-intro.png) | https://windscode.github.io/AerospaceSimulationNotes/docs/intro/ |
-| mobile | home | 200 | 7812 | [home.png](./mobile/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
-| mobile | intelligence | 200 | 7624 | [intelligence.png](./mobile/intelligence.png) | https://windscode.github.io/AerospaceSimulationNotes/intelligence/ |
+| mobile | home | 200 | 8834 | [home.png](./mobile/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
+| mobile | intelligence | 200 | 8646 | [intelligence.png](./mobile/intelligence.png) | https://windscode.github.io/AerospaceSimulationNotes/intelligence/ |
 | mobile | knowledge | 200 | 6434 | [knowledge.png](./mobile/knowledge.png) | https://windscode.github.io/AerospaceSimulationNotes/knowledge/ |
 | mobile | missions | 200 | 4898 | [missions.png](./mobile/missions.png) | https://windscode.github.io/AerospaceSimulationNotes/missions/ |
 | mobile | tools | 200 | 10552 | [tools.png](./mobile/tools.png) | https://windscode.github.io/AerospaceSimulationNotes/tools/ |
