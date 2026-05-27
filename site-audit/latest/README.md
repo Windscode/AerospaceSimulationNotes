@@ -1,7 +1,7 @@
 # Deployed site screenshots
 
 Base URL: https://windscode.github.io/AerospaceSimulationNotes/
-Captured: 2026-05-26T09:48:02.849Z
+Captured: 2026-05-27T01:17:59.077Z
 
 | Viewport | Page | Status | Height | Screenshot | URL |
 | --- | --- | --- | --- | --- | --- |
@@ -14,7 +14,7 @@ Captured: 2026-05-26T09:48:02.849Z
 | desktop | reproduction-lab | 200 | 4411 | [reproduction-lab.png](./desktop/reproduction-lab.png) | https://windscode.github.io/AerospaceSimulationNotes/reproduction-lab/ |
 | desktop | data | 200 | 3132 | [data.png](./desktop/data.png) | https://windscode.github.io/AerospaceSimulationNotes/data/ |
 | desktop | log | 200 | 4098 | [log.png](./desktop/log.png) | https://windscode.github.io/AerospaceSimulationNotes/log/ |
-| desktop | blog-archive | 200 | 1100 | [blog-archive.png](./desktop/blog-archive.png) | https://windscode.github.io/AerospaceSimulationNotes/blog/ |
+| desktop | blog-archive | 200 | 4724 | [blog-archive.png](./desktop/blog-archive.png) | https://windscode.github.io/AerospaceSimulationNotes/blog/ |
 | desktop | knowledge-intro | 200 | 1100 | [knowledge-intro.png](./desktop/knowledge-intro.png) | https://windscode.github.io/AerospaceSimulationNotes/docs/intro/ |
 | mobile | home | 200 | 7671 | [home.png](./mobile/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
 | mobile | intelligence | 200 | 7353 | [intelligence.png](./mobile/intelligence.png) | https://windscode.github.io/AerospaceSimulationNotes/intelligence/ |
@@ -25,5 +25,5 @@ Captured: 2026-05-26T09:48:02.849Z
 | mobile | reproduction-lab | 200 | 7286 | [reproduction-lab.png](./mobile/reproduction-lab.png) | https://windscode.github.io/AerospaceSimulationNotes/reproduction-lab/ |
 | mobile | data | 200 | 4691 | [data.png](./mobile/data.png) | https://windscode.github.io/AerospaceSimulationNotes/data/ |
 | mobile | log | 200 | 7125 | [log.png](./mobile/log.png) | https://windscode.github.io/AerospaceSimulationNotes/log/ |
-| mobile | blog-archive | 200 | 844 | [blog-archive.png](./mobile/blog-archive.png) | https://windscode.github.io/AerospaceSimulationNotes/blog/ |
-| mobile | knowledge-intro | 200 | 1247 | [knowledge-intro.png](./mobile/knowledge-intro.png) | https://windscode.github.io/AerospaceSimulationNotes/docs/intro/ |
+| mobile | blog-archive | 200 | 8779 | [blog-archive.png](./mobile/blog-archive.png) | https://windscode.github.io/AerospaceSimulationNotes/blog/ |
+| mobile | knowledge-intro | 200 | 1309 | [knowledge-intro.png](./mobile/knowledge-intro.png) | https://windscode.github.io/AerospaceSimulationNotes/docs/intro/ |
