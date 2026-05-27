@@ -20,21 +20,21 @@ const dataVisuals = [
 
 export default function DataPage(){
   return <Layout title="数据方法" description="航天仿真公开数据、资料来源与参数推断方法">
-    <AeroLabFrame active="DATA">
-      <LabPageHero eyebrow="DATA ARCHIVE · 数据档案" title="数据与方法" text="公开数据、任务资料、论文图表、开源项目和新闻线索并不是直接可用的真值。这里用于记录来源、可信度、适用范围和参数推断方法。" image={labImages.data} stats={[{label:'数据模式', value:'公开'}, {label:'可追溯性', value:'必须'}, {label:'不确定性', value:'显式标注'}]} />
+    <AeroLabFrame active="OPEN">
+      <LabPageHero eyebrow="DATA METHODS · 内部模块" title="数据方法" text="这是“开源与数据”下的内部模块，用于记录公开资料来源、可信度、适用范围、参数推断和不确定性标注。" image={labImages.data} stats={[{label:'归属栏目', value:'开源与数据'}, {label:'用途', value:'来源 / 方法'}, {label:'要求', value:'可追溯'}]} />
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>数据视觉系统</span><h2>数据页也必须像任务控制台，而不是资料清单。</h2></div><p>先用大图建立数据场景，再用来源、方法和置信度支撑研究可信度。</p></div>
+        <div className="lab-page-head"><div><span>数据场景</span><h2>证据入口</h2></div><p>先用大图建立数据场景，再用来源、方法和置信度支撑研究可信度。</p></div>
         <div className="lab-cinema-grid">{dataVisuals.map((item, i) => <article className={`lab-cinema-card ${i===0?'wide':''}`} key={item.title}><img src={item.image} alt={item.cn}/><div><span>{item.tag}</span><h3>{item.cn}</h3><p>{item.desc}</p><footer><em>{item.title}</em></footer></div></article>)}</div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>数据来源</span><h2>公开数据来源必须可追溯。</h2></div><p>网站每天维护时，新增数据源先标注出处、时间、可信度、适用对象和不可用边界。</p></div>
+        <div className="lab-page-head"><div><span>公开来源</span><h2>来源清单</h2></div><p>每天维护时，新增数据源先标注出处、时间、可信度、适用对象和不可用边界。</p></div>
         <div className="lab-status-grid">{dataSources.map((item, i) => <article key={item.name}><span>{String(i+1).padStart(2,'0')} · {item.type}</span><strong>{item.name}</strong><p>{item.desc}</p></article>)}</div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-overlay-panel"><img src={labImages.orbit} alt="轨道与数据推断"/><div><span>参数推断方法</span><h3>数据不足时，用方法而不是幻想补齐。</h3><p>可以反推和估计，但必须把事实、假设和误差范围说清楚。这个页面的设计目标是把“公开数据 → 参数估计 → 复现实验 → 验证结论”的链路做得清晰、专业、可维护。</p></div></div>
+        <div className="lab-overlay-panel"><img src={labImages.orbit} alt="轨道与数据推断"/><div><span>参数推断</span><h3>事实、假设、误差。</h3><p>可以反推和估计，但必须把公开事实、工程假设和误差范围分开。这个模块负责把“公开数据 → 参数估计 → 复现实验 → 验证结论”的链路维护清楚。</p></div></div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>方法卡片</span><h2>参数推断方法</h2></div><p>每个方法后续都可以独立扩展成一篇说明或实验日志。</p></div>
+        <div className="lab-page-head"><div><span>方法卡片</span><h2>推断方法</h2></div><p>每个方法后续都可以独立扩展成一篇说明或实验日志。</p></div>
         <div className="lab-table-grid">{methodCards.map(item => <article key={item.title}><span>{item.meta}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
       </section>
     </AeroLabFrame>
