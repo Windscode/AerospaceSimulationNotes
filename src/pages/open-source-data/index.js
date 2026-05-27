@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
 import StatusPill from '../../components/StatusPill';
+import DataEvidenceChain from '../../components/DataEvidenceChain';
 import { labImages, methodCards } from '../../data/aerolabContent';
 import { openSourceProjects, datasets } from '../../data/openSource';
 
@@ -22,6 +23,7 @@ export default function OpenSourceDataPage(){
   return <Layout title="开源与数据" description="航天仿真开源项目、公开数据库和参数推断方法">
     <AeroLabFrame active="OPEN">
       <LabPageHero eyebrow="OPEN SOURCE & DATA · 开源与数据" title="开源与数据" text="把能直接学习、复用、接入或验证的开源项目、公开数据库和参数推断方法集中管理。重点不是收藏链接，而是判断能不能进入航天仿真研究链路。" image={labImages.data} stats={[{label:'开源项目', value:String(openSourceProjects.length)}, {label:'数据源', value:String(datasets.length)}, {label:'维护方式', value:'数据驱动'}]} />
+      <DataEvidenceChain datasets={datasets}/>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>资源入口</span><h2>资源入口</h2></div><p>先按用途进入资源类型，再进入项目评估、数据方法或工具链详情。</p></div>
         <div className="lab-cinema-grid">{resourceTypes.map((item, i) => <Link to={item.href} className={`lab-cinema-card ${i === 0 ? 'wide' : ''}`} key={item.title}><img src={item.image} alt={item.title}/><div><span>{item.label}</span><h3>{item.title}</h3><p>{item.desc}</p><footer><em>进入模块</em></footer></div></Link>)}</div>
