@@ -7,10 +7,10 @@ export const labImages = {
 };
 
 export const quickAccess = [
-  { title: 'Knowledge Base', cn: '知识库', href: '/knowledge', code: 'KB' },
-  { title: 'Mission Dossiers', cn: '任务案例', href: '/missions', code: 'MS' },
-  { title: 'Open Source Radar', cn: '开源项目', href: '/radar', code: 'OS' },
-  { title: 'Data Archive', cn: '公开数据', href: '/data', code: 'DA' },
+  { title: 'Frontier Intelligence', cn: '前沿情报', href: '/intelligence', code: 'FR' },
+  { title: 'Vehicles & Missions', cn: '飞行器与任务', href: '/missions', code: 'VM' },
+  { title: 'Tool Library', cn: '工具库', href: '/tools', code: 'TL' },
+  { title: 'Open Source & Data', cn: '开源与数据', href: '/open-source-data', code: 'OD' },
 ];
 
 export const latestUpdates = [
