@@ -187,7 +187,8 @@
 .lab-object-grid article,
 .lab-toolchain-grid article,
 .lab-evidence-rules article,
-.lab-evidence-layout aside {
+.lab-evidence-layout aside,
+.lab-recipe-grid article {
   border: 1px solid rgba(126,229,255,.16);
   background:
     radial-gradient(circle at 18% 0%, rgba(39,231,255,.08), transparent 34%),
@@ -203,7 +204,8 @@
 .lab-action-grid article > span,
 .lab-object-grid article > span,
 .lab-toolchain-grid article > span,
-.lab-evidence-layout aside > span {
+.lab-evidence-layout aside > span,
+.lab-recipe-grid article > span {
   color: #27e7ff;
   font-size: 11px;
   letter-spacing: .14em;
@@ -213,7 +215,8 @@
 .lab-action-grid h3,
 .lab-object-grid h3,
 .lab-toolchain-grid h3,
-.lab-evidence-rules h3 {
+.lab-evidence-rules h3,
+.lab-recipe-grid h3 {
   color: #f5fbff;
   font-size: 22px;
   line-height: 1.2;
@@ -223,7 +226,8 @@
 .lab-object-grid p,
 .lab-toolchain-grid p,
 .lab-evidence-rules p,
-.lab-evidence-layout aside p {
+.lab-evidence-layout aside p,
+.lab-recipe-grid p {
   color: rgba(232,244,255,.72);
   line-height: 1.75;
   margin: 0 0 14px;
@@ -249,7 +253,8 @@
 }
 .lab-action-fields em,
 .lab-object-grid em,
-.lab-toolchain-grid footer em {
+.lab-toolchain-grid footer em,
+.lab-recipe-tools em {
   display: inline-flex;
   margin: 0 6px 6px 0;
   padding: 4px 7px;
@@ -291,7 +296,8 @@
   min-height: 355px;
 }
 .lab-object-grid ul,
-.lab-toolchain-grid ol {
+.lab-toolchain-grid ol,
+.lab-recipe-grid ol {
   margin: 12px 0 0;
   padding-left: 18px;
   color: rgba(235,246,255,.7);
@@ -334,13 +340,91 @@
   line-height: 1;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
+/* Tool page: task recipes, first-run guidance and practical cards. */
+.tool-stage-explorer--mission .tool-stage-lanes button span {
+  white-space: normal !important;
+  line-height: 1.55 !important;
+}
+.tool-stage-io {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+.tool-stage-io p {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid rgba(126,229,255,.12);
+  background: rgba(255,255,255,.035);
+  color: rgba(232,244,255,.76);
+  line-height: 1.55;
+}
+.tool-stage-io b {
+  color: #7ee5ff;
+}
+.lab-recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.lab-recipe-grid article {
+  padding: 22px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+.lab-recipe-tools {
+  margin: 4px 0 8px;
+}
+.lab-recipe-grid strong {
+  display: block;
+  margin-top: auto;
+  padding: 12px;
+  border-left: 2px solid rgba(73,255,207,.55);
+  background: rgba(73,255,207,.045);
+  color: #eafff8;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.lab-recipe-grid small,
+.lab-stack-card small {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255,207,112,.82);
+  line-height: 1.55;
+}
+.lab-stack-card {
+  min-height: 210px !important;
+}
+.lab-tool-card--practical {
+  min-height: 430px !important;
+}
+.lab-tool-card--practical h3 {
+  font-size: 24px !important;
+}
+.lab-practical-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0 4px;
+}
+.lab-practical-dual .lab-detail-field {
+  min-height: 118px !important;
+  background: rgba(255,255,255,.028) !important;
+}
+.lab-tool-database {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
 @media (max-width: 1100px) {
   .lab-vehicle-matrix,
   .lab-action-grid,
   .lab-object-grid,
   .lab-toolchain-grid,
   .lab-evidence-layout,
-  .lab-evidence-rules { grid-template-columns: 1fr !important; }
+  .lab-evidence-rules,
+  .lab-recipe-grid,
+  .lab-practical-dual,
+  .lab-tool-database { grid-template-columns: 1fr !important; }
   .lab-detail-grid { grid-template-columns: 1fr !important; }
   .lab-param-strip { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   .lab-filter-row input { min-width: 100% !important; }
