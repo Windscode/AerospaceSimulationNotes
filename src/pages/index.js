@@ -13,16 +13,38 @@ import { knowledgeDomains } from '../data/knowledge';
 import { experimentCandidates } from '../data/experiments';
 
 const siteStats = [
-  { label: '工具条目', value: String(tools.length) },
+  { label: '专业工具', value: String(tools.length) },
   { label: '开源项目', value: String(openSourceProjects.length) },
-  { label: '公开数据', value: String(datasets.length) },
-  { label: '飞行器档案', value: String(vehicles.length) },
+  { label: '飞行器条目', value: String(vehicles.length) },
   { label: '知识节点', value: String(knowledgeDomains.length) },
-  { label: '复现实验', value: String(experimentCandidates.length) },
+];
+
+const heroRoutes = [
+  { title: '前沿情报', href: '/intelligence', desc: '新闻、论文、软件更新进入筛选队列' },
+  { title: '专业工具', href: '/tools', desc: '从任务阶段选择 STK / GMAT / Orekit / CFD 工具链' },
+  { title: '飞行器库', href: '/missions', desc: '把火箭、卫星、空间站转成仿真对象' },
+  { title: '知识图谱', href: '/knowledge', desc: '理论域、对象节点、方法链路相互连接' },
 ];
 
 function Hero() {
-  return <section className="lab-hero"><img className="lab-hero-bg" src={labImages.hero} alt="航天仿真研究主视觉"/><div className="lab-hero-shade"/><div className="lab-hero-content"><div className="lab-hero-copy"><div className="lab-kicker">AEROSPACE SIMULATION RESEARCH</div><h1>仿真。<br/>分析。<br/>探索。</h1><p>面向中文用户的航天仿真研究入口：工程软件、开源项目、飞行器档案、公开数据、仿真方法、前沿情报与个人实验记录。</p><div className="lab-hero-actions"><Link to="/intelligence">开始探索 ↗</Link><span>前沿情报 · 飞行器与任务 · 工具库</span></div></div><div className="lab-status-panel lab-status-panel--data">{siteStats.map(item => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}<svg viewBox="0 0 220 44" aria-hidden="true"><path d="M2 28 C45 5, 80 42, 115 24 S180 16, 218 6"/><circle cx="55" cy="19" r="4"/><circle cx="118" cy="25" r="4"/><circle cx="178" cy="13" r="4"/></svg></div></div></section>;
+  return <section className="network-hero lab-hero">
+    <img className="lab-hero-bg" src={labImages.hero} alt="航天仿真研究主视觉"/>
+    <div className="lab-hero-shade"/>
+    <div className="network-planet" aria-hidden="true"><i/><i/><i/></div>
+    <div className="network-hero-content">
+      <div className="network-hero-copy">
+        <div className="lab-kicker">AEROSPACE SIMULATION RESEARCH NETWORK</div>
+        <h1><span>航天仿真</span><b>研究网络</b></h1>
+        <p>探索航天仿真技术的前沿知识、专业工具、开源项目、飞行器数据库、最新研究进展与理论知识图谱，构建个人可维护的航天领域知识中心。</p>
+        <div className="network-hero-actions"><Link to="/intelligence">开始探索</Link><Link to="/tools">查看工具库</Link></div>
+        <div className="network-stats">{siteStats.map(item => <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div>
+      </div>
+      <div className="network-route-panel">
+        <span>MISSION ROUTES</span>
+        {heroRoutes.map((route, index) => <Link key={route.title} to={route.href}><em>{String(index + 1).padStart(2,'0')}</em><strong>{route.title}</strong><p>{route.desc}</p></Link>)}
+      </div>
+    </div>
+  </section>;
 }
 
 function ConsoleBand() {
