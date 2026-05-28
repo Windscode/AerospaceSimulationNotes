@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
 import StatusPill from '../../components/StatusPill';
 import DataEvidenceChain from '../../components/DataEvidenceChain';
+import { ProjectDatabaseCard } from '../../components/DatabaseCards';
 import { labImages, methodCards } from '../../data/aerolabContent';
 import { openSourceProjects, datasets } from '../../data/openSource';
 
@@ -33,9 +34,10 @@ export default function OpenSourceDataPage(){
         <div className="lab-status-grid">{datasets.map((s, i) => <article key={s.id}><div className="lab-card-status-row"><StatusPill label="可信度" value={s.confidence}/><StatusPill label="类型" value={s.type}/></div><span>{String(i + 1).padStart(2,'0')} · {s.organization}</span><strong>{s.title}</strong><p>{s.updateCycle} · {s.format}</p><p>{s.scenario}</p><p><b>限制：</b>{s.limitation}</p></article>)}</div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>开源评估</span><h2>项目矩阵</h2></div><p>优先看许可证、活跃度、文档、示例质量、复现成本和工程价值。</p></div>
+        <div className="lab-page-head"><div><span>开源评估</span><h2>项目矩阵</h2></div><p>优先看许可证、活跃度、文档、示例质量、复现成本和工程价值；展开后判断它能不能接入实际仿真链路。</p></div>
         <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 Orekit / Basilisk / cFS / TLE" />{categories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
-        <div className="lab-table-grid">{result.map(p => <article key={p.id}><div className="lab-card-status-row"><StatusPill label="活跃度" value={p.activity}/><StatusPill label="难度" value={p.difficulty}/><StatusPill label="可信度" value={p.confidence}/></div><span>{p.category} · {p.language} · {p.license}</span><h3>{p.title}</h3><p>{p.summary}</p><p><b>能做什么：</b>{p.canDo.join(' / ')}</p><p><b>流程位置：</b>{p.workflowUse.join(' / ')}</p><footer>{p.relatedTools.map(t => <em key={t}>{t}</em>)}<em>{p.personalLearning ? '适合学习' : '偏工程参考'}</em></footer></article>)}</div>
+        <div className="lab-database-toolbar"><strong>{result.length}</strong><span>个匹配项目</span><p>不是收藏项目，而是把项目放入学习、验证、任务回放或工程接口的位置。</p></div>
+        <div className="lab-table-grid lab-database-grid">{result.map(p => <ProjectDatabaseCard key={p.id} project={p}/>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>参数推断</span><h2>方法卡片</h2></div><p>公开数据不完整时，必须清楚区分事实、估计和猜测。</p></div>
