@@ -28,7 +28,8 @@ const config = {
       require.resolve('./src/css/aerolab-resources.css'),
       require.resolve('./src/css/aerolab-screenshot-audit.css'),
       require.resolve('./src/css/aerolab-screenshot-audit-2.css'),
-      require.resolve('./src/css/aerolab-screenshot-audit-3.css')
+      require.resolve('./src/css/aerolab-screenshot-audit-3.css'),
+      require.resolve('./src/css/aerolab-network-v2.css')
     ] }
   }]],
   themeConfig: {
