@@ -1,0 +1,161 @@
+/* Missions v4: make the vehicle page feel like an object-to-simulation workbench. */
+.lab-object-question-board,
+.lab-mission-path-board,
+.lab-dossier-rules {
+  padding-top: 86px !important;
+  padding-bottom: 86px !important;
+}
+.lab-object-question-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.lab-object-question-grid article,
+.lab-vehicle-evidence-panel article {
+  border: 1px solid rgba(126,229,255,.16);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(39,231,255,.09), transparent 34%),
+    linear-gradient(180deg, rgba(8,20,42,.82), rgba(3,10,22,.76));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 18px 70px rgba(0,0,0,.22);
+}
+.lab-object-question-grid article {
+  min-height: 210px;
+  padding: 22px;
+}
+.lab-object-question-grid span,
+.lab-vehicle-evidence-panel span,
+.lab-vehicle-plan-note span {
+  color: #27e7ff;
+  font-size: 11px;
+  letter-spacing: .14em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.lab-object-question-grid h3,
+.lab-vehicle-evidence-panel h3 {
+  color: #f6fbff;
+  font-size: 22px;
+  line-height: 1.18;
+  margin: 12px 0 10px;
+}
+.lab-object-question-grid p,
+.lab-vehicle-evidence-panel p,
+.lab-vehicle-plan-note p,
+.lab-vehicle-flow--evidence > div p {
+  color: rgba(232,244,255,.72);
+  line-height: 1.76;
+  margin: 0;
+}
+.lab-vehicle-explorer--deep {
+  position: relative;
+  border-top: 1px solid rgba(126,229,255,.1);
+  border-bottom: 1px solid rgba(126,229,255,.1);
+}
+.lab-vehicle-explorer--deep .lab-vehicle-layout {
+  align-items: stretch;
+}
+.lab-vehicle-explorer--deep .lab-vehicle-stage {
+  display: grid;
+  gap: 14px;
+}
+.lab-vehicle-plan-note {
+  border: 1px solid rgba(73,255,207,.18);
+  background: linear-gradient(135deg, rgba(73,255,207,.07), rgba(2,9,22,.55));
+  padding: 16px 18px;
+}
+.lab-vehicle-brief h3 {
+  font-size: 26px !important;
+  line-height: 1.15 !important;
+}
+.lab-vehicle-mini-grid article {
+  border-left: 2px solid rgba(126,229,255,.22);
+}
+.lab-vehicle-flow--evidence {
+  margin-top: 18px !important;
+  border: 1px solid rgba(126,229,255,.14) !important;
+  background:
+    linear-gradient(90deg, rgba(39,231,255,.035), transparent 44%),
+    rgba(3,10,22,.55) !important;
+}
+.lab-vehicle-flow--evidence > div {
+  min-width: 220px;
+}
+.lab-vehicle-flow--evidence article {
+  min-height: 116px !important;
+}
+.lab-vehicle-evidence-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+.lab-vehicle-evidence-panel article {
+  padding: 20px;
+  min-height: 210px;
+}
+.lab-inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+.lab-inline-list em {
+  display: inline-flex;
+  padding: 5px 8px;
+  border: 1px solid rgba(126,229,255,.15);
+  background: rgba(255,255,255,.035);
+  color: rgba(235,246,255,.78);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.35;
+}
+.lab-step-list {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.lab-step-list li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 9px;
+  border: 1px solid rgba(126,229,255,.1);
+  background: rgba(255,255,255,.025);
+}
+.lab-step-list b {
+  color: #49ffcf;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.lab-step-list span {
+  color: rgba(232,244,255,.76);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.lab-mission-path-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.lab-mission-path-grid article {
+  min-height: 250px !important;
+}
+.lab-mission-path-grid .lab-card-brief--strong {
+  margin: 14px 0 !important;
+}
+.lab-dossier-rules .lab-health-grid article {
+  min-height: 185px;
+}
+.lab-real-focus-grid article p {
+  min-height: 70px;
+}
+@media (max-width: 1100px) {
+  .lab-object-question-grid,
+  .lab-vehicle-evidence-panel,
+  .lab-mission-path-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
