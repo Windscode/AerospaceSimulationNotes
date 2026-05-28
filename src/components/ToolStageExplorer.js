@@ -11,12 +11,12 @@ export default function ToolStageExplorer({lanes = [], tools = []}) {
 
   if (!lanes.length || !activeLane) return null;
 
-  return <section className="tool-stage-explorer">
-    <div className="tool-stage-head"><span>TOOLCHAIN BY MISSION STAGE · 阶段工具链</span><h2>先选任务阶段，再选工具。</h2><p>工具库不应该只是软件名录。先确定要解决轨道、控制、气动、遥测哪类问题，再看推荐工具、输入输出和入门动作。</p></div>
+  return <section className="tool-stage-explorer tool-stage-explorer--mission">
+    <div className="tool-stage-head"><span>TOOLCHAIN BY MISSION STAGE · 阶段工具链</span><h2>先选任务问题，再选工具。</h2><p>工具库最有用的形态不是软件清单，而是一个选择器：你现在要解决什么问题，输入是什么，最后要产出什么证据。</p></div>
     <div className="tool-stage-layout">
       <aside className="tool-stage-lanes">
         {lanes.map((lane, index) => <button key={lane.title} type="button" className={lane.title === activeLane.title ? 'active' : ''} onClick={() => setActiveTitle(lane.title)} onMouseEnter={() => setActiveTitle(lane.title)}>
-          <em>{String(index + 1).padStart(2, '0')}</em><strong>{lane.title}</strong><span>{lane.tools.join(' / ')}</span>
+          <em>{String(index + 1).padStart(2, '0')}</em><strong>{lane.title}</strong><span>{lane.problem || lane.desc}</span>
         </button>)}
       </aside>
       <div className="tool-stage-map">
@@ -30,8 +30,8 @@ export default function ToolStageExplorer({lanes = [], tools = []}) {
       <aside className="tool-stage-brief">
         <span>阶段说明</span>
         <h3>{activeLane.title}</h3>
-        <p>{activeLane.desc}</p>
-        <div className="tool-stage-cards">{laneTools.slice(0, 3).map(tool => <article key={tool.id}><strong>{tool.title}</strong><p>{tool.starterTask}</p><footer><StatusPill value={tool.licenseType}/><StatusPill value={tool.confidence}/></footer></article>)}</div>
+        <div className="tool-stage-io"><p><b>要解决：</b>{activeLane.problem}</p><p><b>输入：</b>{activeLane.input}</p><p><b>输出：</b>{activeLane.output}</p></div>
+        <div className="tool-stage-cards">{laneTools.slice(0, 3).map(tool => <article key={tool.id}><strong>{tool.title}</strong><p>{tool.firstRun || tool.starterTask}</p><footer><StatusPill value={tool.licenseType}/><StatusPill value={tool.confidence}/></footer></article>)}</div>
       </aside>
     </div>
   </section>;
