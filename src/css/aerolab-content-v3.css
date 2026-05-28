@@ -165,8 +165,182 @@
 .lab-card-brief {
   line-height: 1.55 !important;
 }
+
+/* Homepage workboards: concrete actions instead of decorative module blocks. */
+.lab-action-board,
+.lab-object-workbench,
+.lab-toolchain-bridge,
+.lab-evidence-board {
+  padding-top: 92px !important;
+  padding-bottom: 92px !important;
+}
+.lab-action-grid,
+.lab-object-grid,
+.lab-toolchain-grid {
+  display: grid;
+  gap: 16px;
+}
+.lab-action-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.lab-action-grid article,
+.lab-object-grid article,
+.lab-toolchain-grid article,
+.lab-evidence-rules article,
+.lab-evidence-layout aside {
+  border: 1px solid rgba(126,229,255,.16);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(39,231,255,.08), transparent 34%),
+    linear-gradient(180deg, rgba(8,20,42,.78), rgba(3,10,22,.74));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 18px 70px rgba(0,0,0,.22);
+}
+.lab-action-grid article {
+  padding: 22px;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+}
+.lab-action-grid article > span,
+.lab-object-grid article > span,
+.lab-toolchain-grid article > span,
+.lab-evidence-layout aside > span {
+  color: #27e7ff;
+  font-size: 11px;
+  letter-spacing: .14em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.lab-action-grid h3,
+.lab-object-grid h3,
+.lab-toolchain-grid h3,
+.lab-evidence-rules h3 {
+  color: #f5fbff;
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 12px 0 10px;
+}
+.lab-action-grid p,
+.lab-object-grid p,
+.lab-toolchain-grid p,
+.lab-evidence-rules p,
+.lab-evidence-layout aside p {
+  color: rgba(232,244,255,.72);
+  line-height: 1.75;
+  margin: 0 0 14px;
+}
+.lab-action-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 4px 0 14px;
+}
+.lab-action-fields div,
+.lab-object-grid article div {
+  border: 1px solid rgba(126,229,255,.11);
+  background: rgba(2,9,22,.45);
+  padding: 11px;
+}
+.lab-action-fields b,
+.lab-object-grid b {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(126,229,255,.82);
+  font-size: 12px;
+}
+.lab-action-fields em,
+.lab-object-grid em,
+.lab-toolchain-grid footer em {
+  display: inline-flex;
+  margin: 0 6px 6px 0;
+  padding: 4px 7px;
+  border: 1px solid rgba(126,229,255,.14);
+  background: rgba(255,255,255,.035);
+  color: rgba(235,246,255,.76);
+  font-size: 11px;
+  font-style: normal;
+}
+.lab-action-output {
+  display: block;
+  margin-top: auto;
+  padding: 12px;
+  border-left: 2px solid rgba(73,255,207,.55);
+  background: rgba(73,255,207,.045);
+  color: #eafff8;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.lab-action-grid a,
+.lab-section-entry,
+.lab-evidence-layout aside a {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1px solid rgba(126,229,255,.2);
+  color: #7ee5ff;
+  font-weight: 800;
+  font-size: 12px;
+  text-decoration: none;
+  background: rgba(126,229,255,.04);
+}
+.lab-object-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.lab-object-grid article {
+  padding: 20px;
+  min-height: 355px;
+}
+.lab-object-grid ul,
+.lab-toolchain-grid ol {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: rgba(235,246,255,.7);
+  line-height: 1.65;
+  font-size: 13px;
+}
+.lab-toolchain-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.lab-toolchain-grid article {
+  padding: 22px;
+  min-height: 320px;
+}
+.lab-toolchain-grid footer {
+  margin-top: 14px;
+}
+.lab-evidence-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+}
+.lab-evidence-rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.lab-evidence-rules article {
+  padding: 20px;
+  min-height: 160px;
+}
+.lab-evidence-layout aside {
+  padding: 24px;
+  align-self: stretch;
+}
+.lab-evidence-layout aside strong {
+  display: block;
+  margin: 18px 0 8px;
+  color: #49ffcf;
+  font-size: 54px;
+  line-height: 1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
 @media (max-width: 1100px) {
-  .lab-vehicle-matrix { grid-template-columns: 1fr !important; }
+  .lab-vehicle-matrix,
+  .lab-action-grid,
+  .lab-object-grid,
+  .lab-toolchain-grid,
+  .lab-evidence-layout,
+  .lab-evidence-rules { grid-template-columns: 1fr !important; }
   .lab-detail-grid { grid-template-columns: 1fr !important; }
   .lab-param-strip { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   .lab-filter-row input { min-width: 100% !important; }
