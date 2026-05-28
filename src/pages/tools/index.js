@@ -1,8 +1,8 @@
 import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
-import StatusPill from '../../components/StatusPill';
 import ToolStageExplorer from '../../components/ToolStageExplorer';
+import { ToolDatabaseCard } from '../../components/DatabaseCards';
 import { labImages, featuredProjects } from '../../data/aerolabContent';
 import { tools, toolCategories, toolLanes } from '../../data/tools';
 
@@ -35,9 +35,10 @@ export default function ToolsPage() {
         </div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>工具矩阵</span><h2>完整工具库</h2></div><p>每个工具条目都要说明类别、商业/开源、难度、典型用途、推荐入门任务和相关工具。</p></div>
+        <div className="lab-page-head"><div><span>工具矩阵</span><h2>完整工具库</h2></div><p>每个工具条目都要说明类别、商业/开源、难度、典型用途、推荐入门任务和相关工具；展开后能看到输入、输出、适合人群和可组合工具。</p></div>
         <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 MATLAB / STK / GMAT / CFD / GNC" />{toolCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
-        <div className="lab-table-grid lab-tool-database">{result.map(tool => <article key={tool.id}><div className="lab-card-status-row"><StatusPill label="许可" value={tool.licenseType}/><StatusPill label="难度" value={tool.difficulty}/><StatusPill label="成熟度" value={tool.status}/><StatusPill label="可信度" value={tool.confidence}/></div><span>{tool.category}</span><h3>{tool.title}</h3><p>{tool.summary}</p><p><b>典型用途：</b>{tool.typicalUse}</p><p><b>入门任务：</b>{tool.starterTask}</p><footer>{tool.relatedTools.map(d => <em key={d}>{d}</em>)}</footer></article>)}</div>
+        <div className="lab-database-toolbar"><strong>{result.length}</strong><span>个匹配工具</span><p>先筛选类别，再展开卡片判断它是否适合当前任务阶段。</p></div>
+        <div className="lab-table-grid lab-database-grid lab-tool-database">{result.map(tool => <ToolDatabaseCard key={tool.id} tool={tool}/>)}</div>
       </section>
     </AeroLabFrame>
   </Layout>;
