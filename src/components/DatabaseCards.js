@@ -37,21 +37,24 @@ export function ToolDatabaseCard({tool}) {
 }
 
 export function VehicleDatabaseCard({vehicle}) {
-  return <article className="lab-database-card lab-vehicle-database-card">
-    <div className="lab-card-status-row"><StatusPill label="状态" value={vehicle.status}/><StatusPill label="可信度" value={vehicle.confidence}/></div>
+  return <article className="lab-database-card lab-vehicle-database-card lab-real-card">
+    <div className="lab-card-status-row"><StatusPill label="状态" value={vehicle.status}/><StatusPill label="可信度" value={vehicle.confidence}/><StatusPill label="国家" value={vehicle.country}/></div>
     <span className="lab-card-meta">{vehicle.category} · {vehicle.organization}</span>
     <h3>{vehicle.title}</h3>
     <p>{vehicle.summary}</p>
     <div className="lab-param-strip">{vehicle.parameterCards?.map(card => <div key={card.label}><span>{card.label}</span><strong>{card.value}</strong></div>)}</div>
+    <div className="lab-card-brief lab-card-brief--strong"><b>建模建议</b><span>{vehicle.modelPlan || '先整理公开来源，再建立可验证的简化模型。'}</span></div>
     <details className="lab-expand-panel">
-      <summary>展开飞行器档案</summary>
+      <summary>展开真实对象档案</summary>
       <div className="lab-detail-grid">
         <Field title="关键参数"><ChipList items={vehicle.keyParameters}/></Field>
-        <Field title="公开数据"><ChipList items={vehicle.publicData}/></Field>
-        <Field title="推断参数"><ChipList items={vehicle.inferredParameters}/></Field>
+        <Field title="公开来源"><ChipList items={vehicle.sourceRefs || vehicle.publicData}/></Field>
+        <Field title="可用公开数据"><ChipList items={vehicle.publicData}/></Field>
+        <Field title="需要推断的参数"><ChipList items={vehicle.inferredParameters}/></Field>
         <Field title="子系统"><ChipList items={vehicle.subsystems}/></Field>
         <Field title="任务阶段"><TextList items={vehicle.missionPhases}/></Field>
         <Field title="仿真流程"><TextList items={vehicle.simulationFlow}/></Field>
+        <Field title="验证检查"><TextList items={vehicle.validationChecks}/></Field>
         <Field title="仿真方向"><ChipList items={vehicle.simulationTopics}/></Field>
         <Field title="可用工具"><ChipList items={vehicle.tools}/></Field>
       </div>
