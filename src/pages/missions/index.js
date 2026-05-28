@@ -2,7 +2,7 @@ import React, {useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
 import VehicleMissionExplorer from '../../components/VehicleMissionExplorer';
-import StatusPill from '../../components/StatusPill';
+import { VehicleDatabaseCard } from '../../components/DatabaseCards';
 import { labImages, missionDossiers, methodCards } from '../../data/aerolabContent';
 import { vehicles, vehicleCategories } from '../../data/vehicles';
 
@@ -28,9 +28,10 @@ export default function MissionsPage(){
         <div className="lab-mission-grid">{missionDossiers.map((m, i) => <article key={m.title} className={i === 0 ? 'featured' : ''}><img src={m.image} alt={m.cn}/><div><span>{m.phase}</span><h3>{m.cn}</h3><h4>{m.title}</h4><p>{m.desc}</p><footer>{m.tags.map(t => <em key={t}>{t}</em>)}</footer></div></article>)}</div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>飞行器档案</span><h2>对象矩阵</h2></div><p>飞行器不是百科条目，而要说明公开数据、可推测参数、适用工具和仿真问题。</p></div>
+        <div className="lab-page-head"><div><span>飞行器档案</span><h2>对象矩阵</h2></div><p>飞行器不是百科条目，而要说明公开数据、可推测参数、适用工具和仿真问题；展开后进入任务阶段、子系统和仿真流程。</p></div>
         <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 火箭 / 卫星 / 星座 / 再入 / GNC" />{vehicleCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
-        <div className="lab-table-grid">{result.map(v => <article key={v.id}><div className="lab-card-status-row"><StatusPill label="状态" value={v.status}/><StatusPill label="可信度" value={v.confidence}/></div><span>{v.category} · {v.organization}</span><h3>{v.title}</h3><p>{v.summary}</p><p><b>公开数据：</b>{v.publicData.join(' / ')}</p><p><b>仿真方向：</b>{v.simulationTopics.join(' / ')}</p><footer>{v.tools.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
+        <div className="lab-database-toolbar"><strong>{result.length}</strong><span>个匹配对象</span><p>对象卡片默认保持紧凑，展开后查看公开参数、推断参数、任务阶段和可用工具。</p></div>
+        <div className="lab-table-grid lab-database-grid">{result.map(v => <VehicleDatabaseCard key={v.id} vehicle={v}/>)}</div>
       </section>
       <section className="lab-page-section">
         <div className="lab-page-head"><div><span>数据与工具链</span><h2>任务证据链</h2></div><p>任务案例不能只展示图片，必须绑定公开数据、工程假设、软件工具和验证结果。</p></div>
