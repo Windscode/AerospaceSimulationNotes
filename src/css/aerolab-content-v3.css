@@ -1,0 +1,173 @@
+/* Content v3: remove the empty-template feeling by making real object/data cards denser and more useful. */
+.lab-real-overview .lab-page-head h2,
+.lab-page-section .lab-page-head h2 {
+  letter-spacing: -.06em !important;
+}
+.lab-real-focus-grid article {
+  min-height: 150px !important;
+  background:
+    linear-gradient(135deg, rgba(39,231,255,.09), transparent 42%),
+    linear-gradient(180deg, rgba(8,24,48,.72), rgba(3,10,23,.72)) !important;
+}
+.lab-real-focus-grid article strong {
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+}
+.lab-vehicle-matrix {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+.lab-vehicle-matrix .lab-database-card {
+  min-height: 360px !important;
+  border: 1px solid rgba(126,229,255,.18) !important;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(39,231,255,.08), transparent 36%),
+    linear-gradient(180deg, rgba(8,20,42,.86), rgba(2,8,19,.78)) !important;
+}
+.lab-real-card h3 {
+  font-size: 25px !important;
+  line-height: 1.18 !important;
+  margin-top: 12px !important;
+}
+.lab-real-card > p {
+  min-height: 86px;
+  font-size: 14px !important;
+  line-height: 1.75 !important;
+  color: rgba(232,244,255,.78) !important;
+}
+.lab-card-brief--strong {
+  margin-top: 14px !important;
+  border-left: 2px solid rgba(73,255,207,.55) !important;
+  background: rgba(73,255,207,.045) !important;
+}
+.lab-card-brief--strong b {
+  color: #49ffcf !important;
+}
+.lab-param-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  margin: 16px 0 !important;
+}
+.lab-param-strip div {
+  min-height: 62px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lab-param-strip span {
+  font-size: 10px !important;
+  color: rgba(126,229,255,.72) !important;
+}
+.lab-param-strip strong {
+  font-size: 13px !important;
+  color: #fff !important;
+  line-height: 1.35;
+}
+.lab-expand-panel summary {
+  color: #7ee5ff !important;
+  border: 1px solid rgba(126,229,255,.18) !important;
+  padding: 9px 12px !important;
+  background: rgba(126,229,255,.045) !important;
+}
+.lab-expand-panel[open] summary {
+  border-color: rgba(126,229,255,.38) !important;
+  background: rgba(126,229,255,.08) !important;
+}
+.lab-detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  margin-top: 12px !important;
+}
+.lab-detail-field {
+  min-height: 92px !important;
+  padding: 13px !important;
+}
+.lab-detail-field > span {
+  color: #27e7ff !important;
+  font-size: 11px !important;
+  letter-spacing: .12em !important;
+}
+.lab-chip-list {
+  gap: 6px !important;
+}
+.lab-chip-list em,
+.lab-mini-ordered li {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+.lab-mini-ordered {
+  padding-left: 18px !important;
+  margin: 8px 0 0 !important;
+}
+.lab-page-section:has(.lab-vehicle-matrix) {
+  padding-top: 84px !important;
+}
+.lab-filter-row {
+  background: rgba(3,10,22,.68) !important;
+  border: 1px solid rgba(126,229,255,.16) !important;
+  padding: 10px !important;
+  gap: 8px !important;
+}
+.lab-filter-row input {
+  min-width: 320px !important;
+  background: rgba(255,255,255,.045) !important;
+  border: 1px solid rgba(126,229,255,.18) !important;
+  color: #fff !important;
+}
+.lab-filter-row button {
+  border-color: rgba(126,229,255,.16) !important;
+}
+.lab-filter-row button.active {
+  background: #f4fbff !important;
+  color: #020711 !important;
+}
+.lab-database-toolbar {
+  margin: 12px 0 18px !important;
+  padding: 14px 18px !important;
+}
+.lab-database-toolbar strong {
+  font-size: 24px !important;
+  color: #49ffcf !important;
+}
+.lab-status-grid article footer,
+.lab-database-card footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.lab-status-grid article footer em,
+.lab-database-card footer em {
+  border: 1px solid rgba(126,229,255,.14);
+  padding: 4px 7px;
+  font-size: 11px;
+  font-style: normal;
+  color: rgba(225,244,255,.74);
+  background: rgba(255,255,255,.035);
+}
+.lab-database-card .lab-card-status-row {
+  gap: 7px !important;
+}
+.lab-status-pill {
+  border-radius: 999px !important;
+}
+.lab-page-section + .lab-page-section {
+  border-top: 1px solid rgba(126,229,255,.09) !important;
+}
+.lab-database-grid:not(.lab-vehicle-matrix) {
+  gap: 14px !important;
+}
+.lab-database-grid:not(.lab-vehicle-matrix) .lab-database-card {
+  min-height: 260px !important;
+}
+.lab-card-brief {
+  line-height: 1.55 !important;
+}
+@media (max-width: 1100px) {
+  .lab-vehicle-matrix { grid-template-columns: 1fr !important; }
+  .lab-detail-grid { grid-template-columns: 1fr !important; }
+  .lab-param-strip { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .lab-filter-row input { min-width: 100% !important; }
+}
