@@ -3,8 +3,17 @@ import Link from '@docusaurus/Link';
 import { labImages } from '../data/aerolabContent';
 import ResearchCommandPalette from './ResearchCommandPalette';
 
-export function LabTopNav() {
-  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>A</span><div><strong>航天仿真研究库</strong><em>AEROSIM RESEARCH LAB</em></div></Link><nav><Link to="/intelligence">前沿情报</Link><Link to="/missions">飞行器与任务</Link><Link to="/tools">工具库</Link><Link to="/open-source-data">开源与数据</Link><Link to="/knowledge">知识图谱</Link><Link to="/my-projects">我的项目</Link></nav><div className="lab-nav-actions"><ResearchCommandPalette/><Link className="lab-log-btn" to="/log">研究日志 ↗</Link></div></header>;
+const navItems = [
+  { key: 'FRONTIER', label: '前沿情报', href: '/intelligence' },
+  { key: 'VEHICLES', label: '飞行器与任务', href: '/missions' },
+  { key: 'TOOLS', label: '工具库', href: '/tools' },
+  { key: 'OPEN', label: '开源与数据', href: '/open-source-data' },
+  { key: 'GRAPH', label: '知识图谱', href: '/knowledge' },
+  { key: 'MINE', label: '我的项目', href: '/my-projects' },
+];
+
+export function LabTopNav({ active = 'HOME' }) {
+  return <header className="lab-top-nav"><Link className="lab-brand" to="/"><span>ASN</span><div><strong>AERO SIM NETWORK</strong><em>航天仿真研究网络</em></div></Link><nav>{navItems.map(item => <Link key={item.key} className={item.key === active ? 'active' : ''} to={item.href}>{item.label}</Link>)}</nav><div className="lab-nav-actions"><ResearchCommandPalette/><Link className="lab-log-btn" to="/log">研究日志 ↗</Link></div></header>;
 }
 
 export function LabSideNav({ active = 'HOME' }) {
@@ -25,5 +34,5 @@ export function LabPageHero({ eyebrow, title, text, image = labImages.hero, stat
 }
 
 export default function AeroLabFrame({ active, children }) {
-  return <main className="lab-site"><LabSideNav active={active}/><LabTopNav/>{children}</main>;
+  return <main className="lab-site"><LabSideNav active={active}/><LabTopNav active={active}/>{children}</main>;
 }
