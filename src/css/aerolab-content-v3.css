@@ -188,7 +188,10 @@
 .lab-toolchain-grid article,
 .lab-evidence-rules article,
 .lab-evidence-layout aside,
-.lab-recipe-grid article {
+.lab-recipe-grid article,
+.lab-decision-grid article,
+.lab-route-grid article,
+.lab-health-grid article {
   border: 1px solid rgba(126,229,255,.16);
   background:
     radial-gradient(circle at 18% 0%, rgba(39,231,255,.08), transparent 34%),
@@ -205,7 +208,8 @@
 .lab-object-grid article > span,
 .lab-toolchain-grid article > span,
 .lab-evidence-layout aside > span,
-.lab-recipe-grid article > span {
+.lab-recipe-grid article > span,
+.lab-decision-grid em {
   color: #27e7ff;
   font-size: 11px;
   letter-spacing: .14em;
@@ -216,7 +220,10 @@
 .lab-object-grid h3,
 .lab-toolchain-grid h3,
 .lab-evidence-rules h3,
-.lab-recipe-grid h3 {
+.lab-recipe-grid h3,
+.lab-decision-grid h3,
+.lab-route-grid h3,
+.lab-health-grid h3 {
   color: #f5fbff;
   font-size: 22px;
   line-height: 1.2;
@@ -227,7 +234,10 @@
 .lab-toolchain-grid p,
 .lab-evidence-rules p,
 .lab-evidence-layout aside p,
-.lab-recipe-grid p {
+.lab-recipe-grid p,
+.lab-decision-grid p,
+.lab-route-grid p,
+.lab-health-grid p {
   color: rgba(232,244,255,.72);
   line-height: 1.75;
   margin: 0 0 14px;
@@ -254,7 +264,8 @@
 .lab-action-fields em,
 .lab-object-grid em,
 .lab-toolchain-grid footer em,
-.lab-recipe-tools em {
+.lab-recipe-tools em,
+.lab-decision-grid span {
   display: inline-flex;
   margin: 0 6px 6px 0;
   padding: 4px 7px;
@@ -297,7 +308,8 @@
 }
 .lab-object-grid ul,
 .lab-toolchain-grid ol,
-.lab-recipe-grid ol {
+.lab-recipe-grid ol,
+.lab-route-grid ol {
   margin: 12px 0 0;
   padding-left: 18px;
   color: rgba(235,246,255,.7);
@@ -387,7 +399,8 @@
   line-height: 1.55;
 }
 .lab-recipe-grid small,
-.lab-stack-card small {
+.lab-stack-card small,
+.lab-route-grid small {
   display: block;
   margin-top: 10px;
   color: rgba(255,207,112,.82);
@@ -415,6 +428,66 @@
 .lab-tool-database {
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
+
+/* Tools page: task-first selection rather than software catalogue. */
+.lab-tool-decision,
+.lab-learning-routes,
+.lab-tool-health {
+  padding-top: 82px !important;
+  padding-bottom: 82px !important;
+}
+.lab-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.lab-decision-grid article {
+  padding: 18px;
+  min-height: 220px;
+  position: relative;
+}
+.lab-decision-grid article::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(126,229,255,.16);
+  border-radius: 50%;
+  box-shadow: 0 0 32px rgba(39,231,255,.16) inset;
+}
+.lab-decision-grid strong {
+  display: block;
+  margin: 12px 0 14px;
+  color: #49ffcf;
+  font-size: 14px;
+  letter-spacing: .04em;
+}
+.lab-route-grid,
+.lab-health-grid {
+  display: grid;
+  gap: 14px;
+}
+.lab-route-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.lab-route-grid article,
+.lab-health-grid article {
+  padding: 22px;
+}
+.lab-route-grid article {
+  min-height: 330px;
+}
+.lab-health-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.lab-health-grid article {
+  min-height: 170px;
+}
+.lab-tool-database .lab-card-brief--strong span {
+  color: rgba(255,255,255,.88) !important;
+}
 @media (max-width: 1100px) {
   .lab-vehicle-matrix,
   .lab-action-grid,
@@ -424,7 +497,10 @@
   .lab-evidence-rules,
   .lab-recipe-grid,
   .lab-practical-dual,
-  .lab-tool-database { grid-template-columns: 1fr !important; }
+  .lab-tool-database,
+  .lab-decision-grid,
+  .lab-route-grid,
+  .lab-health-grid { grid-template-columns: 1fr !important; }
   .lab-detail-grid { grid-template-columns: 1fr !important; }
   .lab-param-strip { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   .lab-filter-row input { min-width: 100% !important; }
