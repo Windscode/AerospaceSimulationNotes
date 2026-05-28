@@ -1,11 +1,11 @@
 # Deployed site screenshots
 
 Base URL: https://windscode.github.io/AerospaceSimulationNotes/
-Captured: 2026-05-28T07:10:48.614Z
+Captured: 2026-05-28T07:16:57.324Z
 
 | Viewport | Page | Status | Height | Screenshot | URL |
 | --- | --- | --- | --- | --- | --- |
-| desktop | home | 200 | 8034 | [home.png](./desktop/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
+| desktop | home | 200 | 7169 | [home.png](./desktop/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
 | desktop | intelligence | 200 | 6038 | [intelligence.png](./desktop/intelligence.png) | https://windscode.github.io/AerospaceSimulationNotes/intelligence/ |
 | desktop | knowledge | 200 | 6937 | [knowledge.png](./desktop/knowledge.png) | https://windscode.github.io/AerospaceSimulationNotes/knowledge/ |
 | desktop | missions | 200 | 6465 | [missions.png](./desktop/missions.png) | https://windscode.github.io/AerospaceSimulationNotes/missions/ |
@@ -16,7 +16,7 @@ Captured: 2026-05-28T07:10:48.614Z
 | desktop | log | 200 | 4057 | [log.png](./desktop/log.png) | https://windscode.github.io/AerospaceSimulationNotes/log/ |
 | desktop | blog-archive | 200 | 4698 | [blog-archive.png](./desktop/blog-archive.png) | https://windscode.github.io/AerospaceSimulationNotes/blog/ |
 | desktop | knowledge-intro | 200 | 2515 | [knowledge-intro.png](./desktop/knowledge-intro.png) | https://windscode.github.io/AerospaceSimulationNotes/docs/intro/ |
-| mobile | home | 200 | 9976 | [home.png](./mobile/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
+| mobile | home | 200 | 12447 | [home.png](./mobile/home.png) | https://windscode.github.io/AerospaceSimulationNotes/ |
 | mobile | intelligence | 200 | 10037 | [intelligence.png](./mobile/intelligence.png) | https://windscode.github.io/AerospaceSimulationNotes/intelligence/ |
 | mobile | knowledge | 200 | 12157 | [knowledge.png](./mobile/knowledge.png) | https://windscode.github.io/AerospaceSimulationNotes/knowledge/ |
 | mobile | missions | 200 | 12705 | [missions.png](./mobile/missions.png) | https://windscode.github.io/AerospaceSimulationNotes/missions/ |
