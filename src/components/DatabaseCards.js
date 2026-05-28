@@ -16,19 +16,24 @@ function TextList({items = []}) {
 }
 
 export function ToolDatabaseCard({tool}) {
-  return <article className="lab-database-card">
+  return <article className="lab-database-card lab-tool-card--practical">
     <div className="lab-card-status-row"><StatusPill label="许可" value={tool.licenseType}/><StatusPill label="难度" value={tool.difficulty}/><StatusPill label="成熟度" value={tool.status}/><StatusPill label="可信度" value={tool.confidence}/></div>
     <span className="lab-card-meta">{tool.category}</span>
     <h3>{tool.title}</h3>
     <p>{tool.summary}</p>
     <div className="lab-card-brief"><b>典型用途</b><span>{tool.typicalUse}</span></div>
-    <div className="lab-card-brief"><b>入门任务</b><span>{tool.starterTask}</span></div>
+    <div className="lab-card-brief lab-card-brief--strong"><b>第一步</b><span>{tool.firstRun || tool.starterTask}</span></div>
+    <div className="lab-practical-dual">
+      <Field title="适合用来"><ChipList items={tool.bestFor}/></Field>
+      <Field title="不要拿它做"><ChipList items={tool.notFor}/></Field>
+    </div>
     <details className="lab-expand-panel">
       <summary>展开工具档案</summary>
       <div className="lab-detail-grid">
         <Field title="输入"><ChipList items={tool.inputs}/></Field>
         <Field title="输出"><ChipList items={tool.outputs}/></Field>
         <Field title="适合人群"><p>{tool.audience}</p></Field>
+        <Field title="证据链用途"><p>{tool.evidenceUse || '作为工具链中的一环，需要保留输入、输出和版本。'}</p></Field>
         <Field title="相关案例"><ChipList items={tool.relatedCases}/></Field>
         <Field title="可组合工具"><ChipList items={tool.relatedTools}/></Field>
       </div>
