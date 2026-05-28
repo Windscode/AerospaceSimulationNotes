@@ -3,13 +3,21 @@ import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
 import VehicleMissionExplorer from '../../components/VehicleMissionExplorer';
 import { VehicleDatabaseCard } from '../../components/DatabaseCards';
-import { labImages, missionDossiers, methodCards } from '../../data/aerolabContent';
+import { labImages } from '../../data/aerolabContent';
 import { vehicles, vehicleCategories } from '../../data/vehicles';
 
-const vehicleTypes = vehicleCategories.filter(c => c !== '全部').slice(0, 4).map(category => {
-  const sample = vehicles.find(v => v.category === category);
-  return { title: category, desc: sample ? sample.simulationTopics.join('、') : '资料、参数、子系统和仿真方法。' };
-});
+const realFocus = vehicles.slice(0, 4).map(v => ({
+  title: v.title,
+  desc: v.simulationTopics.slice(0, 4).join('、'),
+  meta: `${v.category} · ${v.country} · ${v.confidence}`,
+  tools: v.tools.slice(0, 4),
+}));
+
+const simulationPaths = [
+  { title: '入轨与任务轨道', desc: '火箭、低轨卫星、星座和任务部署都先落到轨道状态、事件时间和 TLE 对照。', items: ['GMAT', 'Orekit', 'TLE', 'Cesium'] },
+  { title: '再入与气动热', desc: 'Starship、Orion、Apollo 指令舱等对象要把外形、速度高度走廊、热流和过载分开处理。', items: ['OpenVSP', 'SU2', 'OpenFOAM', 'ParaView'] },
+  { title: '任务控制回放', desc: '把公开事件、遥测线索、状态估计和仿真输出组织成可复查的时间线。', items: ['Open MCT', 'CesiumJS', 'Python'] },
+];
 
 export default function MissionsPage(){
   const [cat, setCat] = useState('全部');
@@ -17,29 +25,21 @@ export default function MissionsPage(){
   const result = useMemo(() => vehicles.filter(v => (cat === '全部' || v.category === cat) && JSON.stringify(v).toLowerCase().includes(q.toLowerCase())), [cat, q]);
   return <Layout title="飞行器与任务" description="航天飞行器、火箭、卫星、空间站和任务仿真方法">
     <AeroLabFrame active="VEHICLES">
-      <LabPageHero eyebrow="VEHICLES & MISSIONS · 飞行器与任务" title="飞行器与任务" text="围绕真实航天对象组织资料：火箭、卫星、空间站、探测器、飞船和再入飞行器。每个对象都要逐步关联公开参数、图片、子系统、仿真方法、工具链和可复现实验。" image={labImages.hero} stats={[{label:'对象条目', value:String(vehicles.length)}, {label:'数据模式', value:'公开 + 估计'}, {label:'仿真链路', value:'任务驱动'}]} />
+      <LabPageHero eyebrow="VEHICLES & MISSIONS · 飞行器与任务" title="飞行器与任务" text="这里不再放空泛模板，而是围绕真实航天对象建立档案：Falcon 9、长征五号、Starship、ISS、天宫、Starlink、天问一号、Orion、Apollo 指令舱。每个对象都说明公开来源、可推断参数、仿真路径和验证边界。" image={labImages.hero} stats={[{label:'真实对象', value:String(vehicles.length)}, {label:'数据模式', value:'公开 + 估计'}, {label:'仿真链路', value:'对象驱动'}]} />
       <VehicleMissionExplorer vehicles={vehicles}/>
-      <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>对象分类</span><h2>航天对象库</h2></div><p>先按真实飞行器和任务对象组织内容，再挂接工具、数据和理论。</p></div>
-        <div className="lab-status-grid">{vehicleTypes.map((item, i) => <article key={item.title}><span>对象 {String(i+1).padStart(2,'0')}</span><strong>{item.title}</strong><p>{item.desc}</p></article>)}</div>
+      <section className="lab-page-section lab-real-overview">
+        <div className="lab-page-head"><div><span>真实对象</span><h2>先用真实飞行器承载内容。</h2></div><p>相比样板模块，真实对象会逼着网站回答：数据从哪里来、能算什么、哪些只是估计、用什么工具验证。</p></div>
+        <div className="lab-status-grid lab-real-focus-grid">{realFocus.map((item, i) => <article key={item.title}><span>{String(i+1).padStart(2,'0')} · {item.meta}</span><strong>{item.title}</strong><p>{item.desc}</p><footer>{item.tools.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>任务档案</span><h2>任务案例</h2></div><p>每个任务档案都要回答：研究对象是什么，数据从哪里来，参数如何估计，工具怎么验证，结果如何复现。</p></div>
-        <div className="lab-mission-grid">{missionDossiers.map((m, i) => <article key={m.title} className={i === 0 ? 'featured' : ''}><img src={m.image} alt={m.cn}/><div><span>{m.phase}</span><h3>{m.cn}</h3><h4>{m.title}</h4><p>{m.desc}</p><footer>{m.tags.map(t => <em key={t}>{t}</em>)}</footer></div></article>)}</div>
+        <div className="lab-page-head"><div><span>仿真路径</span><h2>对象进入仿真的三条主线。</h2></div><p>真实飞行器不是百科卡片。它必须转化为轨道、气动热、任务回放或 GNC 等可执行研究任务。</p></div>
+        <div className="lab-status-grid">{simulationPaths.map((path, i) => <article key={path.title}><span>路径 {String(i+1).padStart(2,'0')}</span><strong>{path.title}</strong><p>{path.desc}</p><footer>{path.items.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
       </section>
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>飞行器档案</span><h2>对象矩阵</h2></div><p>飞行器不是百科条目，而要说明公开数据、可推测参数、适用工具和仿真问题；展开后进入任务阶段、子系统和仿真流程。</p></div>
-        <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 火箭 / 卫星 / 星座 / 再入 / GNC" />{vehicleCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
-        <div className="lab-database-toolbar"><strong>{result.length}</strong><span>个匹配对象</span><p>对象卡片默认保持紧凑，展开后查看公开参数、推断参数、任务阶段和可用工具。</p></div>
-        <div className="lab-table-grid lab-database-grid">{result.map(v => <VehicleDatabaseCard key={v.id} vehicle={v}/>)}</div>
-      </section>
-      <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>数据与工具链</span><h2>任务证据链</h2></div><p>任务案例不能只展示图片，必须绑定公开数据、工程假设、软件工具和验证结果。</p></div>
-        <div className="lab-table-grid">{missionDossiers.map(m => <article key={m.title}><span>{m.phase}</span><h3>{m.cn}</h3><p><b>数据：</b>{m.data.join(' / ')}</p><p><b>工具：</b>{m.tools.join(' / ')}</p><footer>{m.tags.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
-      </section>
-      <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>参数推断</span><h2>估计方法</h2></div><p>公开资料不完整时，必须清楚说明从事实到仿真参数的推断路径。</p></div>
-        <div className="lab-table-grid">{methodCards.map(m => <article key={m.title}><span>{m.meta}</span><h3>{m.title}</h3><p>{m.text}</p></article>)}</div>
+        <div className="lab-page-head"><div><span>飞行器档案</span><h2>对象数据库</h2></div><p>展开卡片后能看到公开来源、推断参数、任务阶段、仿真流程和验证检查。后续每个对象都应该继续补图片、原始链接、表格和实验记录。</p></div>
+        <div className="lab-filter-row"><input value={q} onChange={e=>setQ(e.target.value)} placeholder="搜索 Falcon / 长征 / Starship / ISS / 天宫 / Starlink / Orion" />{vehicleCategories.map(c => <button key={c} className={c===cat?'active':''} onClick={()=>setCat(c)}>{c}</button>)}</div>
+        <div className="lab-database-toolbar"><strong>{result.length}</strong><span>个匹配对象</span><p>优先看真实对象，再看它能产生什么仿真任务。</p></div>
+        <div className="lab-table-grid lab-database-grid lab-vehicle-matrix">{result.map(v => <VehicleDatabaseCard key={v.id} vehicle={v}/>)}</div>
       </section>
     </AeroLabFrame>
   </Layout>;
