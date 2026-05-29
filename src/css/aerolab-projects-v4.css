@@ -1,0 +1,219 @@
+/* Projects v4: personal roadmap dashboard instead of decorative project cards. */
+.lab-project-dashboard,
+.lab-project-roadmap,
+.lab-project-experiments,
+.lab-project-gates {
+  padding-top: 86px !important;
+  padding-bottom: 86px !important;
+}
+.lab-personal-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.lab-personal-project-grid article,
+.lab-experiment-grid article,
+.lab-roadmap-line article,
+.lab-project-gate-layout aside,
+.lab-project-gate-layout .lab-health-grid article {
+  border: 1px solid rgba(126,229,255,.16);
+  background:
+    radial-gradient(circle at 16% 0%, rgba(39,231,255,.09), transparent 34%),
+    linear-gradient(180deg, rgba(8,20,42,.82), rgba(3,10,22,.76));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 18px 70px rgba(0,0,0,.22);
+}
+.lab-personal-project-grid article {
+  min-height: 430px;
+  padding: 22px;
+}
+.lab-personal-project-grid h3,
+.lab-experiment-grid h3,
+.lab-roadmap-line h3,
+.lab-project-gate-layout h3 {
+  color: #f6fbff;
+  font-size: 24px;
+  line-height: 1.16;
+  margin: 14px 0 10px;
+}
+.lab-personal-project-grid p,
+.lab-experiment-grid p,
+.lab-roadmap-line p,
+.lab-project-gate-layout p {
+  color: rgba(232,244,255,.72);
+  line-height: 1.76;
+  margin: 0 0 14px;
+}
+.lab-project-field {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(126,229,255,.12);
+  background: rgba(255,255,255,.028);
+}
+.lab-project-field--next {
+  border-left: 2px solid rgba(73,255,207,.55);
+  background: rgba(73,255,207,.045);
+}
+.lab-project-field b,
+.lab-experiment-grid b,
+.lab-project-gate-layout aside b {
+  display: block;
+  margin-bottom: 8px;
+  color: #27e7ff;
+  font-size: 12px;
+}
+.lab-project-field em,
+.lab-experiment-grid em,
+.lab-personal-project-grid footer span {
+  display: inline-flex;
+  margin: 0 6px 6px 0;
+  padding: 5px 8px;
+  border: 1px solid rgba(126,229,255,.14);
+  background: rgba(255,255,255,.035);
+  color: rgba(235,246,255,.78);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.35;
+}
+.lab-personal-project-grid footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 14px;
+}
+.lab-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.lab-project-links a {
+  padding: 7px 10px;
+  border: 1px solid rgba(126,229,255,.18);
+  color: #7ee5ff;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  background: rgba(126,229,255,.04);
+}
+.lab-roadmap-line {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.lab-roadmap-line article {
+  position: relative;
+  min-height: 230px;
+  padding: 22px;
+}
+.lab-roadmap-line article::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 44px;
+  width: 16px;
+  height: 1px;
+  background: rgba(126,229,255,.32);
+}
+.lab-roadmap-line article:last-child::after {
+  display: none;
+}
+.lab-roadmap-line em {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(73,255,207,.24);
+  border-radius: 50%;
+  color: #49ffcf;
+  font-style: normal;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.lab-roadmap-line span,
+.lab-experiment-grid > article > span,
+.lab-project-gate-layout .lab-health-grid span {
+  display: block;
+  margin-top: 12px;
+  color: #27e7ff;
+  font-size: 11px;
+  letter-spacing: .14em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.lab-experiment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.lab-experiment-grid article {
+  padding: 22px;
+  min-height: 360px;
+}
+.lab-experiment-grid article > div {
+  margin-top: 10px;
+  padding: 11px;
+  border: 1px solid rgba(126,229,255,.1);
+  background: rgba(255,255,255,.025);
+}
+.lab-experiment-grid footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.lab-experiment-grid footer strong {
+  display: inline-flex;
+  padding: 5px 8px;
+  border: 1px solid rgba(73,255,207,.18);
+  color: #49ffcf;
+  background: rgba(73,255,207,.045);
+  font-size: 12px;
+}
+.lab-project-gate-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 18px;
+}
+.lab-project-gate-layout .lab-health-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.lab-project-gate-layout .lab-health-grid article {
+  padding: 20px;
+  min-height: 190px;
+}
+.lab-project-gate-layout aside {
+  padding: 18px;
+}
+.lab-project-gate-layout aside article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(126,229,255,.1);
+}
+.lab-project-gate-layout aside article:last-child {
+  border-bottom: 0;
+}
+.lab-project-gate-layout aside b {
+  color: #49ffcf;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.lab-project-gate-layout aside h3 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+.lab-project-gate-layout aside p {
+  font-size: 13px;
+  margin: 0;
+}
+@media (max-width: 1100px) {
+  .lab-personal-project-grid,
+  .lab-roadmap-line,
+  .lab-experiment-grid,
+  .lab-project-gate-layout,
+  .lab-project-gate-layout .lab-health-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .lab-roadmap-line article::after {
+    display: none;
+  }
+}
