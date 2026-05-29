@@ -68,18 +68,20 @@ export function VehicleDatabaseCard({vehicle}) {
 }
 
 export function ProjectDatabaseCard({project}) {
-  return <article className="lab-database-card">
+  return <article className="lab-database-card lab-project-card--practical">
     <div className="lab-card-status-row"><StatusPill label="活跃度" value={project.activity}/><StatusPill label="难度" value={project.difficulty}/><StatusPill label="可信度" value={project.confidence}/><StatusPill label="示例" value={project.runnableExample ? '可运行' : '待验证'}/></div>
     <span className="lab-card-meta">{project.category} · {project.language} · {project.license}</span>
     <h3>{project.title}</h3>
     <p>{project.summary}</p>
     <div className="lab-card-brief"><b>能做什么</b><span>{project.canDo.join(' / ')}</span></div>
+    <div className="lab-card-brief lab-card-brief--strong"><b>起步动作</b><span>{project.startPlan || '先跑通官方示例，再把输入输出接入本站的任务链路。'}</span></div>
     <details className="lab-expand-panel">
       <summary>展开项目评估</summary>
       <div className="lab-detail-grid">
         <Field title="流程位置"><ChipList items={project.workflowUse}/></Field>
         <Field title="关联工具"><ChipList items={project.relatedTools}/></Field>
         <Field title="学习价值"><p>{project.personalLearning ? '适合作为学习与工程原型入口。' : '更适合作为工程架构参考，不建议一开始就完整复刻。'}</p></Field>
+        <Field title="风险 / 坑点"><p>{project.watchRisk || '需要先确认维护状态、依赖安装和示例可运行性。'}</p></Field>
         <Field title="接入判断"><p>先跑通官方示例，再确认输入输出格式，最后判断能否接入本站的任务对象或复现实验。</p></Field>
       </div>
     </details>
