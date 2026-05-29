@@ -1,0 +1,113 @@
+/* Open source & data v4: resource pipeline, data recipes and project evaluation cards. */
+.lab-resource-pipeline,
+.lab-resource-decision,
+.lab-data-recipes,
+.lab-source-matrix-section,
+.lab-open-rules {
+  padding-top: 86px !important;
+  padding-bottom: 86px !important;
+}
+.lab-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.lab-pipeline-grid article,
+.lab-source-matrix article,
+.lab-open-project-grid .lab-project-card--practical {
+  border: 1px solid rgba(126,229,255,.16) !important;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(39,231,255,.09), transparent 34%),
+    linear-gradient(180deg, rgba(8,20,42,.82), rgba(3,10,22,.76)) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 18px 70px rgba(0,0,0,.22);
+}
+.lab-pipeline-grid article {
+  min-height: 240px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+.lab-pipeline-grid span,
+.lab-source-matrix article > span {
+  color: #27e7ff !important;
+  font-size: 11px !important;
+  letter-spacing: .14em !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+}
+.lab-pipeline-grid h3 {
+  color: #f6fbff;
+  font-size: 22px;
+  line-height: 1.18;
+  margin: 14px 0 10px;
+}
+.lab-pipeline-grid p {
+  color: rgba(232,244,255,.72);
+  line-height: 1.76;
+  margin: 0 0 16px;
+}
+.lab-pipeline-grid strong {
+  display: block;
+  margin-top: auto;
+  padding: 12px;
+  border-left: 2px solid rgba(73,255,207,.55);
+  background: rgba(73,255,207,.045);
+  color: #eafff8;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.lab-resource-decision-grid article strong {
+  color: #49ffcf !important;
+}
+.lab-data-recipes .lab-recipe-grid article {
+  min-height: 360px !important;
+}
+.lab-source-matrix {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+.lab-source-matrix article {
+  min-height: 280px !important;
+  padding: 22px !important;
+}
+.lab-source-matrix article strong {
+  font-size: 23px !important;
+  line-height: 1.18 !important;
+}
+.lab-source-matrix article footer em {
+  color: #49ffcf !important;
+  border-color: rgba(73,255,207,.22) !important;
+  background: rgba(73,255,207,.045) !important;
+}
+.lab-open-project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+.lab-open-project-grid .lab-project-card--practical {
+  min-height: 380px !important;
+}
+.lab-open-project-grid .lab-project-card--practical h3 {
+  font-size: 24px !important;
+  line-height: 1.16 !important;
+}
+.lab-open-project-grid .lab-project-card--practical > p {
+  color: rgba(232,244,255,.76) !important;
+  font-size: 14px !important;
+  line-height: 1.72 !important;
+}
+.lab-open-project-grid .lab-card-brief--strong {
+  border-left: 2px solid rgba(73,255,207,.55) !important;
+  background: rgba(73,255,207,.045) !important;
+}
+.lab-open-rules .lab-health-grid article {
+  min-height: 180px;
+}
+@media (max-width: 1100px) {
+  .lab-pipeline-grid,
+  .lab-source-matrix,
+  .lab-open-project-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
