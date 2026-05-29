@@ -1,0 +1,56 @@
+name: Screenshot Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'blog/**'
+      - 'docusaurus.config.js'
+      - 'sidebars.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/screenshot-audit.mjs'
+      - '.github/workflows/screenshot-audit.yml'
+
+jobs:
+  screenshot-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build site
+        run: npm run build
+
+      - name: Serve site
+        run: |
+          npx serve build -l 4173 > /tmp/aerosim-site.log 2>&1 &
+          echo $! > /tmp/aerosim-site.pid
+          npx wait-on http://127.0.0.1:4173/AerospaceSimulationNotes/
+
+      - name: Capture screenshots
+        run: node scripts/screenshot-audit.mjs http://127.0.0.1:4173/AerospaceSimulationNotes/ site-screenshots
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-screenshots
+          path: site-screenshots
+          if-no-files-found: error
+          retention-days: 14
