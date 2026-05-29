@@ -1,0 +1,137 @@
+/* Knowledge v4: object-to-theory-to-experiment workbench. */
+.lab-graph-explorer--deep {
+  border-top: 1px solid rgba(126,229,255,.1);
+  border-bottom: 1px solid rgba(126,229,255,.1);
+}
+.lab-graph-explorer--deep .lab-graph-domain {
+  text-align: left;
+  cursor: pointer;
+}
+.lab-graph-explorer--deep .lab-graph-domain.active {
+  border-color: rgba(73,255,207,.55) !important;
+  box-shadow: 0 0 0 1px rgba(73,255,207,.16), 0 0 40px rgba(73,255,207,.1) !important;
+}
+.lab-graph-brief--deep .lab-card-brief {
+  margin: 10px 0;
+}
+.lab-graph-brief-list article.active {
+  border-color: rgba(73,255,207,.38) !important;
+  background: rgba(73,255,207,.045) !important;
+}
+.lab-graph-domain-panel {
+  display: grid;
+  grid-template-columns: 1.35fr repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.lab-graph-domain-panel article {
+  min-height: 190px;
+  padding: 20px;
+  border: 1px solid rgba(126,229,255,.16);
+  background:
+    radial-gradient(circle at 16% 0%, rgba(39,231,255,.09), transparent 34%),
+    linear-gradient(180deg, rgba(8,20,42,.82), rgba(3,10,22,.76));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 18px 70px rgba(0,0,0,.22);
+}
+.lab-graph-domain-panel .lab-graph-domain-main {
+  grid-row: span 2;
+}
+.lab-graph-domain-panel span,
+.lab-knowledge-route-grid article > span {
+  color: #27e7ff;
+  font-size: 11px;
+  letter-spacing: .14em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.lab-graph-domain-panel h3 {
+  color: #f6fbff;
+  font-size: 25px;
+  line-height: 1.16;
+  margin: 12px 0 10px;
+}
+.lab-graph-domain-panel p {
+  color: rgba(232,244,255,.72);
+  line-height: 1.76;
+  margin: 0 0 14px;
+}
+.lab-graph-domain-panel a {
+  display: inline-flex;
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1px solid rgba(126,229,255,.2);
+  color: #7ee5ff;
+  font-weight: 800;
+  font-size: 12px;
+  text-decoration: none;
+  background: rgba(126,229,255,.04);
+}
+.lab-step-list--compact li {
+  grid-template-columns: 30px 1fr !important;
+  padding: 8px !important;
+}
+.lab-knowledge-routes,
+.lab-domain-matrix-section,
+.lab-object-matrix-section,
+.lab-graph-rules {
+  padding-top: 86px !important;
+  padding-bottom: 86px !important;
+}
+.lab-knowledge-route-grid article,
+.lab-domain-matrix article,
+.lab-object-matrix article {
+  border: 1px solid rgba(126,229,255,.16) !important;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(39,231,255,.09), transparent 34%),
+    linear-gradient(180deg, rgba(8,20,42,.82), rgba(3,10,22,.76)) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 18px 70px rgba(0,0,0,.22);
+}
+.lab-knowledge-route-grid article {
+  min-height: 340px;
+}
+.lab-knowledge-route-grid footer,
+.lab-domain-matrix footer,
+.lab-object-matrix footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.lab-knowledge-route-grid footer em,
+.lab-domain-matrix footer em,
+.lab-object-matrix footer em {
+  border: 1px solid rgba(126,229,255,.14);
+  padding: 4px 7px;
+  font-size: 11px;
+  font-style: normal;
+  color: rgba(225,244,255,.74);
+  background: rgba(255,255,255,.035);
+}
+.lab-domain-matrix,
+.lab-object-matrix {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+.lab-domain-matrix article,
+.lab-object-matrix article {
+  min-height: 310px !important;
+  padding: 22px !important;
+}
+.lab-domain-matrix article strong,
+.lab-object-matrix article strong {
+  font-size: 23px !important;
+  line-height: 1.18 !important;
+}
+.lab-graph-edge-grid article {
+  min-height: 170px !important;
+}
+@media (max-width: 1100px) {
+  .lab-graph-domain-panel,
+  .lab-domain-matrix,
+  .lab-object-matrix {
+    grid-template-columns: 1fr !important;
+  }
+  .lab-graph-domain-panel .lab-graph-domain-main {
+    grid-row: auto;
+  }
+}
