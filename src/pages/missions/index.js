@@ -5,6 +5,7 @@ import VehicleMissionExplorer from '../../components/VehicleMissionExplorer';
 import { VehicleDatabaseCard } from '../../components/DatabaseCards';
 import { labImages } from '../../data/aerolabContent';
 import { vehicles, vehicleCategories } from '../../data/vehicles';
+import '../../css/aerolab-missions-v4.css';
 
 const realFocus = vehicles.slice(0, 4).map(v => ({
   title: v.title,
