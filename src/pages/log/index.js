@@ -2,37 +2,82 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import AeroLabFrame, { LabPageHero } from '../../components/AeroLabFrame';
-import { labImages, latestUpdates, missionDossiers, featuredProjects } from '../../data/aerolabContent';
+import { labImages } from '../../data/aerolabContent';
+import { logEntryTypes, dailyMaintenanceChecklist, recentWorkLog, contentRoutingRules, screenshotAuditPages } from '../../data/maintenance';
+import '../../css/aerolab-log-v4.css';
 
-const logTypes = [
-  { title: 'Daily Research Digest', cn: '每日简报', image: labImages.data, tag: '每日', desc: '快速记录每天看到的新论文、新项目、新工具、新任务动态和数据线索。' },
-  { title: 'Reproduction Notes', cn: '实验记录', image: labImages.control, tag: '实验', desc: '记录环境、依赖、命令、输入输出、误差、对照基准和结论。' },
-  { title: 'Mission Case Updates', cn: '任务更新', image: labImages.hero, tag: '任务', desc: '围绕火箭、星座、月球、再入等任务案例维护研究进展。' },
-  { title: 'Toolchain Review', cn: '工具评估', image: labImages.orbit, tag: '工具', desc: '记录工具链、开源项目、软件版本和工程价值判断。' },
-];
+function LogTypes() {
+  return <section className="lab-page-section lab-log-types">
+    <div className="lab-page-head"><div><span>日志模板</span><h2>日志不是文章分类，而是维护动作。</h2></div><p>每天新增内容时，先按日志模板拆字段，成熟后再流转到工具库、对象库、知识图谱或复现实验。</p></div>
+    <div className="lab-log-type-grid">{logEntryTypes.map((item, index) => <article key={item.id}>
+      <span>{String(index + 1).padStart(2, '0')}</span>
+      <h3>{item.title}</h3>
+      <p>{item.purpose}</p>
+      <div>{item.requiredFields.map(field => <em key={field}>{field}</em>)}</div>
+      <strong>{item.output}</strong>
+      <Link to={item.route}>进入对应模块 ↗</Link>
+    </article>)}</div>
+  </section>;
+}
+
+function MaintenanceChecklist() {
+  return <section className="lab-page-section lab-maintenance-checklist">
+    <div className="lab-page-head"><div><span>每日维护</span><h2>每天维护时按这套检查。</h2></div><p>你的站点以后会持续扩内容，所以需要流程约束，避免又变成一堆漂亮但没用的模块。</p></div>
+    <div className="lab-checklist-grid">{dailyMaintenanceChecklist.map((item, index) => <article key={item.title}>
+      <em>{String(index + 1).padStart(2, '0')}</em>
+      <h3>{item.title}</h3>
+      <p>{item.desc}</p>
+    </article>)}</div>
+  </section>;
+}
+
+function RecentWork() {
+  return <section className="lab-page-section lab-recent-work-log">
+    <div className="lab-page-head"><div><span>最近工作</span><h2>最近维护记录。</h2></div><p>记录网站结构怎么演进、哪些问题已经处理、下一步还要修什么。</p></div>
+    <div className="lab-work-log-grid">{recentWorkLog.map(item => <article key={item.title}>
+      <span>{item.date} · {item.type}</span>
+      <h3>{item.title}</h3>
+      <p>{item.summary}</p>
+      <div>{item.changed.map(c => <em key={c}>{c}</em>)}</div>
+      <strong>{item.next}</strong>
+    </article>)}</div>
+  </section>;
+}
+
+function RoutingRules() {
+  return <section className="lab-page-section lab-log-routing">
+    <div className="lab-page-head"><div><span>内容流转</span><h2>同一条材料只维护一次。</h2></div><p>日志负责记录过程，稳定内容进入结构化页面，避免同一资料在多个页面重复维护。</p></div>
+    <div className="lab-routing-grid lab-log-routing-grid">{contentRoutingRules.map((item, index) => <article key={`${item.from}-${item.to}`}>
+      <span>ROUTE {String(index + 1).padStart(2, '0')}</span>
+      <h3>{item.from} → {item.to}</h3>
+      <p>{item.condition}</p>
+    </article>)}</div>
+  </section>;
+}
+
+function ScreenshotAudit() {
+  return <section className="lab-page-section lab-screenshot-audit">
+    <div className="lab-page-head"><div><span>截图审查</span><h2>每次构建后用真实页面截图审查。</h2></div><p>你之前指出的问题是对的：只看代码会误判真实页面。后续每轮构建都应该按页面截图逐页审查。</p></div>
+    <div className="lab-screenshot-grid">{screenshotAuditPages.map((item, index) => <article key={item.path}>
+      <em>{String(index + 1).padStart(2, '0')}</em>
+      <h3>{item.title}</h3>
+      <p>{item.focus}</p>
+      <Link to={item.path}>打开页面 ↗</Link>
+    </article>)}</div>
+  </section>;
+}
 
 export default function LogPage(){
   return <Layout title="研究日志" description="AeroSim Research Lab 研究日志入口">
     <AeroLabFrame active="MINE">
-      <LabPageHero eyebrow="MISSION LOG · 日志模块" title="研究日志" text="研究日志承接每天新增的资料、判断、实验和阶段性结论。它不是普通博客，而是前沿情报、飞行器任务、工具库、开源数据和个人项目之间的工作记录。" image={labImages.control} stats={[{label:'归属栏目', value:'我的项目'}, {label:'模式', value:'每日维护'}, {label:'状态', value:'进行中'}]} />
+      <LabPageHero eyebrow="MISSION LOG · 日志模块" title="研究日志与维护台" text="研究日志不是普通博客，而是每天维护网站的工作台：新资料先入队，成熟内容再流转到工具库、飞行器任务、开源数据、知识图谱、复现实验或个人项目。" image={labImages.control} stats={[{label:'日志模板', value:String(logEntryTypes.length)}, {label:'检查项', value:String(dailyMaintenanceChecklist.length)}, {label:'截图审查', value:String(screenshotAuditPages.length)}, {label:'模式', value:'每日维护'}]} />
+      <LogTypes />
+      <MaintenanceChecklist />
+      <RecentWork />
+      <RoutingRules />
+      <ScreenshotAudit />
       <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>日志类型</span><h2>日志入口</h2></div><p>具体文章仍用 Docusaurus Blog 维护，入口页负责统一视觉和信息架构。</p></div>
-        <div className="lab-cinema-grid">{logTypes.map((item, i) => <article className={`lab-cinema-card ${i===0?'wide':''}`} key={item.title}><img src={item.image} alt={item.cn}/><div><span>{item.tag}</span><h3>{item.cn}</h3><p>{item.desc}</p><footer><em>{item.title}</em></footer></div></article>)}</div>
-      </section>
-      <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>最近更新</span><h2>更新队列</h2></div><p>这里展示维护节奏，完整文章进入博客系统。</p></div>
-        <div className="lab-feature-list">{latestUpdates.map((item, i) => <article className="lab-feature-row" key={item.title}><img src={[labImages.hero, labImages.orbit, labImages.control, labImages.data][i % 4]} alt={item.title}/><div><span>{item.type}</span><h3>{item.title}</h3><p>后续可扩展为正式日志文章、知识条目或复现实验记录。</p></div><strong>{item.date}</strong></article>)}</div>
-      </section>
-      <section className="lab-page-section">
-        <div className="lab-overlay-panel"><img src={labImages.orbit} alt="研究日志归档"/><div><span>归档系统</span><h3>过程与结论分开。</h3><p>每天维护时，先写日志；成熟内容再转入知识图谱、飞行器任务、工具库、开源与数据或个人项目。</p><p><Link to="/blog">打开博客归档 ↗</Link></p></div></div>
-      </section>
-      <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>任务关联</span><h2>关联任务</h2></div><p>每条日志最好能指向一个研究域、任务对象或工具链。</p></div>
-        <div className="lab-table-grid">{missionDossiers.map(m => <article key={m.title}><span>{m.phase}</span><h3>{m.cn}</h3><p>{m.desc}</p><footer>{m.tags.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
-      </section>
-      <section className="lab-page-section">
-        <div className="lab-page-head"><div><span>研究流转</span><h2>沉淀方向</h2></div><p>同一条材料不要重复维护，而是根据成熟度流转。</p></div>
-        <div className="lab-table-grid">{featuredProjects.map(p => <article key={p.title}><span>{p.title}</span><h3>{p.cn}</h3><p>{p.desc}</p><footer>{p.tags.map(t => <em key={t}>{t}</em>)}</footer></article>)}</div>
+        <div className="lab-overlay-panel"><img src={labImages.orbit} alt="研究日志归档"/><div><span>博客归档</span><h3>过程记录进入博客，稳定资产进入结构化页面。</h3><p>日志用于保留判断过程、失败记录和阶段结论；成熟内容再转入对应页面，避免重复维护。</p><p><Link to="/blog-archive">打开博客归档 ↗</Link></p></div></div>
       </section>
     </AeroLabFrame>
   </Layout>;
