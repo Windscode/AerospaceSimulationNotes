@@ -1,5 +1,67 @@
 export const experimentCategories = ['全部', '轨道传播', '任务回放', 'GNC闭环', '推进估计', '气动建库', '再入分析', '工具链验证'];
 
+export const personalProjects = [
+  {
+    id: 'aerosim-research-site',
+    title: '航天仿真研究网站',
+    status: '持续建设',
+    type: '知识系统 / 研究入口',
+    objective: '把工具、开源项目、公开数据、真实飞行器、知识图谱和实验记录组织成一个每天可维护的中文航天仿真研究工作台。',
+    currentProgress: ['完成站点信息架构重构', '工具库/飞行器/开源数据/知识图谱已改为字段驱动', '真实对象与实验链路开始替代样板模块'],
+    nextActions: ['清理冗余 CSS 补丁', '补真实高清图片与来源', '给每个页面增加“新增条目模板”', '接入自动截图审查流程'],
+    outputs: ['中文研究网站', '数据驱动内容库', '维护规范', '截图审查记录'],
+    relatedPages: ['/tools', '/missions', '/open-source-data', '/knowledge'],
+    risks: ['CSS 补丁层过多', '内容还需持续补真实来源', '图片资产仍不足'],
+    stack: ['Docusaurus', 'React', 'MDX', 'GitHub Pages']
+  },
+  {
+    id: 'tle-orbit-lab',
+    title: 'TLE 轨道传播与过境实验',
+    status: '优先落地',
+    type: '复现实验 / 任务回放',
+    objective: '选择 ISS、天宫或 Starlink，读取公开 TLE，完成轨道传播、过境窗口计算和 Cesium 三维回放。',
+    currentProgress: ['已在对象库和数据源中建立 TLE 传播方向', '已明确 CelesTrak / Orekit / CesiumJS 工具链'],
+    nextActions: ['写最小 Python/Orekit 示例', '导出轨道状态 CSV', '生成过境窗口表', '做 Cesium 回放页面'],
+    outputs: ['轨道 CSV', '过境窗口', 'Cesium 回放', '误差说明'],
+    relatedPages: ['/missions', '/open-source-data', '/reproduction-lab'],
+    risks: ['时间系统和坐标系容易混用', 'TLE 精度不能夸大', '地面站配置需要明确'],
+    stack: ['Orekit', 'Python', 'CesiumJS', 'CelesTrak']
+  },
+  {
+    id: 'launch-ascent-lab',
+    title: 'Falcon 9 / 长征五号简化入轨实验',
+    status: '设计中',
+    type: '动力学 / 推进估计',
+    objective: '用公开火箭参数、质量估计和目标轨道建立三自由度入轨近似模型，形成速度增量预算和事件时间线。',
+    currentProgress: ['已补 Falcon 9 和长征五号对象档案', '已列出公开数据、推断参数和验证检查'],
+    nextActions: ['整理发动机和分级参数', '建立质量随时间变化模型', '做重力转弯近似', '与目标轨道/TLE 对照'],
+    outputs: ['Δv 预算', '高度/速度曲线', '事件时间线', '假设边界'],
+    relatedPages: ['/missions', '/tools', '/knowledge'],
+    risks: ['真实制导不可见', '质量分配需要估计', '不能伪装成高保真发射仿真'],
+    stack: ['RocketCEA', 'GMAT', 'Python']
+  },
+  {
+    id: 'reentry-aero-lab',
+    title: 'Apollo / Orion 再入气动热初步复现',
+    status: '候选',
+    type: '再入 / CFD / 验证',
+    objective: '从公开历史报告、外形尺寸和论文曲线出发，建立低阶再入走廊和气动热趋势对照。',
+    currentProgress: ['已在飞行器对象库和知识图谱中建立再入方向', '已明确 OpenVSP / SU2 / OpenFOAM 工具链'],
+    nextActions: ['收集 NASA NTRS 报告', '数字化论文曲线', '建立简化外形', '跑低阶轨迹和热流趋势'],
+    outputs: ['热流/过载趋势', '外形假设', '曲线对照', '误差来源'],
+    relatedPages: ['/missions', '/open-source-data', '/knowledge'],
+    risks: ['CFD 容易只产出漂亮云图', '边界条件和网格必须记录', '再入真实参数不完整'],
+    stack: ['OpenVSP', 'SU2', 'OpenFOAM', 'ParaView']
+  }
+];
+
+export const projectMilestones = [
+  { id: 'm1', title: '站点结构稳定', target: '当前阶段', desc: '导航、页面结构、数据文件和主要视觉方向稳定下来，停止继续堆样板模块。' },
+  { id: 'm2', title: '第一个可运行实验', target: '下一阶段', desc: '优先完成 TLE 轨道传播与过境实验，产出 CSV、窗口表和三维回放。' },
+  { id: 'm3', title: '真实对象档案成型', target: '中期', desc: '每个核心对象都补齐公开来源、参数表、仿真路径、验证检查和下一步动作。' },
+  { id: 'm4', title: '自动维护流程', target: '长期', desc: '形成新增条目模板、截图审查、日志归档和每周清洗规则。' }
+];
+
 export const experimentCandidates = [
   {
     id: 'tle-orbit-replay', title: 'TLE 轨道传播与任务回放', category: '轨道传播', status: '候选', priority: '高',
