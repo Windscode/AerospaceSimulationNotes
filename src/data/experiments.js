@@ -68,28 +68,44 @@ export const experimentCandidates = [
     objective: '读取公开 TLE，完成轨道传播、地面站过境计算和 Cesium 轨迹回放。',
     inputs: ['TLE', '地面站经纬度', '传播时间范围'], tools: ['Orekit', 'CesiumJS', 'Python / Jupyter'],
     outputs: ['轨道状态 CSV', '过境窗口', '三维回放页面'], validation: ['与 CelesTrak / STK 结果对照', '检查时间系统和坐标系一致性'],
-    archiveTarget: '开源与数据 / 飞行器与任务 / 我的项目'
+    archiveTarget: '开源与数据 / 飞行器与任务 / 我的项目',
+    runPlan: ['从 CelesTrak 获取 ISS 或天宫 TLE', '固定地面站坐标和 UTC 时间段', '用 SGP4/Orekit 输出位置速度 CSV', '计算仰角门限下的过境窗口', '导入 Cesium 做三维回放'],
+    artifacts: ['tle.txt', 'ground_station.json', 'orbit_state.csv', 'access_windows.csv', 'cesium.czml', 'validation.md'],
+    failureModes: ['TLE 历元过旧', 'UTC/TAI 时间系统混用', '地面站坐标系错误', '只做三维图不输出对照表'],
+    doneDefinition: '能重新下载同一历元 TLE，运行脚本生成 CSV、过境窗口和回放文件，并写清误差来源。'
   },
   {
     id: 'small-launch-ascent', title: '小型运载火箭入轨仿真', category: '推进估计', status: '候选', priority: '高',
     objective: '用公开或估计参数建立简化入轨模型，记录质量、推力、气动和飞行程序假设。',
     inputs: ['质量估计', '推力曲线', '比冲', '目标轨道', '气动假设'], tools: ['RocketCEA', 'GMAT', 'Python / Jupyter'],
     outputs: ['入轨轨迹', '速度/高度曲线', '剩余质量', '误差说明'], validation: ['与公开任务描述、TLE 和低阶估算对照'],
-    archiveTarget: '飞行器与任务 / 数据方法 / 我的项目'
+    archiveTarget: '飞行器与任务 / 数据方法 / 我的项目',
+    runPlan: ['整理发动机数量、推力和比冲公开资料', '建立分级质量和推进剂消耗假设', '写三自由度上升段积分脚本', '输出高度/速度/质量随时间曲线', '与目标轨道速度和任务事件对照'],
+    artifacts: ['vehicle_assumptions.yaml', 'ascent_sim.py', 'trajectory.csv', 'dv_budget.md', 'assumption_boundary.md'],
+    failureModes: ['把估计质量写成事实', '忽略气动阻力或重力损失', '没有目标轨道对照', '把低阶模型包装成真实制导'],
+    doneDefinition: '能说明所有假设来源，输出轨迹和 Δv 预算，并明确该模型只用于总体近似。'
   },
   {
     id: 'adcs-closed-loop', title: '卫星姿态控制闭环', category: 'GNC闭环', status: '设计中', priority: '中高',
     objective: '建立刚体姿态动力学、传感器噪声、执行机构限幅和控制律，形成可重复闭环实验。',
     inputs: ['惯量矩阵', '初始姿态', '控制参数', '传感器噪声'], tools: ['Basilisk', 'Simulink', 'Python / Jupyter'],
     outputs: ['姿态误差', '控制力矩', '执行机构饱和记录'], validation: ['检查稳定时间、稳态误差和能量变化'],
-    archiveTarget: '知识图谱 / 我的项目'
+    archiveTarget: '知识图谱 / 我的项目',
+    runPlan: ['固定刚体惯量和初始姿态', '选择 PD 或四元数反馈控制律', '加入执行机构限幅和传感器噪声', '输出姿态误差和控制力矩曲线', '检查稳定时间和饱和事件'],
+    artifacts: ['adcs_config.yaml', 'attitude_response.csv', 'control_torque.csv', 'stability_report.md'],
+    failureModes: ['没有定义姿态参数化', '忽略执行机构限幅', '没有单位检查', '只看收敛曲线不看控制量'],
+    doneDefinition: '能复现实验配置，输出姿态响应和控制量，并说明控制律适用范围。'
   },
   {
     id: 'reentry-low-order-aero', title: '再入飞行器气动热初步估计', category: '再入分析', status: '候选', priority: '中',
     objective: '从外形尺寸、初始速度和大气模型估计再入阻力、过载和热流范围。',
     inputs: ['外形尺寸', '质量', '初始状态', '大气模型'], tools: ['OpenVSP', 'SU2', 'OpenFOAM', 'Python / Jupyter'],
     outputs: ['升阻力估计', '热流范围', '轨迹曲线', '假设边界'], validation: ['与论文曲线、教材案例或公开任务剖面对照'],
-    archiveTarget: '飞行器与任务 / 知识图谱 / 复现实验'
+    archiveTarget: '飞行器与任务 / 知识图谱 / 复现实验',
+    runPlan: ['收集 Apollo/Orion 外形和质量公开资料', '建立简化外形或低阶阻力模型', '固定再入初始速度高度走廊', '积分速度/高度/过载/热流趋势', '与公开曲线或教材案例对照'],
+    artifacts: ['geometry_notes.md', 'reentry_config.yaml', 'trajectory.csv', 'heat_load_curve.csv', 'comparison_report.md'],
+    failureModes: ['边界条件不清', '网格或模型不收敛', '热流模型超出适用范围', '把趋势估计当高保真 CFD'],
+    doneDefinition: '能给出趋势曲线、对照来源、误差解释和模型适用范围。'
   }
 ];
 
@@ -107,4 +123,19 @@ export const experimentLifecycle = [
   { step: '03', title: '运行', desc: '记录命令、脚本、环境、数据和运行日志。' },
   { step: '04', title: '验证', desc: '用公开基准、工具对照、论文曲线或物理一致性检查结果。' },
   { step: '05', title: '归档', desc: '把实验结果沉淀为日志、方法卡片、工具条目或任务案例。' }
+];
+
+export const archiveSchema = [
+  { title: 'README.md', desc: '实验目标、运行方式、输入输出和结论摘要。' },
+  { title: 'config.yaml', desc: '模型参数、工具版本、坐标系、时间系统和假设。' },
+  { title: 'data/', desc: '原始输入、公开来源、处理后的 CSV 或曲线数据。' },
+  { title: 'scripts/', desc: '可运行脚本、后处理脚本和生成图表命令。' },
+  { title: 'results/', desc: '曲线、表格、回放文件、误差说明和验证报告。' }
+];
+
+export const reviewQuestions = [
+  { title: '数据从哪来？', desc: '是否能追溯到 TLE、任务页面、论文、报告或官方文档。' },
+  { title: '怎么重新跑？', desc: '是否有命令、依赖、版本和最小运行路径。' },
+  { title: '对照什么？', desc: '是否有公开基准、工具对照、论文曲线或物理一致性检查。' },
+  { title: '哪里不可信？', desc: '是否写清估计参数、低阶模型、误差和不适用范围。' }
 ];
