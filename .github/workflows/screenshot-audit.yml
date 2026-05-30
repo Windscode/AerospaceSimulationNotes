@@ -18,7 +18,7 @@ on:
 jobs:
   screenshot-audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,10 +27,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+
+      - name: Install audit tools
+        run: npm install --no-save playwright serve wait-on
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
