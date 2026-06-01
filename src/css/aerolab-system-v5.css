@@ -1,0 +1,347 @@
+/* System v5: global consolidation layer loaded last.
+   Purpose: keep the site from feeling like many stacked CSS patches. */
+
+:root {
+  --asn-max: 1180px;
+  --asn-left: 70px;
+  --asn-section-y: clamp(64px, 7vw, 96px);
+  --asn-card-radius: 0px;
+  --asn-card-bg: linear-gradient(180deg, rgba(8, 20, 42, .82), rgba(3, 10, 22, .76));
+  --asn-card-line: rgba(126, 229, 255, .16);
+  --asn-card-line-strong: rgba(126, 229, 255, .28);
+  --asn-text: rgba(240, 248, 255, .92);
+  --asn-muted: rgba(230, 243, 255, .68);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.lab-site {
+  color: var(--asn-text);
+}
+
+.lab-top-nav {
+  min-width: 0 !important;
+}
+
+.lab-top-nav nav {
+  display: flex !important;
+  gap: 2px !important;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+  max-width: min(58vw, 780px);
+}
+
+.lab-top-nav nav::-webkit-scrollbar {
+  display: none;
+}
+
+.lab-top-nav nav a {
+  padding: 8px 9px !important;
+  font-size: 12px !important;
+  letter-spacing: .02em !important;
+}
+
+.lab-nav-actions {
+  flex-shrink: 0;
+}
+
+.lab-command-trigger {
+  min-width: 92px !important;
+}
+
+.lab-side-nav--eight a {
+  min-height: calc((100vh - 28px) / 8) !important;
+}
+
+.lab-side-nav--eight a b {
+  font-size: 12px !important;
+}
+
+.lab-page-section,
+.lab-section,
+.home-mission-control,
+.orbital-console,
+.experiment-flow-console,
+.tool-stage-explorer,
+.data-evidence-chain,
+.lab-vehicle-explorer,
+.lab-radar-console,
+.lab-graph-explorer {
+  padding-top: var(--asn-section-y) !important;
+  padding-bottom: var(--asn-section-y) !important;
+}
+
+.lab-page-head,
+.lab-section-head,
+.home-mission-head,
+.tool-stage-head,
+.data-evidence-head,
+.lab-vehicle-head,
+.lab-radar-copy,
+.lab-graph-head,
+.experiment-flow-head {
+  max-width: var(--asn-max) !important;
+  margin: 0 auto 28px !important;
+}
+
+.lab-page-head h2,
+.lab-section-head h2,
+.home-mission-head h2,
+.tool-stage-head h2,
+.data-evidence-head h2,
+.lab-vehicle-head h2,
+.lab-radar-copy h2,
+.lab-graph-head h2,
+.experiment-flow-head h2 {
+  max-width: 860px;
+  font-size: clamp(2rem, 3vw, 3.75rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.06em !important;
+}
+
+.lab-page-head p,
+.lab-section-head p,
+.home-mission-head p,
+.tool-stage-head p,
+.data-evidence-head p,
+.lab-vehicle-head p,
+.lab-radar-copy p,
+.lab-graph-head p,
+.experiment-flow-head p {
+  max-width: 820px !important;
+  color: var(--asn-muted) !important;
+  font-size: 15px !important;
+  line-height: 1.82 !important;
+}
+
+.lab-sub-hero {
+  min-height: 300px !important;
+}
+
+.lab-sub-hero-content h1 {
+  font-size: clamp(2.85rem, 5vw, 5.5rem) !important;
+  line-height: .96 !important;
+  letter-spacing: -.07em !important;
+}
+
+.lab-sub-hero-content p {
+  max-width: 760px !important;
+  line-height: 1.82 !important;
+}
+
+.network-hero-copy h1 {
+  font-size: clamp(4rem, 6.8vw, 7.6rem) !important;
+}
+
+.network-route-panel,
+.lab-console-band,
+.lab-database-card,
+.lab-status-grid article,
+.lab-table-grid article,
+.lab-action-grid article,
+.lab-object-grid article,
+.lab-toolchain-grid article,
+.lab-pipeline-grid article,
+.lab-source-matrix article,
+.lab-personal-project-grid article,
+.lab-experiment-grid article,
+.lab-intelligence-queue-grid article,
+.experiment-run-panel article {
+  border-radius: var(--asn-card-radius) !important;
+  border-color: var(--asn-card-line) !important;
+  background: var(--asn-card-bg) !important;
+}
+
+.lab-database-card:hover,
+.lab-status-grid article:hover,
+.lab-table-grid article:hover,
+.lab-action-grid article:hover,
+.lab-object-grid article:hover,
+.lab-toolchain-grid article:hover,
+.lab-pipeline-grid article:hover,
+.lab-source-matrix article:hover,
+.lab-personal-project-grid article:hover,
+.lab-experiment-grid article:hover,
+.lab-intelligence-queue-grid article:hover {
+  border-color: var(--asn-card-line-strong) !important;
+  transform: translateY(-2px);
+  transition: transform .18s ease, border-color .18s ease;
+}
+
+.lab-database-card h3,
+.lab-status-grid article strong,
+.lab-table-grid article h3,
+.lab-action-grid h3,
+.lab-object-grid h3,
+.lab-toolchain-grid h3,
+.lab-pipeline-grid h3,
+.lab-source-matrix article strong,
+.lab-personal-project-grid h3,
+.lab-experiment-grid h3,
+.lab-intelligence-queue-grid h3,
+.experiment-run-panel h3 {
+  overflow-wrap: anywhere;
+}
+
+.lab-database-card > p,
+.lab-table-grid article p,
+.lab-status-grid article p,
+.lab-action-grid p,
+.lab-object-grid p,
+.lab-toolchain-grid p,
+.lab-pipeline-grid p,
+.lab-source-matrix p,
+.lab-personal-project-grid p,
+.lab-experiment-grid p,
+.lab-intelligence-queue-grid p {
+  color: var(--asn-muted) !important;
+}
+
+.lab-card-status-row {
+  row-gap: 6px !important;
+}
+
+.lab-status-pill,
+.lab-chip-list em,
+.lab-inline-list em,
+.lab-action-fields em,
+.lab-object-grid em,
+.lab-toolchain-grid footer em,
+.lab-recipe-tools em,
+.lab-project-field em,
+.lab-experiment-grid em,
+.lab-intel-field em,
+.lab-intelligence-queue-grid footer em {
+  border-radius: 999px !important;
+}
+
+.lab-filter-row {
+  max-width: var(--asn-max);
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.lab-database-toolbar {
+  max-width: var(--asn-max);
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.lab-database-grid,
+.lab-table-grid,
+.lab-status-grid,
+.lab-action-grid,
+.lab-object-grid,
+.lab-toolchain-grid,
+.lab-pipeline-grid,
+.lab-source-matrix,
+.lab-personal-project-grid,
+.lab-experiment-grid,
+.lab-intelligence-queue-grid,
+.lab-repro-candidate-grid,
+.lab-log-type-grid,
+.lab-checklist-grid,
+.lab-work-log-grid,
+.lab-screenshot-grid {
+  max-width: var(--asn-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.lab-section-entry {
+  margin-left: calc((100% - var(--asn-max)) / 2) !important;
+}
+
+.lab-overlay-panel {
+  max-width: var(--asn-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.lab-sub-hero-content aside {
+  min-width: 260px;
+}
+
+.lab-sub-hero-content aside div strong {
+  overflow-wrap: anywhere;
+}
+
+.lab-command-panel {
+  width: min(860px, calc(100vw - 28px)) !important;
+  max-height: min(720px, calc(100vh - 60px)) !important;
+}
+
+.lab-command-results {
+  max-height: 520px !important;
+  overflow: auto !important;
+}
+
+@media (max-width: 1280px) {
+  .lab-top-nav nav {
+    max-width: 48vw;
+  }
+  .lab-brand strong {
+    font-size: 14px !important;
+  }
+  .lab-brand em {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --asn-left: 0px;
+  }
+  .lab-top-nav nav {
+    max-width: 100%;
+  }
+  .lab-top-nav nav a {
+    padding: 8px 7px !important;
+  }
+  .lab-log-btn {
+    display: none !important;
+  }
+  .lab-sub-hero-content aside {
+    min-width: 0;
+  }
+  .lab-section-entry {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .lab-top-nav {
+    height: auto !important;
+    min-height: 66px !important;
+    padding: 10px 12px !important;
+    align-items: flex-start !important;
+  }
+  .lab-top-nav nav {
+    order: 3;
+    width: 100%;
+    padding-top: 8px;
+  }
+  .lab-command-trigger kbd {
+    display: none !important;
+  }
+  .network-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .lab-page-head h2,
+  .lab-section-head h2,
+  .home-mission-head h2,
+  .tool-stage-head h2,
+  .data-evidence-head h2,
+  .lab-vehicle-head h2,
+  .lab-radar-copy h2,
+  .lab-graph-head h2,
+  .experiment-flow-head h2 {
+    font-size: 2.25rem !important;
+  }
+  .lab-sub-hero-content h1 {
+    font-size: 3rem !important;
+  }
+}
