@@ -44,6 +44,7 @@ const config = {
       { to: '/tools', label: '工具库', position: 'left' },
       { to: '/open-source-data', label: '开源与数据', position: 'left' },
       { to: '/knowledge', label: '知识图谱', position: 'left' },
+      { to: '/reproduction-lab', label: '复现实验', position: 'left' },
       { to: '/my-projects', label: '我的项目', position: 'left' },
       { to: '/log', label: '研究日志', position: 'right' }
     ] },
