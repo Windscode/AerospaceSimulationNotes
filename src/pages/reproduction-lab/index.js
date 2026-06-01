@@ -47,8 +47,8 @@ export default function LabPage(){
   const [q, setQ] = useState('');
   const result = useMemo(() => experimentCandidates.filter(exp => (cat === '全部' || exp.category === cat) && JSON.stringify(exp).toLowerCase().includes(q.toLowerCase())), [cat, q]);
   return <Layout title="复现实验" description="航天仿真复现实验、验证和归档流程">
-    <AeroLabFrame active="MINE">
-      <LabPageHero eyebrow="REPRODUCTION LAB · 内部模块" title="复现实验工作台" text="这里不是展示实验想法，而是把实验推进到可运行：输入可追溯、脚本可重跑、输出可对照、假设可解释、结论可归档。" image={labImages.control} stats={[{label:'实验候选', value:String(experimentCandidates.length)}, {label:'验证门禁', value:String(validationGates.length)}, {label:'归档字段', value:String(archiveSchema.length)}, {label:'状态', value:'可运行优先'}]} />
+    <AeroLabFrame active="REPRO">
+      <LabPageHero eyebrow="REPRODUCTION LAB · 复现实验" title="复现实验工作台" text="这里不是展示实验想法，而是把实验推进到可运行：输入可追溯、脚本可重跑、输出可对照、假设可解释、结论可归档。" image={labImages.control} stats={[{label:'实验候选', value:String(experimentCandidates.length)}, {label:'验证门禁', value:String(validationGates.length)}, {label:'归档字段', value:String(archiveSchema.length)}, {label:'状态', value:'可运行优先'}]} />
       <ExperimentFlowConsole experiments={experimentCandidates}/>
       <ArchiveSchema />
       <ReviewQuestions />
