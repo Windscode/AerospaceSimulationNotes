@@ -30,7 +30,8 @@ const config = {
       require.resolve('./src/css/aerolab-screenshot-audit-2.css'),
       require.resolve('./src/css/aerolab-screenshot-audit-3.css'),
       require.resolve('./src/css/aerolab-network-v2.css'),
-      require.resolve('./src/css/aerolab-content-v3.css')
+      require.resolve('./src/css/aerolab-content-v3.css'),
+      require.resolve('./src/css/aerolab-system-v5.css')
     ] }
   }]],
   themeConfig: {
