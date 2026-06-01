@@ -9,6 +9,7 @@ const navItems = [
   { key: 'TOOLS', label: '工具库', href: '/tools' },
   { key: 'OPEN', label: '开源与数据', href: '/open-source-data' },
   { key: 'GRAPH', label: '知识图谱', href: '/knowledge' },
+  { key: 'REPRO', label: '复现实验', href: '/reproduction-lab' },
   { key: 'MINE', label: '我的项目', href: '/my-projects' },
 ];
 
@@ -24,9 +25,10 @@ export function LabSideNav({ active = 'HOME' }) {
     { key: 'TOOLS', label: '工具', href: '/tools' },
     { key: 'OPEN', label: '开源', href: '/open-source-data' },
     { key: 'GRAPH', label: '图谱', href: '/knowledge' },
+    { key: 'REPRO', label: '实验', href: '/reproduction-lab' },
     { key: 'MINE', label: '我的', href: '/my-projects' },
   ];
-  return <aside className="lab-side-nav lab-side-nav--seven">{items.map((item, i) => <Link key={item.key} to={item.href} className={item.key === active ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
+  return <aside className="lab-side-nav lab-side-nav--eight">{items.map((item, i) => <Link key={item.key} to={item.href} className={item.key === active ? 'active' : ''}><span>{String(i + 1).padStart(2, '0')}</span><b>{item.label}</b></Link>)}</aside>;
 }
 
 export function LabPageHero({ eyebrow, title, text, image = labImages.hero, stats = [] }) {
